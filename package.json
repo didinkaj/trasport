@@ -23,6 +23,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
-        "element-ui": "^2.4.4"
+        "element-ui": "^2.4.4",
+        "vue-router": "^3.0.1"
     }
 }

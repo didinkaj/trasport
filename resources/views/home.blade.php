@@ -16,7 +16,10 @@
                 You are logged in!
 
             </div>
-            <example-component></example-component>
+
+            <main-component></main-component>
+            <router-view></router-view>
+
 
         </div>
 

@@ -99,7 +99,7 @@
                 </div>
             @endif
 
-            <div class="content">
+            <div class="content" id="app">
 
                 <div class="title m-b-md">
                     Laravel

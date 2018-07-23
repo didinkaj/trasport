@@ -9,6 +9,7 @@
     import ElCol from "element-ui/packages/col/src/col";
 
     export default {
+        name:'home',
         components: {
             ElCol,
             ElRow

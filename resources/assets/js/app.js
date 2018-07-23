@@ -12,9 +12,16 @@ window.Vue = require('vue');
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/en';
 import 'element-ui/lib/theme-chalk/index.css';
+import Main from './components/layout/Main.vue'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI, { locale });
+
+import VueRouter from 'vue-router'
+import router from './routes/router'
+
+
+Vue.use(VueRouter)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -23,7 +30,13 @@ Vue.use(ElementUI, { locale });
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('main-component', Main);
 
 const app = new Vue({
+    router,
     el: '#app'
 });
+
+
+
+

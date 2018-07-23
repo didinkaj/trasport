@@ -14,18 +14,18 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+<div id="app">
 
-        {{-- top bar  --}}
-        <div class="top-bar">
+    {{-- top bar  --}}
+    <div class="top-bar">
 
-          <div class="top-bar-left">
+        <div class="top-bar-left">
             <ul class="dropdown menu" data-dropdown-menu>
-              <li class="menu-text">{{ config('app.name', 'Laravel') }} </li>
+                <li class="menu-text">{{ config('app.name', 'Laravel') }} </li>
             </ul>
-          </div>
+        </div>
 
-          <div class="top-bar-right">
+        <div class="top-bar-right">
             <ul class="menu">
                 @if (Auth::guest())
                     <li><a href="{{ route('login') }}">Login</a></li>
@@ -36,11 +36,13 @@
                             <a href="#">{{ Auth::user()->name }}</a>
                             <ul class="menu">
                                 <li>
-                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                         Logout
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
                                         {{ csrf_field() }}
                                     </form>
                                 </li>
@@ -49,18 +51,18 @@
                     </ul>
                 @endif
             </ul>
-          </div>
-
         </div>
-
-        @yield('content')
 
     </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script>
-        $(document).foundation();
-    </script>
+    @yield('content')
+
+</div>
+
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}"></script>
+<script>
+    $(document).foundation();
+</script>
 </body>
 </html>
