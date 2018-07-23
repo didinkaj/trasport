@@ -1,32 +1,6 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card card-default">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        <el-row>
-                            <el-col :span="12">
-                                I'm an example component.
-                                <el-time-select
-                                        v-model="value1"
-                                        :picker-options="{
-    start: '08:30',
-    step: '00:15',
-    end: '18:30'
-  }"
-                                        placeholder="Select time">
-                                </el-time-select>
-
-
-                            </el-col>
-                        </el-row>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="grid-container">
+        <p>Vue component</p>
     </div>
 </template>
 
@@ -41,7 +15,17 @@
         },
         data(){
             return{
-                value1: ''
+                value1: '',
+                formInline: {
+                    user: '',
+                    region: ''
+                }
+
+            }
+        },
+        methods: {
+            onSubmit() {
+                console.log('submit!');
             }
         },
         mounted() {

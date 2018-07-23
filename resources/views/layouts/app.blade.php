@@ -21,7 +21,7 @@
 
           <div class="top-bar-left">
             <ul class="dropdown menu" data-dropdown-menu>
-              <li class="menu-text">{{ config('app.name', 'Laravel') }} {{ app()->version() }}</li>
+              <li class="menu-text">{{ config('app.name', 'Laravel') }} </li>
             </ul>
           </div>
 
