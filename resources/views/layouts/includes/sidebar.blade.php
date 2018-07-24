@@ -1,13 +1,15 @@
 <div class="column small-12  medium-2 sidebar">
     <div class="grid-x">
+        <div>
+        </div>
         <div class="cell sidebar-items">
             <ul class="menu">
-                <li class=""> <i class="fa fa-dashboard fa-2x"></i> Dashboard</li>
-                <li class=""> <i class="fa fa-cab fa-2x"></i> Vehicles</li>
-                <li class=""><i class="fa fa-dashboard fa-2x"></i> Reservations</li>
-                <li class=""><i class="fa fa-dashboard fa-2x"></i> Drivers</li>
-                <li class=""><i class="fa fa-dashboard fa-2x"></i> Reports</li>
-                <li class=""><i class="fa fa-dashboard fa-2x"></i> Log Out</li>
+                <li class="active"> &nbsp;&nbsp;<i class="fa fa-dashboard fa-2x"></i>&nbsp;&nbsp; Dashboard</li>
+                <li class=""> &nbsp;&nbsp;<i class="fa fa-cab fa-2x"></i> &nbsp;&nbsp;Vehicles</li>
+                <li class="">&nbsp;&nbsp;<i class="fa fa-dashboard fa-2x"></i> &nbsp;&nbsp;Reservations</li>
+                <li class="">&nbsp;&nbsp;<i class="fa fa-dashboard fa-2x"></i>&nbsp;&nbsp; Drivers</li>
+                <li class="">&nbsp;&nbsp;<i class="fa fa-dashboard fa-2x"></i>&nbsp;&nbsp; Reports</li>
+                <li class="">&nbsp;&nbsp;<i class="fa fa-dashboard fa-2x"></i> &nbsp;&nbsp;Log Out</li>
             </ul>
             {{--<main-component></main-component>--}}
         </div>

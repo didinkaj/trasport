@@ -11157,16 +11157,22 @@ body .help-text {
 
 .sidebar {
   min-height: 500px;
+  border-right: 1px solid #e6e6e6;
+  margin-left: -10px;
 }
 
 .sidebar .menu {
   line-height: 3.5em;
 }
 
+.side-bar-icon {
+  color: #e6e6e6;
+}
+
 .sidebar-items {
-  margin-padding: 20px;
-  border-right: 1px solid #2f4b26;
+  margin-top: 20px;
   height: 100%;
+  margin-left: 15px;
 }
 
 .dashboard-content {

@@ -2,10 +2,10 @@
 
 @section('content')
 
-    <div class="column small-12  medium-10 button-plus-link">
+    <div class="column small-12  medium-10 content-area">
 
         <div class="dash-title text-center">
-            <h4>Quick Over View</h4>
+            <h5>Quick Over View</h5>
         </div>
 
         {{--second grid column--}}
