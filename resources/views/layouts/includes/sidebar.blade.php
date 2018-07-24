@@ -1,4 +1,4 @@
-<div class="column small-12  medium-2 sidebar">
+<div class="column hide-for-small-only  medium-2 sidebar">
     <div class="grid-x">
         <div>
         </div>
