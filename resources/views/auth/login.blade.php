@@ -43,13 +43,13 @@
                 </label>
             </div>
             <div class="row">
-                <div class="column button-plus-link">
+                <div class="column small-12  medium-6 button-plus-link">
                     <a href="{{ route('password.request') }}" class="pull-right forgot-password">
                         &nbsp;
                         Forgot Your Password?
                     </a>
                 </div>
-                <div class="column button-plus-link  ">
+                <div class="column small-12 medium-6 button-plus-link  ">
                     <button type="submit" class=" auth-button button">
                         Login
                     </button>
