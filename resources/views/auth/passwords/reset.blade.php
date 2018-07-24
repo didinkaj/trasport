@@ -62,7 +62,7 @@
 
                 <div class="row">
                     <div class="column button-plus-link  ">
-                        <button type="submit" class="button auth-button">
+                        <button type="submit" class="button auth-button forgot-password">
                             Reset Password
                         </button>
                     </div>

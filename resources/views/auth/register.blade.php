@@ -62,7 +62,7 @@
                         </a>
                     </div>
                     <div class="column small-12  medium-6 button-plus-link  ">
-                        <button type="submit" class="button auth-button">
+                        <button type="submit" class="button auth-button ">
                             Register
                         </button>
                     </div>
