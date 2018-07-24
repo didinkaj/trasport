@@ -11183,6 +11183,7 @@ body .help-text {
   text-align: center;
   margin-top: 10px;
   float: left;
+  min-height: 50px;
 }
 
 .dash-title {

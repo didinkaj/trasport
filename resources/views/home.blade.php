@@ -30,11 +30,11 @@
             </div>
             <div class="medium-offset-1 medium-3 card dashboard-item cell">
                 <div class="card-divider">
-                    Events
+                   Events
                 </div>
-                <i class="fa fa-users fa-4x icon-user"></i>
+                <i class="fa fa-calendar fa-4x icon-user"></i>
                 <div class="card-section">
-                    <h6>Events 3</h6>
+                    <h6>On Going Events 3</h6>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
                 <div class="card-divider">
                     Reservations
                 </div>
-                <i class="fa fa-cab fa-4x icon-user"></i>
+                <i class="fa fa-calendar-check-o fa-4x icon-user"></i>
                 <div class="card-section">
                     <h6>3 Reservation Requests </h6>
                 </div>
@@ -53,18 +53,18 @@
                 <div class="card-divider">
                     Reports
                 </div>
-                <i class="fa fa-users fa-4x icon-user"></i>
+                <i class="fa fa-area-chart fa-4x icon-user"></i>
                 <div class="card-section">
                     <h6>Reports</h6>
                 </div>
             </div>
             <div class="medium-offset-1 medium-3 card dashboard-item cell">
                 <div class="card-divider">
-                    Events
+                    My Account
                 </div>
-                <i class="fa fa-users fa-4x icon-user"></i>
+                <i class="fa fa-cogs fa-4x icon-user"></i>
                 <div class="card-section">
-                    <h6>Events 3</h6>
+                    <h6>Total events Booked 5</h6>
                 </div>
             </div>
         </div>

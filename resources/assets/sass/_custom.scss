@@ -50,7 +50,6 @@ body {
   border-right:1px solid #e6e6e6;
   margin-left: -10px;
 
-
   .menu{
     line-height:3.5em;
   }
@@ -60,7 +59,6 @@ body {
 
 }
 .sidebar-items{
-
   margin-top: 20px;
   height: 100%;
   margin-left:15px ;
@@ -77,6 +75,7 @@ body {
       text-align: center;
       margin-top:10px;
       float: left;
+      min-height: 50px;
     }
   }
 }
