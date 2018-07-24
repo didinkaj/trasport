@@ -15,7 +15,7 @@ body {
   height: 80px;
   .title-bar {
     background-color: $primary-color;
-    color: $secondary-color;
+    color: #2f4b26;
   }
 
   .top-bar, .top-bar ul {
@@ -60,12 +60,11 @@ body {
     min-height: 520px;
   }
 }
-
-.footer-section {
-  background: #e6e6e6;
-  height: 50px;
-  padding: 10px;
-  margin-bottom: 0;
+.dash-container {
+  min-height: 550px;
+  .login-content {
+    min-height: 520px;
+  }
 }
 
 .auth-form {
@@ -77,4 +76,15 @@ body {
     margin-bottom: 25px;
   }
 
+}
+
+.footer-section {
+  background: #e6e6e6;
+  height: 50px;
+  padding: 10px;
+  margin-bottom: 0;
+
+  .footer-text{
+    color:#2f4b26;
+  }
 }

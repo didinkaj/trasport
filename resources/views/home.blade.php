@@ -2,30 +2,19 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="column small-12  medium-10 button-plus-link">
 
-        <div class="row">
-
-            <div class="form-container small-6 small-centered columns">
-
-                <div class="form-title text-center">
-                    Dashboard
-                </div>
-
-                <div class="callout">
-                    You are logged in!
-
-                </div>
-
-                <main-component></main-component>
-                <router-view></router-view>
-
-
-
-            </div>
-
+        <div class="form-title text-center">
+            <br/>
         </div>
 
+        <div class="callout">
+            You are logged in!
+
+        </div>
+        <router-view></router-view>
+
     </div>
+
 
 @endsection

@@ -1,7 +1,7 @@
 @include('layouts.includes.header')
-    <div class="grid-container auth-container">
+    <div class="grid-container dash-container">
 
-
+        @include('layouts.includes.sidebar')
 
             @yield('content')
 

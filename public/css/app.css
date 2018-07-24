@@ -11133,7 +11133,7 @@ body .help-text {
 
 .header-nav .title-bar {
   background-color: #e6e6e6;
-  color: #1779ba;
+  color: #2f4b26;
 }
 
 .header-nav .top-bar .title-bar-right a,
@@ -11167,11 +11167,12 @@ body .help-text {
   min-height: 520px;
 }
 
-.footer-section {
-  background: #e6e6e6;
-  height: 50px;
-  padding: 10px;
-  margin-bottom: 0;
+.dash-container {
+  min-height: 550px;
+}
+
+.dash-container .login-content {
+  min-height: 520px;
 }
 
 .auth-form .auth-button {
@@ -11181,6 +11182,17 @@ body .help-text {
 .auth-form .forgot-password {
   margin-top: 25px;
   margin-bottom: 25px;
+}
+
+.footer-section {
+  background: #e6e6e6;
+  height: 50px;
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+.footer-section .footer-text {
+  color: #2f4b26;
 }
 
 /*!
