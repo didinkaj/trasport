@@ -55,13 +55,13 @@
 
 
                 <div class="row">
-                    <div class="column button-plus-link">
+                    <div class="column small-12  medium-6 button-plus-link">
                         <a href="{{ route('login') }}" class="pull-right forgot-password">
                             &nbsp;
                             Already have an account?
                         </a>
                     </div>
-                    <div class="column button-plus-link  ">
+                    <div class="column small-12  medium-6 button-plus-link  ">
                         <button type="submit" class="button auth-button">
                             Register
                         </button>
