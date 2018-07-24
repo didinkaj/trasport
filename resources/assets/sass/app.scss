@@ -3,7 +3,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
 // Variables
-@import "settings";
+
 
 // Bootstrap
 @import "foundation";
@@ -11,3 +11,5 @@
 
 //custom sass
 @import "custom";
+
+@import "../../../node_modules/font-awesome/scss/font-awesome";

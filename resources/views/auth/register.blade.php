@@ -2,17 +2,13 @@
 
 @section('content')
 
-<div class="container">
-
-    <div class="row align-middle">
-
-        <div class="form-container medium-6 small-centered columns">
+        <div class="form-container small-12 medium-6 small-centered columns">
 
             <div class="form-title text-center">
-                Register
+                <i class="fa fa-user-plus fa-5x auth-icon" aria-hidden="true"></i>
             </div>
 
-            <form class="register-form" method="POST" action="{{ route('register') }}">
+            <form class="auth-form" method="POST" action="{{ route('register') }}">
 
                 {{ csrf_field() }}
 
@@ -57,10 +53,19 @@
                     <input id="password-confirm" type="password" name="password_confirmation" required>
                 </div>
 
-                <div class="register_button">
-                    <button type="submit" class="button">
-                        Register
-                    </button>
+
+                <div class="row">
+                    <div class="column button-plus-link">
+                        <a href="{{ route('login') }}" class="pull-right forgot-password">
+                            &nbsp;
+                            Already have an account?
+                        </a>
+                    </div>
+                    <div class="column button-plus-link  ">
+                        <button type="submit" class="button auth-button">
+                            Register
+                        </button>
+                    </div>
                 </div>
 
 
@@ -68,8 +73,5 @@
 
         </div>
 
-    </div>
-
-</div>
 
 @endsection

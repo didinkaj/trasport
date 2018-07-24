@@ -1,4 +1,5 @@
 $red : #FF0000;
+$primary-color:#e6e6e6;
 
 //general body
 body{
@@ -9,9 +10,16 @@ body{
 
 //top bar
 .header-nav {
-  background-color: #e6e6e6;
+  background-color: $primary-color;
+  height:80px;
 
   .top-bar, .top-bar ul {
+
+    .title-bar-right{
+      a{
+        color:#fe5f55;
+      }
+    }
 
   }
 }
@@ -29,10 +37,14 @@ body{
 
   }
 }
+.auth-icon{
+  color: $primary-color;
+
+}
 .auth-container{
-  height: 500px;
-  .align-middle{
-    height: 100%;
+  min-height: 550px;
+  .login-content{
+    min-height:520px;
   }
 }
 
@@ -41,4 +53,14 @@ body{
   height: 50px;
   padding: 10px;
   margin-bottom: 0;
+}
+
+.auth-form{
+  .auth-button{
+    float:right;
+  }
+  .forgot-password{
+      margin-top: 10px;
+  }
+
 }

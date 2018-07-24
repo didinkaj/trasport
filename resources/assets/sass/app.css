@@ -1,16 +1,69 @@
 /*
-Error: File to import not found or unreadable: node_modules/foundation-sites/scss/util/util.
-        on line 63 of _settings.scss
-        from line 6 of app.scss
+Error: Invalid US-ASCII character "\xE2"
+        on line 94 of ../../../node_modules/foundation-sites/scss/prototype/_relation.scss
+        from line 10 of ../../../node_modules/foundation-sites/scss/prototype/_prototype.scss
+        from line 68 of ../../../node_modules/foundation-sites/scss/foundation.scss
+        from line 1 of foundation.scss
+        from line 9 of app.scss
+
+89:   &:nth-child(n + #{$num}):nth-last-child(n + #{$num}) {
+90:     @content;
+91:   }
+92: }
+93: 
+94: /// Will only select the child if it’s unique. That means that if there are at least 2 children, the style will not be applied.
+95: @mixin unique {
+96:   &:only-child {
+97:     @content;
+98:   }
+99: }
 
 Backtrace:
-_settings.scss:63
-app.scss:6
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/import_node.rb:67:in `rescue in import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/import_node.rb:45:in `import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/import_node.rb:28:in `imported_file'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/import_node.rb:37:in `css_import?'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:314:in `visit_import'
+../../../node_modules/foundation-sites/scss/prototype/_relation.scss:94
+../../../node_modules/foundation-sites/scss/prototype/_prototype.scss:10
+../../../node_modules/foundation-sites/scss/foundation.scss:68
+foundation.scss:1
+app.scss:9
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/util.rb:1043:in `rescue in block in find_encoding_error'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/util.rb:1040:in `block in find_encoding_error'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/util.rb:1039:in `each'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/util.rb:1039:in `each_with_index'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/util.rb:1039:in `find_encoding_error'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/util.rb:767:in `check_sass_encoding'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/engine.rb:444:in `check_encoding!'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/engine.rb:400:in `_to_tree'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/engine.rb:321:in `to_tree'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:327:in `block in visit_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:88:in `block in with_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:88:in `with_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:329:in `block (2 levels) in visit_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:329:in `map'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:329:in `block in visit_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:88:in `block in with_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:88:in `with_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:329:in `block (2 levels) in visit_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:329:in `map'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:329:in `block in visit_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:88:in `block in with_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:88:in `with_import'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `block in with_base'
@@ -61,4 +114,4 @@ app.scss:6
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: node_modules/foundation-sites/scss/util/util.\A         on line 63 of _settings.scss\A         from line 6 of app.scss"; }
+  content: "Error: Invalid US-ASCII character \"\xE2\"\A         on line 94 of ../../../node_modules/foundation-sites/scss/prototype/_relation.scss\A         from line 10 of ../../../node_modules/foundation-sites/scss/prototype/_prototype.scss\A         from line 68 of ../../../node_modules/foundation-sites/scss/foundation.scss\A         from line 1 of foundation.scss\A         from line 9 of app.scss\A \A 89:   &:nth-child(n + #{$num}):nth-last-child(n + #{$num}) {\A 90:     @content;\A 91:   }\A 92: }\A 93: \A 94: /// Will only select the child if it’s unique. That means that if there are at least 2 children, the style will not be applied.\A 95: @mixin unique {\A 96:   &:only-child {\A 97:     @content;\A 98:   }\A 99: }"; }

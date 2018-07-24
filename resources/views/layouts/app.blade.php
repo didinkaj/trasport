@@ -64,8 +64,20 @@
             </div>
         </div>
     </div>
+    <div class="grid-container auth-container">
+        <div class="row align-middle  login-content">
 
-    @yield('content')
+            <div class="form-container small-12 medium-6 small-centered columns">
+                <div class="row align-middle home-logo ">
+                    <div class="columns">
+                        <img src="{{asset('images/logo.jpg')}}">
+                    </div>
+                </div>
+            </div>
+
+            @yield('content')
+        </div>
+    </div>
 
 
 
@@ -73,7 +85,7 @@
 <footer class="grid-container fluid footer-section">
     <section class="grid-container ">
         <div class="medium-12">
-            <p class="text-center">&copy johnson Didinya 2018</p>
+            <p class="text-center">Johnson Didinya &copy  2018</p>
         </div>
     </section>
 </footer>

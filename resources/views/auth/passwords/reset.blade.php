@@ -2,10 +2,6 @@
 
 @section('content')
 
-<div class="container">
-
-    <div class="row align-middle">
-
         <div class="form-container medium-6 small-centered columns">
 
             <div class="status_message">
@@ -17,10 +13,11 @@
             </div>
 
             <div class="form-title text-center">
-                Reset Password
+                <p>Reset Password</p>
+                <i class="fa fa-unlock fa-5x auth-icon" aria-hidden="true"></i>
             </div>
 
-            <form class="password-reset-form" method="POST" action="{{ route('password.request') }}">
+            <form class="auth-form" method="POST" action="{{ route('password.request') }}">
 
                 {{ csrf_field() }}
 
@@ -62,18 +59,21 @@
                     @endif
                 </div>
 
-                <div class="reset-button">
-                    <button type="submit" class="button">
-                        Reset Password
-                    </button>
+
+                <div class="row">
+                    <div class="column button-plus-link">
+
+                    </div>
+                    <div class="column button-plus-link  ">
+                        <button type="submit" class="button auth-button">
+                            Reset Password
+                        </button>
+                    </div>
                 </div>
 
             </form>
 
         </div>
 
-    </div>
-
-</div>
 
 @endsection

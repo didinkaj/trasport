@@ -2,11 +2,7 @@
 
 @section('content')
 
-<div class="container">
-
-    <div class="row align-middle">
-
-        <div class="form-container medium-6 small-centered columns">
+    <div class="form-container small-12 medium-6 small-centered columns">
 
             <div class="status_message">
                 @if (session('status'))
@@ -17,10 +13,11 @@
             </div>
 
             <div class="form-title text-center">
-                Reset Password
+                <p>Reset you password</p>
+                <i class="fa fa-unlock-alt fa-5x auth-icon" aria-hidden="true"></i>
             </div>
 
-            <form class="forgot-password-form" method="POST" action="{{ route('password.email') }}">
+            <form class="auth-form" method="POST" action="{{ route('password.email') }}">
 
                 {{ csrf_field() }}
 
@@ -36,18 +33,19 @@
                     @endif
                 </div>
 
-                <div class="send-button">
-                    <button type="submit" class="button">
-                        Send Password Reset Link
-                    </button>
+                <div class="row">
+                    <div class="column button-plus-link">
+
+                    </div>
+                    <div class="column button-plus-link  ">
+                        <button type="submit" class="button auth-button">
+                            Send Password Reset Link
+                        </button>
+                    </div>
                 </div>
 
             </form>
 
         </div>
-
-    </div>
-
-</div>
 
 @endsection
