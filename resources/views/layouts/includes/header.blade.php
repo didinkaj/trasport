@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }} {{ app()->version() }}</title>
+    <title>{{ config('app.name', 'Laravel') }} </title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -64,36 +64,3 @@
             </div>
         </div>
     </div>
-    <div class="grid-container auth-container">
-        <div class="row align-middle  login-content">
-
-            <div class="form-container hide-for-small-only medium-6 small-centered columns">
-                <div class="row align-middle home-logo ">
-                    <div class="columns">
-                        <img src="{{asset('images/logo.jpg')}}">
-                    </div>
-                </div>
-            </div>
-
-            @yield('content')
-        </div>
-    </div>
-
-
-
-</div>
-<footer class="grid-container fluid footer-section">
-    <section class="grid-container ">
-        <div class="medium-12">
-            <p class="text-center">Johnson Didinya &copy  2018</p>
-        </div>
-    </section>
-</footer>
-
-<!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
-<script>
-    $(document).foundation();
-</script>
-</body>
-</html>

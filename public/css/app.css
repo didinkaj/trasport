@@ -11131,18 +11131,28 @@ body .help-text {
   height: 80px;
 }
 
+.header-nav .title-bar {
+  background-color: #e6e6e6;
+  color: #1779ba;
+}
+
 .header-nav .top-bar .title-bar-right a,
 .header-nav .top-bar ul .title-bar-right a {
   color: #fe5f55;
 }
 
+.header-nav .top-bar .title-bar-left button,
+.header-nav .top-bar ul .title-bar-left button {
+  color: #1779ba;
+}
+
 .main-page {
-  min-height: 93vh;
+  min-height: 94vh;
 }
 
 .home-logo img {
   width: 65%;
-  align: center;
+  vertical-align: middle;
 }
 
 .auth-icon {
