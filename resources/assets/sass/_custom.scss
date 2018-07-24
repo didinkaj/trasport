@@ -29,6 +29,11 @@ body {
       button {
         color: $secondary-color;
       }
+      .menu-text{
+        a{
+          color:red;
+        }
+      }
 
     }
 
@@ -39,6 +44,35 @@ body {
   min-height: 94vh;
 }
 
+//side bar
+.sidebar{
+  min-height: 500px;
+
+  .menu{
+    line-height:3.5em;
+  }
+}
+.sidebar-items{
+  margin-padding: 20px;
+  border-right:1px solid #2f4b26;
+  height: 100%;
+}
+
+.dashboard-content{
+  margin-bottom: 20px;
+  .dashboard-item{
+    .icon-user{
+      text-align: center;
+      margin-top:10px;
+      float: left;
+    }
+  }
+}
+
+
+.dash-title{
+  padding:20px;
+}
 //login form
 
 .home-logo {

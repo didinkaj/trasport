@@ -1,11 +1,12 @@
 @include('layouts.includes.header')
-    <div class="grid-container dash-container">
-
+    <section class="grid-container fluid dash-container grid-margin-x grid-padding-x">
+        <div class="grid-container">
         @include('layouts.includes.sidebar')
 
             @yield('content')
+        </div>
 
-    </div>
+    </section>
 @include('layouts.includes.footer')
 
 

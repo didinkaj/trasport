@@ -15,7 +15,8 @@
 </head>
 <body>
 <div class="main-page" id="app">
-    <div class="grid-container fluid grid-margin-x grid-padding-x header-nav">
+    <section class="grid-container fluid grid-margin-x grid-padding-x header-nav">
+        <div class="grid-container">
         <div class="title-bar " data-responsive-toggle="mainNavigation" data-hide-for="medium">
             <div class="title-bar-left">
                 <button class="menu-icon" type="button" data-toggle="mainNavigation"></button>
@@ -63,7 +64,9 @@
                 </ul>
             </div>
         </div>
-    </div>
+        </div>
+    </section>
+
     <div class="grid-container auth-container">
         <div class="row align-middle  login-content">
 

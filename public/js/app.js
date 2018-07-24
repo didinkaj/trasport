@@ -103941,7 +103941,7 @@ if (false) {
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]);
 
 var routes = [{
-    path: '/',
+    path: '/homevue',
     name: 'home',
     component: __WEBPACK_IMPORTED_MODULE_0__components_ExampleComponent_vue___default.a
 }];
@@ -103961,6 +103961,7 @@ var myrouter = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_element_ui_packages_row_src_row__ = __webpack_require__(219);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_element_ui_packages_col_src_col__ = __webpack_require__(220);
+//
 //
 //
 //
@@ -104138,18 +104139,18 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "grid-container" },
+    [
+      _c("p", [_vm._v("Vue component")]),
+      _vm._v(" "),
+      _c("router-link", { attrs: { to: { name: "home" } } }, [_vm._v("Home")])
+    ],
+    1
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "grid-container" }, [
-      _c("p", [_vm._v("Vue component")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

@@ -11146,8 +11146,41 @@ body .help-text {
   color: #1779ba;
 }
 
+.header-nav .top-bar .title-bar-left .menu-text a,
+.header-nav .top-bar ul .title-bar-left .menu-text a {
+  color: red;
+}
+
 .main-page {
   min-height: 94vh;
+}
+
+.sidebar {
+  min-height: 500px;
+}
+
+.sidebar .menu {
+  line-height: 3.5em;
+}
+
+.sidebar-items {
+  margin-padding: 20px;
+  border-right: 1px solid #2f4b26;
+  height: 100%;
+}
+
+.dashboard-content {
+  margin-bottom: 20px;
+}
+
+.dashboard-content .dashboard-item .icon-user {
+  text-align: center;
+  margin-top: 10px;
+  float: left;
+}
+
+.dash-title {
+  padding: 20px;
 }
 
 .home-logo img {

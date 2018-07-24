@@ -1,6 +1,7 @@
 <template>
     <div class="grid-container">
         <p>Vue component</p>
+        <router-link :to="{name:'home'}">Home</router-link>
     </div>
 </template>
 
