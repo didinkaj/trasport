@@ -1,9 +1,44 @@
-.menuitem{
-  color: red;
-}
-.grid-container{
-  p{
-    color:red;
-  }
+$red : #FF0000;
 
+//general body
+body{
+  .help-text{
+    color: red;
+  }
+}
+
+//top bar
+.header-nav {
+  background-color: #e6e6e6;
+
+  .top-bar, .top-bar ul {
+
+  }
+}
+
+.main-page{
+  min-height:93vh;
+}
+
+//login form
+
+.home-logo{
+  img{
+    width: 65%;
+    align:center;
+
+  }
+}
+.auth-container{
+  height: 500px;
+  .align-middle{
+    height: 100%;
+  }
+}
+
+.footer-section{
+  background: #e6e6e6;
+  height: 50px;
+  padding: 10px;
+  margin-bottom: 0;
 }

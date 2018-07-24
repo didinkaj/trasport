@@ -1,4 +1,4 @@
-import Main from '../components/layout/Main.vue';
+import Example from '../components/ExampleComponent.vue';
 
 import Vue from 'vue'
 
@@ -10,7 +10,7 @@ Vue.use(VueRouter)
     {
         path: '/',
         name: 'home',
-        component: Main
+        component: Example
     },
 
 ];

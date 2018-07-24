@@ -21,6 +21,10 @@ import VueRouter from 'vue-router'
 import router from './routes/router'
 
 
+import VueProgress from 'vue-progress'
+Vue.use(VueProgress)
+
+
 Vue.use(VueRouter)
 
 /**
@@ -31,6 +35,7 @@ Vue.use(VueRouter)
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('main-component', Main);
+
 
 const app = new Vue({
     router,

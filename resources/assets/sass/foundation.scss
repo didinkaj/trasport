@@ -5,3 +5,9 @@
 // if you won't be using old float grid, comment this out
 // and design your own auth pages
 @include foundation-grid;
+
+// @include foundation-grid;
+@include foundation-flex-classes;
+@include foundation-flex-grid;
+
+

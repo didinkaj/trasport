@@ -4,13 +4,13 @@
 
 <div class="container">
 
-    <div class="row">
+    <div class="row align-middle">
 
-        <div class="form-container small-6 small-centered columns">
+        <div class="form-container medium-6 small-centered columns">
 
             <div class="status_message">
                 @if (session('status'))
-                    <div class="callout">
+                    <div class="alert-box success">
                         {{ session('status') }}
                     </div>
                 @endif
