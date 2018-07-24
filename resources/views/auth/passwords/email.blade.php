@@ -34,9 +34,6 @@
                 </div>
 
                 <div class="row">
-                    <div class="column button-plus-link">
-
-                    </div>
                     <div class="column button-plus-link  ">
                         <button type="submit" class="button auth-button">
                             Send Password Reset Link
