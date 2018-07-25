@@ -14,6 +14,9 @@ const mutations = {
     },
     GET_ALL_VEHICLES(state,data){
         state.vehicles = data
+    },
+    DELETE_VEHICLE(state,vehicleToDelete){
+        state.vehicles.splice( state.vehicles.indexOf(vehicleToDelete), 1 );
     }
 
 };
@@ -25,10 +28,19 @@ const actions = {
         })
     },
     addVehicle(store, newVehicle){
-        axios.post('api/save/vihecle', newVehicle).then(function (response) {
+        axios.post('api/save/vihecle', newVehicle).then((response) => {
             store.commit('ADD_VEHICLES',response.data);
+        }).catch( error => {
+            return Promise.reject(error.response);
         });
-
+    },
+    deleteVehicle(store, vehicleToDelete){
+        console.log(vehicleToDelete)
+        axios.delete('api/delete/vihecle/'+ vehicleToDelete.id).then( (response) => {
+            store.commit('DELETE_VEHICLE',vehicleToDelete);
+        }).catch( error => {
+            return Promise.reject(error.response);
+        });
     }
 };
 

@@ -6,11 +6,29 @@
                 vehiclesInfo:[]
             }
         },
-        methods:{
+        methods: {
             getVehiclesInfo(){
                 this.vehiclesInfo = this.vehicles
+            },
+            deleteVehicle(vehicleToDelete) {
+                this.$confirm('This will permanently delete the file. Continue?', 'Warning', {
+                    confirmButtonText: 'OK',
+                    cancelButtonText: 'Cancel',
+                    type: 'warning'
+                }).then(() => {
+                    this.$store.dispatch('deleteVehicle',vehicleToDelete);
+                    this.$router.push({name: 'Showvehicles_route'})
+                    this.$message({
+                        type: 'success',
+                        message: 'Delete completed'
+                    });
+                }).catch(() => {
+                    this.$message({
+                        type: 'info',
+                        message: 'Delete canceled'
+                    });
+                });
             }
-
         },
         computed:{
             ...mapGetters({
@@ -18,7 +36,7 @@
             })
         },
         created(){
-            this.$store.dispatch('getAllVehicles');
+            this.$store.dispatch('getAllVehicles')
             this.getVehiclesInfo();
         },
         mounted(){
@@ -39,7 +57,7 @@
                         <th>Name</th>
                         <th>Capacity</th>
                         <th>Number Plate</th>
-                        <th>Actions</th>
+                        <th colspan="2">Actions</th>
                     </tr>
                     </thead>
                     <tr v-for="vehicle in vehicles" >
@@ -47,7 +65,12 @@
                         <td>{{ vehicle.name }}</td>
                         <td>{{ vehicle.capacity }}</td>
                         <td>{{ vehicle.no_plate }}</td>
-                        <td></td>
+                        <td id="show-modal" @click="" class="btn btn-info">
+                            <span class="fa fa-pencil"></span>
+                        </td>
+                        <td @click.prevent="deleteVehicle(vehicle)">
+                            <span class="fa fa-trash danger"></span>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -56,5 +79,8 @@
 </template>
 
 <style>
-
+.danger{
+    color: red;
+    cursor:pointer;
+}
 </style>

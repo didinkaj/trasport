@@ -30,12 +30,16 @@
                     }
                     this.error('Vehicle not added. Ensure all fields are filled')
                 } else {
-                    if (this.$store.dispatch('addVehicle', input)) {
-                        this.success('Vehicle added successfully')
-                        this.newItem = {}
-                        this.errors = []
-                        this.$router.push({name: 'Showvehicles_route'})
-                    }
+                    this.$store.dispatch('addVehicle', input).then(() => {
+                            this.success('Vehicle added successfully')
+                            this.newItem = {}
+                            this.errors = []
+                            this.$router.push({name: 'Showvehicles_route'})
+                        },
+                        error => {
+                            this.error('Vehicle not added')
+
+                        })
                 }
             },
             success(messageToEcho) {
@@ -102,7 +106,7 @@
 </template>
 
 <style>
-.error{
-    color:red;
-}
+    .error {
+        color: red;
+    }
 </style>

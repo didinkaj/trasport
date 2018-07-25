@@ -20,3 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::middleware('auth')->get('/allusers', 'HomeController@alluser');
 
 Route::middleware('auth')->post('/save/vihecle','HomeController@storecare');
+
+Route::middleware('auth')->delete('/delete/vihecle/{id}','HomeController@deleteVehicle');

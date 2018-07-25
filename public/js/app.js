@@ -104614,7 +104614,7 @@ exports = module.exports = __webpack_require__(18)(false);
 
 
 // module
-exports.push([module.i, "\n.error{\n    color:red;\n}\n", ""]);
+exports.push([module.i, "\n.error {\n    color: red;\n}\n", ""]);
 
 // exports
 
@@ -104642,6 +104642,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         createItem: function createItem() {
+            var _this = this;
+
             var input = this.newItem;
             if (input['name'] == '' || input['no_plate'] == '' || input['capacity'] == '') {
                 this.errors = [];
@@ -104657,12 +104659,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
                 this.error('Vehicle not added. Ensure all fields are filled');
             } else {
-                if (this.$store.dispatch('addVehicle', input)) {
-                    this.success('Vehicle added successfully');
-                    this.newItem = {};
-                    this.errors = [];
-                    this.$router.push({ name: 'Showvehicles_route' });
-                }
+                this.$store.dispatch('addVehicle', input).then(function () {
+                    _this.success('Vehicle added successfully');
+                    _this.newItem = {};
+                    _this.errors = [];
+                    _this.$router.push({ name: 'Showvehicles_route' });
+                }, function (error) {
+                    _this.error('Vehicle not added');
+                });
             }
         },
         success: function success(messageToEcho) {
@@ -104942,7 +104946,7 @@ exports = module.exports = __webpack_require__(18)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.danger{\n    color: red;\n    cursor:pointer;\n}\n", ""]);
 
 // exports
 
@@ -104967,6 +104971,27 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     methods: {
         getVehiclesInfo: function getVehiclesInfo() {
             this.vehiclesInfo = this.vehicles;
+        },
+        deleteVehicle: function deleteVehicle(vehicleToDelete) {
+            var _this = this;
+
+            this.$confirm('This will permanently delete the file. Continue?', 'Warning', {
+                confirmButtonText: 'OK',
+                cancelButtonText: 'Cancel',
+                type: 'warning'
+            }).then(function () {
+                _this.$store.dispatch('deleteVehicle', vehicleToDelete);
+                _this.$router.push({ name: 'Showvehicles_route' });
+                _this.$message({
+                    type: 'success',
+                    message: 'Delete completed'
+                });
+            }).catch(function () {
+                _this.$message({
+                    type: 'info',
+                    message: 'Delete canceled'
+                });
+            });
         }
     },
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])({
@@ -105019,7 +105044,28 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(vehicle.no_plate))]),
                   _vm._v(" "),
-                  _c("td")
+                  _c(
+                    "td",
+                    {
+                      staticClass: "btn btn-info",
+                      attrs: { id: "show-modal" },
+                      on: { click: function($event) {} }
+                    },
+                    [_c("span", { staticClass: "fa fa-pencil" })]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    {
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.deleteVehicle(vehicle)
+                        }
+                      }
+                    },
+                    [_c("span", { staticClass: "fa fa-trash danger" })]
+                  )
                 ])
               })
             ],
@@ -105045,7 +105091,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Number Plate")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Actions")])
+        _c("th", { attrs: { colspan: "2" } }, [_vm._v("Actions")])
       ])
     ])
   }
@@ -106053,6 +106099,9 @@ var mutations = {
     },
     GET_ALL_VEHICLES: function GET_ALL_VEHICLES(state, data) {
         state.vehicles = data;
+    },
+    DELETE_VEHICLE: function DELETE_VEHICLE(state, vehicleToDelete) {
+        state.vehicles.splice(state.vehicles.indexOf(vehicleToDelete), 1);
     }
 };
 
@@ -106065,6 +106114,16 @@ var actions = {
     addVehicle: function addVehicle(store, newVehicle) {
         axios.post('api/save/vihecle', newVehicle).then(function (response) {
             store.commit('ADD_VEHICLES', response.data);
+        }).catch(function (error) {
+            return Promise.reject(error.response);
+        });
+    },
+    deleteVehicle: function deleteVehicle(store, vehicleToDelete) {
+        console.log(vehicleToDelete);
+        axios.delete('api/delete/vihecle/' + vehicleToDelete.id).then(function (response) {
+            store.commit('DELETE_VEHICLE', vehicleToDelete);
+        }).catch(function (error) {
+            return Promise.reject(error.response);
         });
     }
 };

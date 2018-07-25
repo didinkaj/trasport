@@ -52,4 +52,11 @@ class HomeController extends Controller
         
 
     }
+    
+    public function deleteVehicle($id){
+        
+        $value = Vehicle::find($id);
+        $value->delete();
+        
+    }
 }
