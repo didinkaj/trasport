@@ -18,7 +18,7 @@
                        aria-describedby="emailHelpText" required autofocus>
 
                 @if ($errors->has('email'))
-                    <span class="help-text" id="emailHelpText">
+                    <span class="help-text error" id="emailHelpText">
                             <strong>{{ $errors->first('email') }}</strong>
                         </span>
                 @endif
@@ -31,7 +31,7 @@
                        required>
 
                 @if ($errors->has('password'))
-                    <span class="help-text" id="passwordHelpText">
+                    <span class="help-text error" id="passwordHelpText">
                             <strong>{{ $errors->first('password') }}</strong>
                         </span>
                 @endif

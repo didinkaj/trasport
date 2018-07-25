@@ -1,20 +1,28 @@
 <script>
+    import {mapGetters} from 'vuex'
     export default {
         data(){
             return{
-                items:[]
+                vehiclesInfo:[]
             }
         },
         methods:{
-            getVueItems: function getVueItems() {
-                var _this = this;
-                axios.get('/api/allusers').then(function (response) {
-                    _this.items = response.data;
-                });
+            getVehiclesInfo(){
+                this.vehiclesInfo = this.vehicles
             }
+
+        },
+        computed:{
+            ...mapGetters({
+                vehicles: 'vehicles',
+            })
+        },
+        created(){
+            this.$store.dispatch('getAllVehicles');
+            this.getVehiclesInfo();
         },
         mounted(){
-            this.getVueItems();
+
         }
     }
 </script>
@@ -34,11 +42,11 @@
                         <th>Actions</th>
                     </tr>
                     </thead>
-                    <tr v-for="item in items">
-                        <td>{{ item.id }}</td>
-                        <td>{{ item.name }}</td>
-                        <td>{{ item.capacity }}</td>
-                        <td>{{ item.no_plate }}</td>
+                    <tr v-for="vehicle in vehicles" >
+                        <td>{{ vehicle.id }}</td>
+                        <td>{{ vehicle.name }}</td>
+                        <td>{{ vehicle.capacity }}</td>
+                        <td>{{ vehicle.no_plate }}</td>
                         <td></td>
                     </tr>
                 </table>

@@ -1,4 +1,29 @@
 <script>
+    import {mapGetters} from 'vuex'
+    export default {
+        data(){
+            return{
+
+            }
+        },
+        computed:{
+            ...mapGetters({
+                vehicles: 'vehicles',
+            })
+        },
+        methods:{
+
+        },
+        mounted(){
+            this.getVehicles();
+        },
+        created(){
+            this.$store.dispatch('getAllVehicles');
+        },
+        mounted(){
+            console.log("mounted")
+        }
+    }
 
 
 </script>
@@ -12,11 +37,11 @@
     <div class="grid-x dashboard-content" >
         <div class=" cell medium-3 card dashboard-item ">
             <div class="card-divider">
-                Vehicles
+                 Vehicles
             </div>
             <i class="fa fa-cab fa-4x icon-user"></i>
             <div class="card-section">
-                <h6>4 Registered Vehicles</h6>
+                <h6> {{ vehicles.length }} Registered Vehicles</h6>
             </div>
         </div>
         <div class="medium-offset-1 medium-3 card dashboard-item cell">
