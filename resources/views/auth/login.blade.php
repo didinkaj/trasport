@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="form-container small-12 medium-6 small-centered columns">
+    <div class="form-container small-12 medium-6 small-centered columns auth">
         <div class="form-title text-center">
             <i class="fa fa-user-circle fa-5x auth-icon" aria-hidden="true"></i>
         </div>
@@ -50,7 +50,7 @@
                     </a>
                 </div>
                 <div class="column small-12 medium-6 button-plus-link  ">
-                    <button type="submit" class=" auth-button button">
+                    <button type="submit" class=" auth-button button large">
                         Login
                     </button>
                 </div>

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="form-container small-12 medium-6 small-centered columns">
+    <div class="form-container small-12 medium-6 small-centered columns auth">
 
             <div class="status_message">
                 @if (session('status'))
@@ -35,7 +35,7 @@
 
                 <div class="row">
                     <div class="column button-plus-link  ">
-                        <button type="submit" class="button auth-button forgot-password">
+                        <button type="submit" class="button auth-button forgot-password large">
                             Send Password Reset Link
                         </button>
                     </div>

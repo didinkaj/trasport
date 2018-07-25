@@ -11155,6 +11155,14 @@ body .help-text {
   min-height: 94vh;
 }
 
+.auth {
+  margin-top: 10px;
+  border: 2px solid #e6e6e6;
+  padding: 40px;
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
 .sidebar {
   min-height: 500px;
   margin-left: -10px;
@@ -11180,7 +11188,7 @@ body .help-text {
 
 .dashboard-content .dashboard-item .icon-user {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 15px;
   float: left;
   min-height: 50px;
 }
@@ -11190,20 +11198,16 @@ body .help-text {
 }
 
 .home-logo img {
-  width: 65%;
+  width: 85%;
   vertical-align: middle;
 }
 
-.auth-icon {
-  color: #e6e6e6;
-}
-
 .auth-container {
-  min-height: 550px;
+  min-height: 630px;
 }
 
 .auth-container .login-content {
-  min-height: 520px;
+  min-height: 600px;
 }
 
 .dash-container {

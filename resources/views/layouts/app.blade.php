@@ -64,7 +64,7 @@
                 </ul>
             </div>
         </div>
-        </div>
+    </div>
     </section>
 
     <div class="grid-container auth-container">
@@ -73,12 +73,19 @@
             <div class="form-container hide-for-small-only medium-6 small-centered columns">
                 <div class="row align-middle home-logo ">
                     <div class="columns">
-                        <img src="{{asset('images/logo.jpg')}}">
+                        <img src="{{asset('images/watermark.png')}}">
+
                     </div>
                 </div>
             </div>
 
+
             @yield('content')
+        </div>
+        <div class="row">
+            <div class="column">
+
+            </div>
         </div>
     </div>
 

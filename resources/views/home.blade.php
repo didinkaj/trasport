@@ -16,7 +16,7 @@
                 </div>
                 <i class="fa fa-cab fa-4x icon-user"></i>
                 <div class="card-section">
-                    <h6>200 Registered Vehicles</h6>
+                    <h6>4 Registered Vehicles</h6>
                 </div>
             </div>
             <div class="medium-offset-1 medium-3 card dashboard-item cell">
@@ -46,7 +46,7 @@
                 </div>
                 <i class="fa fa-calendar-check-o fa-4x icon-user"></i>
                 <div class="card-section">
-                    <h6>3 Reservation Requests </h6>
+                    <h6>3 Pending Requests </h6>
                 </div>
             </div>
             <div class="medium-offset-1 medium-3 card dashboard-item cell">
@@ -60,11 +60,11 @@
             </div>
             <div class="medium-offset-1 medium-3 card dashboard-item cell">
                 <div class="card-divider">
-                    My Account
+                    Maintainance
                 </div>
                 <i class="fa fa-cogs fa-4x icon-user"></i>
                 <div class="card-section">
-                    <h6>Total events Booked 5</h6>
+                    <h6>Next Maintainance 5th</h6>
                 </div>
             </div>
         </div>

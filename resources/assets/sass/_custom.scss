@@ -4,6 +4,7 @@ $secondary-color: #1779ba;
 
 //general body
 body {
+
   .help-text {
     color: red;
   }
@@ -42,6 +43,17 @@ body {
 //main page
 .main-page {
   min-height: 94vh;
+  //background-image: url("../../../public/images/watermark.png");
+  //background-repeat: no-repeat;
+  //background-position: center;
+
+}
+.auth{
+  margin-top: 10px;
+  border: 2px solid $primary-color;
+  padding: 40px;
+  border-radius: 10px;
+  opacity: 0.9;
 }
 
 //side bar
@@ -72,7 +84,7 @@ body {
   .dashboard-item{
     .icon-user{
       text-align: center;
-      margin-top:10px;
+      margin-top:15px;
       float: left;
       min-height: 50px;
     }
@@ -89,21 +101,21 @@ body {
 
 .home-logo {
   img {
-    width: 65%;
+    width: 85%;
     vertical-align: middle;
 
   }
 }
 
 .auth-icon {
-  color: $primary-color;
+  //color: $primary-color;
 
 }
 
 .auth-container {
-  min-height: 550px;
+  min-height: 630px;
   .login-content {
-    min-height: 520px;
+    min-height: 600px;
   }
 }
 .dash-container {
