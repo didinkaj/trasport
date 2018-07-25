@@ -9,17 +9,17 @@
                 hasError: true,
                 newItem: {
                     'name': '',
-                    'age': '',
-                    'profession': ''
+                    'capacity': '',
+                    'noPlate': ''
                 },
             }
         },
-        methods() {
-            createItem: function createItem() {
+        methods: {
+            createItem() {
                 let _this = this;
                 let input = this.newItem;
 
-                if (input['name'] == '' || input['age'] == '' || input['profession'] == '') {
+                if (input['name'] == '' || input['noPlate'] == '' || input['capacity'] == '') {
 
                     this.hasError = false;
 
@@ -41,28 +41,27 @@
 
 <template>
     <div>
-        <p class="text-center alert alert-danger"
-           v-bind:class="{ hidden: hasError }">Please fill all fields!
-        </p>
-
+        <div class="dash-title text-center">
+            <h5>Add Vehicle</h5>
+        </div>
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" class="form-control" id="name" name="name"
-                   required v-model="newItem.name" placeholder=" Enter some name">
+                   required v-model="newItem.name" >
         </div>
         <div class="form-group">
-            <label for="age">Age:</label>
-            <input type="number" class="form-control" id="age" name="age"
-                   required v-model="newItem.age" placeholder=" Enter your age">
+            <label for="capacity">Capacity:</label>
+            <input type="number" class="form-control" id="capacity" name="capacity"
+                   required v-model="newItem.capacity" >
         </div>
         <div class="form-group">
-            <label for="profession">Profession:</label>
-            <input type="text" class="form-control" id="profession" name="profession"
-                   required v-model="newItem.profession" placeholder=" Enter your profession">
+            <label for="noPlate">Number Plate:</label>
+            <input type="text" class="form-control" id="noPlate" name="noPlate"
+                   required v-model="newItem.noPlate" >
         </div>
 
-        <button class="btn btn-primary" @click.prevent="createItem()">
-            <span class="glyphicon glyphicon-plus"></span> ADD
+        <button class=" button " @click.prevent="createItem()">
+            <span class="fa fa-plus"></span> Add Vehicle
         </button>
     </div>
 

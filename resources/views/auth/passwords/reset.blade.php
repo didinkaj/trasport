@@ -6,7 +6,7 @@
 
             <div class="status_message">
                 @if (session('status'))
-                    <div class="alert-box success">
+                    <div class="alert-box callout  success">
                         {{ session('status') }}
                     </div>
                 @endif

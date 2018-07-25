@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('homeguest');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/{any}', 'HomeController@index')->where('any', '.*');
 

@@ -11122,6 +11122,10 @@ a.thumbnail image {
   }
 }
 
+body {
+  height: auto;
+}
+
 body .help-text {
   color: red;
 }
@@ -11151,8 +11155,12 @@ body .help-text {
   color: red;
 }
 
-.main-page {
+.main-page-login {
   min-height: 94vh;
+}
+
+.main-page {
+  min-height: 100vh;
 }
 
 .auth {
@@ -11164,12 +11172,12 @@ body .help-text {
 }
 
 .sidebar {
-  min-height: 500px;
-  margin-left: -10px;
+  height: auto;
+  padding-left: 50px;
 }
 
 .sidebar .menu {
-  line-height: 3.5em;
+  line-height: 1.0em;
 }
 
 .side-bar-icon {
@@ -11203,19 +11211,18 @@ body .help-text {
 }
 
 .auth-container {
-  min-height: 630px;
+  min-height: 600px;
+  vertical-align: middle;
 }
 
 .auth-container .login-content {
   min-height: 600px;
+  vertical-align: middle;
 }
 
 .dash-container {
-  min-height: 550px;
-}
-
-.dash-container .login-content {
-  min-height: 520px;
+  min-height: 84vh;
+  line-height: inherit;
 }
 
 .auth-form .auth-button {
