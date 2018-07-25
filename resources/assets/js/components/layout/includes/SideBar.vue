@@ -13,7 +13,7 @@
                     class="fa fa-dashboard fa-2x"></i>&nbsp;&nbsp; Dashboard
             </router-link>
             </li>
-            <li class="">&nbsp;&nbsp;<router-link :to="{name:'vehicle_route'}"><i class="fa fa-cab fa-2x"></i> &nbsp;&nbsp;Vehicles
+            <li class="">&nbsp;&nbsp;<router-link :to="{name:'Showvehicles_route'}"><i class="fa fa-cab fa-2x"></i> &nbsp;&nbsp;Vehicles
             </router-link>
             </li>
             <li class="">&nbsp;&nbsp;<router-link :to="{name:'bookings_route'}"><i
@@ -28,7 +28,7 @@
                 Reports
             </router-link>
             </li>
-            <li class="">&nbsp;&nbsp;<router-link :to="{name:'vehicle_route'}"><i class="fa fa-sign-out  fa-2x"></i>
+            <li class="">&nbsp;&nbsp;<router-link :to="{name:'Showvehicles_route'}"><i class="fa fa-sign-out  fa-2x"></i>
                 &nbsp;&nbsp;Log Out
             </router-link>
             </li>

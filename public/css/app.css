@@ -11190,6 +11190,10 @@ body .help-text {
   margin-left: 15px;
 }
 
+.content-area {
+  padding-top: 20px;
+}
+
 .dashboard-content {
   margin-bottom: 20px;
 }

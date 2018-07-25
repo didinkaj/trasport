@@ -1,11 +1,9 @@
-import Example from '../components/ExampleComponent.vue'
+import Vue from 'vue'
 import Dashboard from '../components/dashboard/DashboardComponent.vue'
-import Vehicles from '../components/vihecles/AddVihicleComponent.vue'
 import Drivers from '../components/drivers/AddDriverComponent.vue'
 import Bookings from '../components/bookings/ShowComponent.vue'
 import Reports from '../components/reports/ShowComponent.vue'
-
-import Vue from 'vue'
+import VehiclesRoutes from './vehicles'
 
 import VueRouter from 'vue-router'
 
@@ -14,7 +12,7 @@ Vue.use(VueRouter)
  const routes = [
      {
          path: '/',
-         name: 'home_route',
+         name: 'default_route',
          component: Dashboard
      },
     {
@@ -26,11 +24,6 @@ Vue.use(VueRouter)
          path:'/dashboard',
          name:'dashboard_route',
          component:Dashboard
-     },
-     {
-         path:'/vehicles',
-         name:'vehicle_route',
-         component:Vehicles
      },
      {
          path:'/drivers',
@@ -46,14 +39,29 @@ Vue.use(VueRouter)
          path:'/reports',
          name:'reports_route',
          component:Reports
-     }
+     },
+     ...generateRoutesFromMenu(VehiclesRoutes),
 
 ];
+
+function generateRoutesFromMenu (menu = [], routes = []) {
+    for (let i = 0, l = menu.length; i < l; i++) {
+        let item = menu[i]
+        if (item.path) {
+            routes.push(item)
+        }
+        if (item.children) {
+            generateRoutesFromMenu(item.children, routes)
+        }
+    }
+    return routes
+}
 
 const myrouter = new VueRouter({
     mode: 'history',
     routes
 })
+
 setTimeout(() => {
     console.log(myrouter.currentRoute.path);
 }, 0);

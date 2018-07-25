@@ -1,6 +1,7 @@
 <script>
     export default {
 
+
         data() {
 
             return {
@@ -10,7 +11,7 @@
                 newItem: {
                     'name': '',
                     'capacity': '',
-                    'noPlate': ''
+                    'no_plate': ''
                 },
             }
         },
@@ -19,7 +20,7 @@
                 let _this = this;
                 let input = this.newItem;
 
-                if (input['name'] == '' || input['noPlate'] == '' || input['capacity'] == '') {
+                if (input['name'] == '' || input['no_plate'] == '' || input['capacity'] == '') {
 
                     this.hasError = false;
 
@@ -27,12 +28,18 @@
 
                     this.hasError = true;
 
-                    axios.post('/vueitems', input).then(function (response) {
+                    console.log(input);
 
-                        _this.newItem = {'name': ''};
-                        _this.getVueItems();
+                    axios.post('api/save/vihecle', input).then(function (response) {
+                        console.log(response.data);
+                    },error=>{
+                        console.log("no error")
                     });
-                }
+
+                  //  router.push({ name: 'Showvehicles_route'})
+
+                    }
+
             }
         }
     }
@@ -41,9 +48,16 @@
 
 <template>
     <div>
-        <div class="dash-title text-center">
-            <h5>Add Vehicle</h5>
-        </div>
+        <nav aria-label="You are here:" role="navigation">
+            <ul class="breadcrumbs">
+                <li><a href="dashboard">Home</a></li>
+                <li><a href="ShowVehicles">Vehicle</a></li>
+                <li>
+                    <span class="show-for-sr">Current: </span> Add vihicle
+                </li>
+            </ul>
+        </nav>
+        <form class="form-container">
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" class="form-control" id="name" name="name"
@@ -55,14 +69,15 @@
                    required v-model="newItem.capacity" >
         </div>
         <div class="form-group">
-            <label for="noPlate">Number Plate:</label>
-            <input type="text" class="form-control" id="noPlate" name="noPlate"
-                   required v-model="newItem.noPlate" >
+            <label for="no_plate">Number Plate:</label>
+            <input type="text" class="form-control" id="no_plate" name="no_plate"
+                   required v-model="newItem.no_plate" >
         </div>
 
-        <button class=" button " @click.prevent="createItem()">
+        <button class=" button auth-button" @click.prevent="createItem()">
             <span class="fa fa-plus"></span> Add Vehicle
         </button>
+        </form>
     </div>
 
 </template>
