@@ -104674,7 +104674,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         error: function error(messageToEcho) {
             this.$notify({
-                title: 'Success',
+                title: 'Error',
                 message: messageToEcho,
                 type: 'error'
             });

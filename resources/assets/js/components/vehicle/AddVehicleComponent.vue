@@ -47,7 +47,7 @@
             },
             error(messageToEcho) {
                 this.$notify({
-                    title: 'Success',
+                    title: 'Error',
                     message: messageToEcho,
                     type: 'error'
                 });
