@@ -11198,11 +11198,25 @@ body .help-text {
   margin-bottom: 20px;
 }
 
+.dashboard-content .dashboard-item a {
+  text-align: center;
+  color: #0a0a0a;
+}
+
+.dashboard-content .dashboard-item a:hover {
+  text-align: center;
+  color: #1779ba;
+}
+
 .dashboard-content .dashboard-item .icon-user {
   text-align: center;
   margin-top: 15px;
-  float: left;
   min-height: 50px;
+}
+
+.edit-button {
+  color: #1779ba;
+  cursor: pointer;
 }
 
 .dash-title {
@@ -11247,6 +11261,10 @@ body .help-text {
 
 .footer-section .footer-text {
   color: #2f4b26;
+}
+
+.align-left {
+  float: left;
 }
 
 /*!

@@ -22,3 +22,5 @@ Route::middleware('auth')->get('/allusers', 'HomeController@alluser');
 Route::middleware('auth')->post('/save/vihecle','HomeController@storecare');
 
 Route::middleware('auth')->delete('/delete/vihecle/{id}','HomeController@deleteVehicle');
+
+Route::middleware('auth')->patch('/vehicle/{id}/edit','HomeController@editVihecle');

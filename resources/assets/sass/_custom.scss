@@ -81,15 +81,26 @@ height: auto;
 .dashboard-content{
   margin-bottom: 20px;
   .dashboard-item{
+    a{
+      text-align: center;
+      color: #0a0a0a;
+    }
+    a:hover{
+      text-align: center;
+      color:$secondary-color ;
+    }
     .icon-user{
       text-align: center;
       margin-top:15px;
-      float: left;
       min-height: 50px;
     }
   }
 }
 
+.edit-button{
+  color:$secondary-color;
+  cursor:pointer;
+}
 
 
 
@@ -144,4 +155,7 @@ height: auto;
   .footer-text{
     color:#2f4b26;
   }
+}
+.align-left{
+  float: left;
 }

@@ -11,7 +11,7 @@ import Footer from './components/layout/includes/Footer.vue'
 import VueRouter from 'vue-router'
 import router from './routes/router'
 import mymixins from './mixins/all'
-import VueProgress from 'vue-progress'
+//import VueProgress from 'vue-progress'
 import store from './store/store'
 
 
@@ -20,7 +20,7 @@ Vue.component('footer-component', Footer);
 Vue.config.productionTip = false
 Vue.use(ElementUI, { locale })
 
-Vue.use(VueProgress)
+//Vue.use(VueProgress)
 Vue.use(VueRouter)
 
 

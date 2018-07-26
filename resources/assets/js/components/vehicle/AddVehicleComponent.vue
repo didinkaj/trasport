@@ -57,6 +57,13 @@
                 });
             }
 
+        },
+        filters:{
+            capitalize:  (value) => {
+                if (!value) return ''
+                value = value.toString()
+                return value.charAt(0).toUpperCase() + value.slice(1)
+            }
         }
     }
 
@@ -66,15 +73,15 @@
     <div>
         <nav aria-label="You are here:" role="navigation">
             <ul class="breadcrumbs">
-                <li><a href="dashboard">Home</a></li>
-                <li><a href="ShowVehicles">Vehicle</a></li>
+                <li><router-link :to="{name:'dashboard_route'}">Home</router-link></li>
+                <li><router-link :to="{name:'Showvehicles_route'}">Vehicles</router-link></li>
                 <li>
                     <span class="show-for-sr">Current: </span> Add vihicle
                 </li>
             </ul>
         </nav>
         <form class="form-container">
-
+                <h5 class="text-center">Add Vehicle</h5>
             <div class="form-group">
                 <div v-if="errors.length" class="error text-center">
                     <b>Please correct the following error(s):</b>
@@ -88,7 +95,7 @@
             </div>
             <div class="form-group">
                 <label for="capacity">Capacity:</label>
-                <input type="number" class="form-control" id="capacity" name="capacity"
+                <input type="number" class="form-control" id="capacity" name="capacity" min="1" max="100"
                        required="required" v-model="newItem.capacity">
             </div>
             <div class="form-group">
@@ -97,7 +104,7 @@
                        required="required" v-model="newItem.no_plate">
             </div>
 
-            <button class=" button auth-button text-center" @click.prevent="createItem()">
+            <button class=" button auth-button right" @click.prevent="createItem()">
                 <span class="fa fa-plus"></span> Add Vehicle
             </button>
         </form>

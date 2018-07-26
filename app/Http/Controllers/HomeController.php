@@ -59,4 +59,19 @@ class HomeController extends Controller
         $value->delete();
         
     }
+    
+    public function editVihecle($id,Request $request){
+        $vehicle = Vehicle::find($id);
+    
+        $vehicle->name = $request->name;
+    
+        $vehicle->capacity = $request->capacity;
+    
+        $vehicle->no_plate = $request->no_plate;
+    
+        $vehicle->save ();
+        
+        return $vehicle;
+        
+    }
 }

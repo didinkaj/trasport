@@ -1,24 +1,132 @@
-<div class="table table-borderless" id="table">
-    <table class="table table-borderless" id="table">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Profession</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tr v-for="item in items">
-            <td>@{{ item.id }}</td>
-            <td>@{{ item.name }}</td>
-            <td>@{{ item.age }}</td>
-            <td>@{{ item.profession }}</td>
-            <td id="show-modal" @click="showModal=true; setVal(item.id, item.name, item.age, item.profession)"
-                class="btn btn-info"><span
-                    class="glyphicon glyphicon-pencil"></span></td>
-            <td @click.prevent="deleteItem(item)" class="btn btn-danger"><span
-                    class="glyphicon glyphicon-trash"></span></td>
-        </tr>
-    </table>
-</div>
+<script>
+    export default {
+        data() {
+            return {
+                items: [],
+                errors: [],
+                hasError: true,
+                newItem: {
+                    'name': '',
+                    'capacity': '',
+                    'no_plate': ''
+                },
+            }
+        },
+        methods: {
+            editVehicle() {
+                let input = this.newItem;
+                if (input['name'] == '' || input['no_plate'] == '' || input['capacity'] == '') {
+                    this.errors = [];
+
+                    if (!this.newItem.name) {
+                        this.errors.push('name required.');
+                    }
+                    if (!this.newItem.capacity) {
+                        this.errors.push('capacity required.');
+
+                    }
+                    if (!this.newItem.no_plate) {
+                        this.errors.push('number plate required.');
+                    }
+                    this.error('Vehicle not added. Ensure all fields are filled')
+                } else {
+                    this.$store.dispatch('updateVehicle', input).then(() => {
+                            this.success('Vehicle added successfully')
+                            this.newItem = {}
+                            this.errors = []
+                           this.$router.replace({name: 'Showvehicles_route'})
+                        },
+                        error => {
+                            this.error('Vehicle not added')
+
+                        })
+                }
+            },
+            success(messageToEcho) {
+                this.$notify({
+                    title: 'Success',
+                    message: messageToEcho,
+                    type: 'success'
+                });
+            },
+            error(messageToEcho) {
+                this.$notify({
+                    title: 'Error',
+                    message: messageToEcho,
+                    type: 'error'
+                });
+            }
+
+        },
+        filters:{
+            capitalize:  (value) => {
+                if (!value) return ''
+                value = value.toString()
+                return value.charAt(0).toUpperCase() + value.slice(1)
+            }
+        },
+        created(){
+            let vehicle = this.$route.params.id;
+            this.newItem = vehicle;
+        }
+    }
+
+</script>
+
+<template>
+    <div>
+        <nav aria-label="You are here:" role="navigation">
+            <ul class="breadcrumbs">
+                <li><router-link :to="{name:'dashboard_route'}">Home</router-link></li>
+                <li><router-link :to="{name:'Showvehicles_route'}">Vehicles</router-link></li>
+                <li>
+                    <span class="show-for-sr">Current: </span> Edit Vehicle
+                </li>
+            </ul>
+        </nav>
+        <form class="form-container">
+
+            <div class="reveal" id="exampleModal1" data-reveal>
+                <h1>Awesome. I Have It.</h1>
+                <p class="lead">Your couch. It is mine.</p>
+                <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+                <button class="close-button" data-close aria-label="Close modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="form-group">
+                <div v-if="errors.length" class="error text-center">
+                    <b>Please correct the following error(s):</b>
+                    <div>
+                        <div v-for="error in errors">{{ error }}</div>
+                    </div>
+                </div>
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" maxlength="20"
+                       required="required" v-model="newItem.name">
+            </div>
+            <div class="form-group">
+                <label for="capacity">Capacity:</label>
+                <input type="number" class="form-control" id="capacity" name="capacity" min="1" max="100"
+                       required="required" v-model="newItem.capacity ">
+            </div>
+            <div class="form-group">
+                <label for="no_plate">Number Plate:</label>
+                <input type="text" class="form-control" id="no_plate" name="no_plate"
+                       required="required" v-model="newItem.no_plate">
+            </div>
+
+            <button class=" button auth-button text-center" @click.prevent="editVehicle()">
+                <span class="fa fa-pencil-square-o"></span> Save Changes
+            </button>
+        </form>
+    </div>
+
+</template>
+
+<style>
+    .error {
+        color: red;
+    }
+</style>
