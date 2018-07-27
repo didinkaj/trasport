@@ -19787,7 +19787,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_element_ui___default.a, { locale: __WEBPACK_
 Vue.use(__WEBPACK_IMPORTED_MODULE_5_vue_router__["a" /* default */]);
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_8_vue_progressbar___default.a, {
-    color: 'rgb(138,43,226)',
+    color: 'rgb(255,0,0)',
     failedColor: 'red',
     height: '4px'
 });

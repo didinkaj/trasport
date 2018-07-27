@@ -25,7 +25,7 @@ Vue.use(ElementUI, { locale })
 Vue.use(VueRouter)
 
 Vue.use(VueProgressBar, {
-    color: 'rgb(138,43,226)',
+    color: 'rgb(255,0,0)',
     failedColor: 'red',
     height: '4px'
 })
