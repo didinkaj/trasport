@@ -4,6 +4,7 @@ import Drivers from '../components/drivers/AddDriverComponent.vue'
 import Bookings from '../components/bookings/ShowComponent.vue'
 import Reports from '../components/reports/ShowComponent.vue'
 import VehiclesRoutes from './vehicles'
+import DriversRoutes from './drivers'
 
 import VueRouter from 'vue-router'
 
@@ -41,6 +42,7 @@ Vue.use(VueRouter)
          component:Reports
      },
      ...generateRoutesFromMenu(VehiclesRoutes),
+     ...generateRoutesFromMenu(DriversRoutes),
 
 ];
 

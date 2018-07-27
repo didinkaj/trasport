@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Vehicle;
 use Illuminate\Http\Request;
+use PDF;
+use App;
 
 class HomeController extends Controller
 {
@@ -72,6 +74,19 @@ class HomeController extends Controller
         $value = Vehicle::find($id);
         $value->delete();
         
+    }
+    
+    public function generateTripHistoryPDF(){
+        
+        $users = User::all();
+    
+        view()->share(compact('users'));
+    
+        $pdf = App::make('dompdf.wrapper');
+        
+        $pdf->loadView('reports.sample');
+        
+        return $pdf->stream();
     }
     
 }

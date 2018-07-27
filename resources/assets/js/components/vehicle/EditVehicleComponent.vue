@@ -36,7 +36,7 @@
                             this.success('Vehicle added successfully')
                             this.vehicle = {}
                             this.errors = []
-                           this.$router.replace({name: 'Showvehicles_route'})
+                            this.$router.replace({name: 'Showvehicles_route'})
                         },
                         error => {
                             this.error('Vehicle not added')

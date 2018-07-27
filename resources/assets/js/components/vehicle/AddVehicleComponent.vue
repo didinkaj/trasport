@@ -2,10 +2,9 @@
     export default {
         data() {
             return {
-                items: [],
                 errors: [],
                 hasError: true,
-                newItem: {
+                newVehicle: {
                     'name': '',
                     'capacity': '',
                     'no_plate': ''
@@ -14,25 +13,25 @@
         },
         methods: {
             createItem() {
-                let input = this.newItem;
+                let input = this.newVehicle;
                 if (input['name'] == '' || input['no_plate'] == '' || input['capacity'] == '') {
                     this.errors = [];
 
-                    if (!this.newItem.name) {
+                    if (!this.newVehicle.name) {
                         this.errors.push('name required.');
                     }
-                    if (!this.newItem.capacity) {
+                    if (!this.newVehicle.capacity) {
                         this.errors.push('capacity required.');
 
                     }
-                    if (!this.newItem.no_plate) {
+                    if (!this.newVehicle.no_plate) {
                         this.errors.push('number plate required.');
                     }
                     this.error('Vehicle not added. Ensure all fields are filled')
                 } else {
                     this.$store.dispatch('addVehicle', input).then(() => {
                             this.success('Vehicle added successfully')
-                            this.newItem = {}
+                            this.newVehicle = {}
                             this.errors = []
                             this.$router.push({name: 'Showvehicles_route'})
                         },
@@ -94,17 +93,17 @@
                 </div>
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" name="name" maxlength="20"
-                       required="required" v-model="newItem.name">
+                       required="required" v-model="newVehicle.name">
             </div>
             <div class="form-group">
                 <label for="capacity">Capacity:</label>
                 <input type="number" class="form-control" id="capacity" name="capacity" min="1" max="100"
-                       required="required" v-model="newItem.capacity">
+                       required="required" v-model="newVehicle.capacity">
             </div>
             <div class="form-group">
                 <label for="no_plate">Number Plate:</label>
                 <input type="text" class="form-control" id="no_plate" name="no_plate"
-                       required="required" v-model="newItem.no_plate">
+                       required="required" v-model="newVehicle.no_plate">
             </div>
 
             <button class=" button auth-button right" @click.prevent="createItem()">

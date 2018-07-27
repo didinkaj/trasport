@@ -24,9 +24,9 @@ Vue.use(ElementUI, { locale })
 Vue.use(VueRouter)
 
 Vue.use(VueProgressBar, {
-    color: 'rgb(255,0,0)',
+    color: 'rgb(138,43,226)',
     failedColor: 'red',
-    height: '20px'
+    height: '4px'
 })
 
 
@@ -36,6 +36,8 @@ const app = new Vue({
     mixin:[mymixins],
     el: '#app'
 });
+
+
 
 
 

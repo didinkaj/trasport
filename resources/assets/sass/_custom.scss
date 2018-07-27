@@ -100,10 +100,12 @@ height: auto;
 
 .edit-button{
   color:$secondary-color;
-  cursor:point
+  cursor:pointer;
 }
 
-
+.error{
+  color: red;
+}
 
 .dash-title{
   padding:20px;
