@@ -68,7 +68,7 @@
                 <div class="card-divider">
                     Events
                 </div>
-                <router-link :to="{name:'Showvehicles_route'}">
+                <router-link :to="{name:'AddEvent_route'}">
                     <i class="fa fa-calendar fa-4x icon-user"></i>
                 </router-link>
                 <div class="card-section">

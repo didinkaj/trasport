@@ -104893,7 +104893,7 @@ var render = function() {
             _vm._v("\n                Events\n            ")
           ]),
           _vm._v(" "),
-          _c("router-link", { attrs: { to: { name: "Showvehicles_route" } } }, [
+          _c("router-link", { attrs: { to: { name: "AddEvent_route" } } }, [
             _c("i", { staticClass: "fa fa-calendar fa-4x icon-user" })
           ]),
           _vm._v(" "),
@@ -107127,9 +107127,7 @@ var render = function() {
               return _c("tr", { staticClass: "data" }, [
                 _c("td", [_vm._v(_vm._s(index + 1))]),
                 _vm._v(" "),
-                _c("td", {}, [
-                  _vm._v(_vm._s(_vm._f("uppercase")(driver.name)))
-                ]),
+                _c("td", {}, [_vm._v(_vm._s(driver.name))]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(driver.email))]),
                 _vm._v(" "),
@@ -107632,8 +107630,8 @@ var BookingRoutes = [{
 
 
 var BookingRoutes = [{
-    path: '/show/bookings',
-    name: 'Showbooking_route',
+    path: '/add/event',
+    name: 'AddEvent_route',
     component: __WEBPACK_IMPORTED_MODULE_0__components_events_AddEventComponent___default.a
 
 }];
@@ -107838,7 +107836,7 @@ var render = function() {
             [
               _c(
                 "router-link",
-                { attrs: { to: { name: "Showvehicles_route" } } },
+                { attrs: { to: { name: "Showevents_route" } } },
                 [_vm._v("Events")]
               )
             ],
@@ -107851,7 +107849,7 @@ var render = function() {
     ),
     _vm._v(" "),
     _c("form", { staticClass: "form-container" }, [
-      _c("h5", { staticClass: "text-center" }, [_vm._v("Add Vehicle")]),
+      _c("h5", { staticClass: "text-center" }, [_vm._v("Add Event")]),
       _vm._v(" "),
       _c("div", { staticClass: "form-group" }, [
         _vm.errors.length
@@ -107899,15 +107897,15 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "form-group" }, [
-        _c("label", { attrs: { for: "capacity" } }, [_vm._v("Capacity:")]),
+        _c("label", { attrs: { for: "capacity" } }, [_vm._v("Date:")]),
         _vm._v(" "),
         _c("input", {
           directives: [
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.newEvent.description,
-              expression: "newEvent.description"
+              value: _vm.newEvent.start_date,
+              expression: "newEvent.start_date"
             }
           ],
           staticClass: "form-control",
@@ -107919,28 +107917,28 @@ var render = function() {
             max: "100",
             required: "required"
           },
-          domProps: { value: _vm.newEvent.description },
+          domProps: { value: _vm.newEvent.start_date },
           on: {
             input: function($event) {
               if ($event.target.composing) {
                 return
               }
-              _vm.$set(_vm.newEvent, "description", $event.target.value)
+              _vm.$set(_vm.newEvent, "start_date", $event.target.value)
             }
           }
         })
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "form-group" }, [
-        _c("label", { attrs: { for: "no_plate" } }, [_vm._v("Number Plate:")]),
+        _c("label", { attrs: { for: "no_plate" } }, [_vm._v("Description:")]),
         _vm._v(" "),
         _c("input", {
           directives: [
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.newEvent.startDate,
-              expression: "newEvent.startDate"
+              value: _vm.newEvent.desccription,
+              expression: "newEvent.desccription"
             }
           ],
           staticClass: "form-control",
@@ -107950,13 +107948,13 @@ var render = function() {
             name: "no_plate",
             required: "required"
           },
-          domProps: { value: _vm.newEvent.startDate },
+          domProps: { value: _vm.newEvent.desccription },
           on: {
             input: function($event) {
               if ($event.target.composing) {
                 return
               }
-              _vm.$set(_vm.newEvent, "startDate", $event.target.value)
+              _vm.$set(_vm.newEvent, "desccription", $event.target.value)
             }
           }
         })

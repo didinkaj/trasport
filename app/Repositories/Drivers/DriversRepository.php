@@ -27,7 +27,7 @@ class DriversRepository
     
     public function saveDriver($request)
     {
-        $password = "123456";
+        $password = "abcd1234";
         
         $this->driver->name = $request->name;
     
@@ -62,7 +62,7 @@ class DriversRepository
         
         $res = $this->driver->find($id);
         
-        return $res->delete();
+         $res->delete();
         
     }
     

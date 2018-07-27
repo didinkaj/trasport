@@ -76,14 +76,14 @@
         <nav aria-label="You are here:" role="navigation">
             <ul class="breadcrumbs">
                 <li><router-link :to="{name:'dashboard_route'}">Home</router-link></li>
-                <li><router-link :to="{name:'Showvehicles_route'}">Events</router-link></li>
+                <li><router-link :to="{name:'Showevents_route'}">Events</router-link></li>
                 <li>
                     <span class="show-for-sr">Current: </span> Add Event
                 </li>
             </ul>
         </nav>
         <form class="form-container">
-                <h5 class="text-center">Add Vehicle</h5>
+                <h5 class="text-center">Add Event</h5>
             <div class="form-group">
                 <div v-if="errors.length" class="error text-center">
                     <b>Please correct the following error(s):</b>
@@ -96,14 +96,14 @@
                        required="required" v-model="newEvent.name">
             </div>
             <div class="form-group">
-                <label for="capacity">Capacity:</label>
+                <label for="capacity">Date:</label>
                 <input type="number" class="form-control" id="capacity" name="capacity" min="1" max="100"
-                       required="required" v-model="newEvent.description">
+                       required="required" v-model="newEvent.start_date">
             </div>
             <div class="form-group">
-                <label for="no_plate">Number Plate:</label>
+                <label for="no_plate">Description:</label>
                 <input type="text" class="form-control" id="no_plate" name="no_plate"
-                       required="required" v-model="newEvent.startDate">
+                       required="required" v-model="newEvent.desccription">
             </div>
 
             <button class=" button auth-button right" @click.prevent="createItem()">

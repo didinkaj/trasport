@@ -102,7 +102,7 @@
                 </thead>
                 <tr v-for="(driver, index) in drivers" class="data">
                     <td>{{ index+1 }}</td>
-                    <td class="">{{ driver.name | uppercase }}</td>
+                    <td class="">{{ driver.name  }}</td>
                     <td>{{ driver.email  }}</td>
                     <td>{{ driver.created_at  }}</td>
                     <td class="btn btn-info edit-button" @click="editDriver(driver)">

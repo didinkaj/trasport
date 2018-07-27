@@ -48,7 +48,9 @@ class DriversController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
         ]);
     
-        return $this->driverRepo->saveDriver($request);
+         if($this->driverRepo->saveDriver($request)){
+             return $request;
+         }
         
     }
 

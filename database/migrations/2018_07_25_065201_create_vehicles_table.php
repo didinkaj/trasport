@@ -17,7 +17,7 @@ class CreateVehiclesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('capacity');
-            $table->string('no_plate');
+            $table->string('no_plate')->unique();
             $table->timestamps();
         });
     }
