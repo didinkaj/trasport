@@ -1,26 +1,27 @@
 <script>
-    import UpdateButton from './UpdateButtonComponent.vue'
     import {mapGetters} from 'vuex'
+
     export default {
-        components:{
-            'update-button' : UpdateButton
+        components: {
+
         },
-        data(){
-            return{
-                vehiclesInfo:[]
+        data() {
+            return {
+                vehiclesInfo: []
             }
         },
         methods: {
-            getVehiclesInfo(){
+            getVehiclesInfo() {
                 this.vehiclesInfo = this.vehicles
             },
             deleteVehicle(vehicleToDelete) {
-                this.$confirm('This will permanently delete the file. Continue?', 'Warning', {
+                this.$confirm('' + vehicleToDelete.name + ' ' + vehicleToDelete.no_plate + '  will be  delete permanently. Continue?', 'Warning', {
                     confirmButtonText: 'OK',
                     cancelButtonText: 'Cancel',
                     type: 'warning'
                 }).then(() => {
-                    this.$store.dispatch('deleteVehicle',vehicleToDelete);
+                    this.$store.dispatch('deleteVehicle', vehicleToDelete);
+                    this.$Progress.start(40);
                     this.$router.push({name: 'Showvehicles_route'})
                     this.$message({
                         type: 'success',
@@ -29,31 +30,35 @@
                 }).catch(() => {
                     this.$message({
                         type: 'info',
-                        message: 'Delete canceled'
+                        message: 'Action cancelled'
                     });
                 });
             },
-            editVehicle(vehicle){
-                this.$router.push({name: 'editvehicles_route', params:{id:vehicle}});
+            editVehicle(vehicle) {
+                this.$router.push({name: 'editvehicles_route', params: {id: vehicle}});
             }
         },
-        computed:{
+        computed: {
             ...mapGetters({
                 vehicles: 'vehicles',
             })
         },
         filters: {
-            uppercase: (value) =>   {
+            uppercase: (value) => {
                 return value.toUpperCase()
+            },
+            ucfirst: (string) => {
+                return string.charAt(0).toUpperCase() + string.slice(1);
             }
         },
-        created(){
+        mounted() {
+
+        }, created() {
             this.$store.dispatch('getAllVehicles')
             this.getVehiclesInfo();
-        },
-        mounted(){
+            this.$Progress.start(40)
 
-        }
+        },
     }
 </script>
 
@@ -78,12 +83,12 @@
                         <th colspan="2">Actions</th>
                     </tr>
                     </thead>
-                    <tr v-for="(vehicle, index) in vehicles" >
+                    <tr v-for="(vehicle, index) in vehicles">
                         <td>{{ index }}</td>
-                        <td class="align-left">{{ vehicle.name | uppercase}}</td>
+                        <td class="align-left">{{ vehicle.name | ucfirst}}</td>
                         <td class="text-center">{{ vehicle.capacity }}</td>
                         <td class="align-left">{{ vehicle.no_plate | uppercase}}</td>
-                        <td  class="btn btn-info edit-button"  @click="editVehicle(vehicle)" >
+                        <td class="btn btn-info edit-button" @click="editVehicle(vehicle)">
                             <span class=""> <i class="fa fa-pencil-square-o "></i></span>
                         </td>
                         <td @click.prevent="deleteVehicle(vehicle)">
@@ -98,8 +103,8 @@
 </template>
 
 <style>
-.danger{
-    color: red;
-    cursor:pointer;
-}
+    .danger {
+        color: red;
+        cursor: pointer;
+    }
 </style>

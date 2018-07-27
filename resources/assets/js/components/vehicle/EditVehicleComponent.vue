@@ -1,38 +1,40 @@
 <script>
+    import {mapGetters} from 'vuex'
     export default {
         data() {
             return {
-                items: [],
+                vehicle: {},
                 errors: [],
                 hasError: true,
-                newItem: {
-                    'name': '',
-                    'capacity': '',
-                    'no_plate': ''
-                },
+                newVehicle: {},
             }
+        },
+        computed:{
+            ...mapGetters({
+                vehiclesToEdit:'vehiclesToEdit'
+            })
         },
         methods: {
             editVehicle() {
-                let input = this.newItem;
+                let input = this.vehicle;
                 if (input['name'] == '' || input['no_plate'] == '' || input['capacity'] == '') {
                     this.errors = [];
 
-                    if (!this.newItem.name) {
+                    if (!this.vehicle.name) {
                         this.errors.push('name required.');
                     }
-                    if (!this.newItem.capacity) {
+                    if (!this.vehicle.capacity) {
                         this.errors.push('capacity required.');
 
                     }
-                    if (!this.newItem.no_plate) {
+                    if (!this.vehicle.no_plate) {
                         this.errors.push('number plate required.');
                     }
                     this.error('Vehicle not added. Ensure all fields are filled')
                 } else {
                     this.$store.dispatch('updateVehicle', input).then(() => {
                             this.success('Vehicle added successfully')
-                            this.newItem = {}
+                            this.vehicle = {}
                             this.errors = []
                            this.$router.replace({name: 'Showvehicles_route'})
                         },
@@ -55,9 +57,14 @@
                     message: messageToEcho,
                     type: 'error'
                 });
+            },
+            vehicleStoreValues (){
+                let vehicle = this.$route.params.id
+                this.vehicle = vehicle
             }
 
         },
+
         filters:{
             capitalize:  (value) => {
                 if (!value) return ''
@@ -66,8 +73,11 @@
             }
         },
         created(){
-            let vehicle = this.$route.params.id;
-            this.newItem = vehicle;
+            /*let vehicle = this.$route.params.vehicle
+            this.$store.dispatch('getVehicle',vehicle)
+            this.vehiclesToEdit = vehicle*/
+            this.vehicleStoreValues();
+            this.$Progress.start(40)
         }
     }
 
@@ -104,17 +114,17 @@
                 </div>
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" name="name" maxlength="20"
-                       required="required" v-model="newItem.name">
+                       required="required" v-model="vehicle.name">
             </div>
             <div class="form-group">
                 <label for="capacity">Capacity:</label>
                 <input type="number" class="form-control" id="capacity" name="capacity" min="1" max="100"
-                       required="required" v-model="newItem.capacity ">
+                       required="required" v-model="vehicle.capacity ">
             </div>
             <div class="form-group">
                 <label for="no_plate">Number Plate:</label>
                 <input type="text" class="form-control" id="no_plate" name="no_plate"
-                       required="required" v-model="newItem.no_plate">
+                       required="required" v-model="vehicle.no_plate">
             </div>
 
             <button class=" button auth-button text-center" @click.prevent="editVehicle()">

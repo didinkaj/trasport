@@ -64,6 +64,9 @@
                 value = value.toString()
                 return value.charAt(0).toUpperCase() + value.slice(1)
             }
+        },
+        created(){
+            this.$Progress.start(40)
         }
     }
 

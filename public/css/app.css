@@ -11216,7 +11216,7 @@ body .help-text {
 
 .edit-button {
   color: #1779ba;
-  cursor: pointer;
+  cursor: point;
 }
 
 .dash-title {

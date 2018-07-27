@@ -17,10 +17,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('auth')->get('/allusers', 'HomeController@alluser');
+Route::middleware('auth')->get('/vehicles', 'VehiclesController@index');
 
-Route::middleware('auth')->post('/save/vihecle','HomeController@storecare');
+Route::middleware('auth')->get('/vehicles/{id}', 'VehiclesController@edit');
 
-Route::middleware('auth')->delete('/delete/vihecle/{id}','HomeController@deleteVehicle');
+Route::middleware('auth')->post('/vehicles','VehiclesController@store');
 
-Route::middleware('auth')->patch('/vehicle/{id}/edit','HomeController@editVihecle');
+Route::middleware('auth')->delete('/vehicles/{id}','VehiclesController@destroy');
+
+Route::middleware('auth')->patch('/vehicles/{id}','VehiclesController@update');

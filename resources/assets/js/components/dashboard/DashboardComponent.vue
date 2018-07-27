@@ -20,14 +20,16 @@
             mounted() {
                 this.getVehicles();
                 console.log(this.vehicles)
-            },
-            created() {
-                this.$store.dispatch('getAllVehicles');
-                console.log('component created')
-            },
-            mounted() {
-                console
             }
+        },
+        created() {
+            this.$store.dispatch('getAllVehicles');
+            this.getVehicles();
+            this.$Progress.start()
+        },
+        mounted() {
+            this.$Progress.decrease(40)
+            this.$Progress.finish()
         }
     }
 

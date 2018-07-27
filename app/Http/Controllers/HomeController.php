@@ -50,17 +50,10 @@ class HomeController extends Controller
             
             return $data;
         
-
-    }
-    
-    public function deleteVehicle($id){
-        
-        $value = Vehicle::find($id);
-        $value->delete();
-        
     }
     
     public function editVihecle($id,Request $request){
+        
         $vehicle = Vehicle::find($id);
     
         $vehicle->name = $request->name;
@@ -71,7 +64,14 @@ class HomeController extends Controller
     
         $vehicle->save ();
         
-        return $vehicle;
         
     }
+    
+    public function deleteVehicle($id){
+        
+        $value = Vehicle::find($id);
+        $value->delete();
+        
+    }
+    
 }

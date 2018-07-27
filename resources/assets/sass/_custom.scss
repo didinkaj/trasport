@@ -1,7 +1,8 @@
 $red: #FF0000;
 $primary-color: #e6e6e6;
 $secondary-color: #1779ba;
-
+$primary-color2: #264027;
+$white-links: #ffffff;
 //general body
 body {
 height: auto;
@@ -99,7 +100,7 @@ height: auto;
 
 .edit-button{
   color:$secondary-color;
-  cursor:pointer;
+  cursor:point
 }
 
 
