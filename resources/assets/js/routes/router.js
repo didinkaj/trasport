@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import Dashboard from '../components/dashboard/DashboardComponent.vue'
 import Drivers from '../components/drivers/AddDriverComponent.vue'
-import Bookings from '../components/bookings/ShowComponent.vue'
+import Bookings from '../components/bookings/ShowBookingsComponent.vue'
 import Reports from '../components/reports/ShowComponent.vue'
 import VehiclesRoutes from './vehicles'
 import DriversRoutes from './drivers'
+import BookingsRoutes from './bookings'
+import EventsRoutes from './events'
 
 import VueRouter from 'vue-router'
 
@@ -43,6 +45,8 @@ Vue.use(VueRouter)
      },
      ...generateRoutesFromMenu(VehiclesRoutes),
      ...generateRoutesFromMenu(DriversRoutes),
+     ...generateRoutesFromMenu(BookingsRoutes),
+     ...generateRoutesFromMenu(EventsRoutes),
 
 ];
 

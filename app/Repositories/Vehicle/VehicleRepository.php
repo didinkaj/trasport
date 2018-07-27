@@ -48,7 +48,7 @@ class VehicleRepository
     
         $vehicle->save();
     
-        return $vehicle;
+      
     }
     
     public function deleteVehicle($id){

@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Reserve;
 use Illuminate\Http\Request;
-use App\Repositories\Reservations\ReservationRepository;
+use App\Repositories\Reports\ReportsRepository;
+use App;
+use PDF;
 
-class ReserveController extends Controller
+class VehiclesReportsController extends Controller
 {
-    private $reserveRepo;
+    private $reportRepo;
     
-    function __construct(ReservationRepository $reservationRepository)
+    function __construct(ReportsRepository $reportsRepository)
     {
-        $this->reserveRepo = $reservationRepository;
+        $this->reportRepo = $reportsRepository;
     }
-    
     /**
      * Display a listing of the resource.
      *
@@ -23,8 +23,15 @@ class ReserveController extends Controller
     public function index()
     {
         //
-       return $this->reserveRepo->getAllBookings();
+         $vehicles =  $this->reportRepo->getAllVehiclesInPdf();
         
+        view()->share(compact('vehicles'));
+    
+        $pdf = App::make('dompdf.wrapper');
+    
+        $pdf->loadView('reports.vehicles.vehicleslist');
+    
+        return $pdf->stream();
     }
 
     /**
@@ -51,10 +58,10 @@ class ReserveController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Reserve  $reserve
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Reserve $reserve)
+    public function show($id)
     {
         //
     }
@@ -62,10 +69,10 @@ class ReserveController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Reserve  $reserve
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reserve $reserve)
+    public function edit($id)
     {
         //
     }
@@ -74,10 +81,10 @@ class ReserveController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Reserve  $reserve
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reserve $reserve)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -85,10 +92,10 @@ class ReserveController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Reserve  $reserve
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reserve $reserve)
+    public function destroy($id)
     {
         //
     }

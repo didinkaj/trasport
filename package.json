@@ -29,6 +29,7 @@
         "vue-progressbar": "^0.7.5",
         "vue-router": "^3.0.1",
         "vue2-loading-bar": "0.0.1",
+        "vuejs-paginator": "^2.0.2",
         "vuex": "^3.0.1"
     }
 }

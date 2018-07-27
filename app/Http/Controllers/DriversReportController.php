@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Repositories\Reports\ReportsRepository;
+use App\Repositories\Drivers\DriversRepository;
 use App;
 use PDF;
 
-class ReportsController extends Controller
+class DriversReportController extends Controller
 {
-    private $reportRepo;
+    private $driversRepo;
     
-    function __construct(ReportsRepository $reportsRepository)
+    function __construct(DriversRepository $driversRepository)
     {
-        $this->reportRepo = $reportsRepository;
+        $this->driversRepo = $driversRepository;
     }
     /**
      * Display a listing of the resource.
@@ -23,13 +23,13 @@ class ReportsController extends Controller
     public function index()
     {
         //
-         $vehicles =  $this->reportRepo->getAllVehiclesInPdf();
-        
-        view()->share(compact('vehicles'));
+        $drivers =  $this->driversRepo->getAllDrivers();
+    
+        view()->share(compact('drivers'));
     
         $pdf = App::make('dompdf.wrapper');
     
-        $pdf->loadView('reports.vehicles.vehicleslist');
+        $pdf->loadView('reports.drivers.driverslist');
     
         return $pdf->stream();
     }

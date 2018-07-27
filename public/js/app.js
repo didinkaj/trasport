@@ -104433,7 +104433,7 @@ var render = function() {
         {},
         [
           _vm._v("  "),
-          _c("router-link", { attrs: { to: { name: "driver_route" } } }, [
+          _c("router-link", { attrs: { to: { name: "Showdrivers_route" } } }, [
             _c("i", { staticClass: "fa fa-users fa-2x" }),
             _vm._v("  \n            Drivers\n        ")
           ])
@@ -104631,13 +104631,15 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_dashboard_DashboardComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_dashboard_DashboardComponent_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_drivers_AddDriverComponent_vue__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_drivers_AddDriverComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_drivers_AddDriverComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_bookings_ShowComponent_vue__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_bookings_ShowComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_bookings_ShowComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_bookings_ShowBookingsComponent_vue__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_bookings_ShowBookingsComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_bookings_ShowBookingsComponent_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_reports_ShowComponent_vue__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_reports_ShowComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_reports_ShowComponent_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vehicles__ = __webpack_require__(228);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__drivers__ = __webpack_require__(265);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vue_router__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__bookings__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__events__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_vue_router__ = __webpack_require__(78);
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 
@@ -104650,7 +104652,9 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 
 
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_7_vue_router__["a" /* default */]);
+
+
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_9_vue_router__["a" /* default */]);
 
 var routes = [{
     path: '/',
@@ -104671,12 +104675,12 @@ var routes = [{
 }, {
     path: '/bookings',
     name: 'bookings_route',
-    component: __WEBPACK_IMPORTED_MODULE_3__components_bookings_ShowComponent_vue___default.a
+    component: __WEBPACK_IMPORTED_MODULE_3__components_bookings_ShowBookingsComponent_vue___default.a
 }, {
     path: '/reports',
     name: 'reports_route',
     component: __WEBPACK_IMPORTED_MODULE_4__components_reports_ShowComponent_vue___default.a
-}].concat(_toConsumableArray(generateRoutesFromMenu(__WEBPACK_IMPORTED_MODULE_5__vehicles__["a" /* default */])), _toConsumableArray(generateRoutesFromMenu(__WEBPACK_IMPORTED_MODULE_6__drivers__["a" /* default */])));
+}].concat(_toConsumableArray(generateRoutesFromMenu(__WEBPACK_IMPORTED_MODULE_5__vehicles__["a" /* default */])), _toConsumableArray(generateRoutesFromMenu(__WEBPACK_IMPORTED_MODULE_6__drivers__["a" /* default */])), _toConsumableArray(generateRoutesFromMenu(__WEBPACK_IMPORTED_MODULE_7__bookings__["a" /* default */])), _toConsumableArray(generateRoutesFromMenu(__WEBPACK_IMPORTED_MODULE_8__events__["a" /* default */])));
 
 function generateRoutesFromMenu() {
     var menu = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
@@ -104694,7 +104698,7 @@ function generateRoutesFromMenu() {
     return routes;
 }
 
-var myrouter = new __WEBPACK_IMPORTED_MODULE_7_vue_router__["a" /* default */]({
+var myrouter = new __WEBPACK_IMPORTED_MODULE_9_vue_router__["a" /* default */]({
     mode: 'history',
     routes: routes
 });
@@ -104791,7 +104795,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -104809,27 +104813,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
-        return {
-            vehiclesInfo: []
-
-        };
+        return {};
     },
 
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])({
-        vehicles: 'vehicles'
+        vehiclesNo: 'vehiclesNo',
+        driversNo: 'driversNo',
+        bookingsNo: 'bookingsNo'
     })),
-    methods: {
-        getVehicles: function getVehicles() {
-            this.vehiclesInfo = this.vehicles;
-        },
-        mounted: function mounted() {
-            this.getVehicles();
-            console.log(this.vehicles);
-        }
-    },
+    methods: {},
     created: function created() {
-        this.$store.dispatch('getAllVehicles');
-        this.getVehicles();
+        this.$store.dispatch('getAllVehicles'), this.$store.dispatch('getAllDrivers');
+        this.$store.dispatch('getAllBookings');
         this.$Progress.start();
     },
     mounted: function mounted() {
@@ -104864,7 +104859,7 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "card-section" }, [
             _c("h6", [
-              _vm._v(" " + _vm._s(_vm.vehicles.length) + " Registered Vehicles")
+              _vm._v(" " + _vm._s(_vm.vehiclesNo) + " Registered Vehicles")
             ])
           ])
         ],
@@ -104879,11 +104874,13 @@ var render = function() {
             _vm._v("\n                Drivers\n            ")
           ]),
           _vm._v(" "),
-          _c("router-link", { attrs: { to: { name: "Showvehicles_route" } } }, [
+          _c("router-link", { attrs: { to: { name: "Showdrivers_route" } } }, [
             _c("i", { staticClass: "fa fa-users fa-4x icon-user" })
           ]),
           _vm._v(" "),
-          _vm._m(1)
+          _c("div", { staticClass: "card-section" }, [
+            _c("h6", [_vm._v(_vm._s(_vm.driversNo) + " Drivers")])
+          ])
         ],
         1
       ),
@@ -104900,7 +104897,9 @@ var render = function() {
             _c("i", { staticClass: "fa fa-calendar fa-4x icon-user" })
           ]),
           _vm._v(" "),
-          _vm._m(2)
+          _c("div", { staticClass: "card-section" }, [
+            _c("h6", [_vm._v("On Going Events " + _vm._s(_vm.bookingsNo))])
+          ])
         ],
         1
       )
@@ -104915,11 +104914,13 @@ var render = function() {
             _vm._v("\n                Bookings\n            ")
           ]),
           _vm._v(" "),
-          _c("router-link", { attrs: { to: { name: "Showvehicles_route" } } }, [
+          _c("router-link", { attrs: { to: { name: "Showbooking_route" } } }, [
             _c("i", { staticClass: "fa fa-calendar-check-o fa-4x icon-user" })
           ]),
           _vm._v(" "),
-          _vm._m(3)
+          _c("div", { staticClass: "card-section" }, [
+            _c("h6", [_vm._v(_vm._s(_vm.bookingsNo) + " Pending Requests ")])
+          ])
         ],
         1
       ),
@@ -104936,7 +104937,7 @@ var render = function() {
             _c("i", { staticClass: "fa fa-area-chart fa-4x icon-user" })
           ]),
           _vm._v(" "),
-          _vm._m(4)
+          _vm._m(1)
         ],
         1
       ),
@@ -104953,7 +104954,7 @@ var render = function() {
             _c("i", { staticClass: "fa fa-cogs fa-4x icon-user" })
           ]),
           _vm._v(" "),
-          _vm._m(5)
+          _vm._m(2)
         ],
         1
       )
@@ -104965,32 +104966,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "dash-title text-center" }, [
-      _c("h5", [_vm._v("Quick Over View")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-section" }, [
-      _c("h6", [_vm._v("10 Drivers")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-section" }, [
-      _c("h6", [_vm._v("On Going Events 3")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-section" }, [
-      _c("h6", [_vm._v("3 Pending Requests ")])
+    return _c("div", { staticClass: "grid-x page-header" }, [
+      _c("div", { staticClass: "cell medium-12" }, [
+        _c("div", { staticClass: "dash-title text-center" }, [
+          _c("h5", [_vm._v("Quick Over View")])
+        ])
+      ])
     ])
   },
   function() {
@@ -105105,7 +105086,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -105120,23 +105101,51 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            name: '',
-            email: '',
+            form: {
+                name: '',
+                email: ''
+            },
             errors: []
         };
     },
 
     methods: {
         registerDriver: function registerDriver() {
+            var _this = this;
 
-            if (this.name == '' || this.email == '') {
+            if (this.form.name == '' || this.form.email == '') {
                 if (this.name == '') {
                     this.errors.push('  Name required.');
                 }
-                if (this.email == '') {
+                if (this.form.email == '') {
                     this.errors.push(' Email Address required.');
                 }
+            } else {
+                this.errors = [];
+                var input = this.form;
+                this.$store.dispatch('addDriver', input).then(function () {
+                    _this.success('Driver added successfully');
+                    _this.newVehicle = {};
+                    _this.errors = [];
+                    _this.$router.push({ name: 'Showdrivers_route' });
+                }, function (error) {
+                    _this.error('Driver not added');
+                });
             }
+        },
+        success: function success(messageToEcho) {
+            this.$notify({
+                title: 'Success',
+                message: messageToEcho,
+                type: 'success'
+            });
+        },
+        error: function error(messageToEcho) {
+            this.$notify({
+                title: 'Error',
+                message: messageToEcho,
+                type: 'error'
+            });
         }
     },
     created: function created() {
@@ -105175,7 +105184,7 @@ var render = function() {
             [
               _c(
                 "router-link",
-                { attrs: { to: { name: "Showvehicles_route" } } },
+                { attrs: { to: { name: "Showdrivers_route" } } },
                 [_vm._v("Drivers")]
               )
             ],
@@ -105188,6 +105197,8 @@ var render = function() {
     ),
     _vm._v(" "),
     _c("form", { staticClass: "auth-form" }, [
+      _c("h5", { staticClass: "text-center" }, [_vm._v("Add Driver")]),
+      _vm._v(" "),
       _vm.errors.length
         ? _c("div", { staticClass: "error text-center" }, [
             _c("b", [_vm._v("Please correct the following error(s):")]),
@@ -105209,8 +105220,8 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.name,
-              expression: "name"
+              value: _vm.form.name,
+              expression: "form.name"
             }
           ],
           staticClass: "form-control",
@@ -105223,13 +105234,13 @@ var render = function() {
             required: "",
             autofocus: ""
           },
-          domProps: { value: _vm.name },
+          domProps: { value: _vm.form.name },
           on: {
             input: function($event) {
               if ($event.target.composing) {
                 return
               }
-              _vm.name = $event.target.value
+              _vm.$set(_vm.form, "name", $event.target.value)
             }
           }
         })
@@ -105243,8 +105254,8 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.email,
-              expression: "email"
+              value: _vm.form.email,
+              expression: "form.email"
             }
           ],
           attrs: {
@@ -105254,13 +105265,13 @@ var render = function() {
             "aria-describedby": "emailHelpText",
             required: ""
           },
-          domProps: { value: _vm.email },
+          domProps: { value: _vm.form.email },
           on: {
             input: function($event) {
               if ($event.target.composing) {
                 return
               }
-              _vm.email = $event.target.value
+              _vm.$set(_vm.form, "email", $event.target.value)
             }
           }
         })
@@ -105316,144 +105327,11 @@ if (false) {
 }
 
 /***/ }),
-/* 218 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(219)
-}
-var normalizeComponent = __webpack_require__(6)
-/* script */
-var __vue_script__ = __webpack_require__(221)
-/* template */
-var __vue_template__ = __webpack_require__(222)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/bookings/ShowComponent.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-b85094bc", Component.options)
-  } else {
-    hotAPI.reload("data-v-b85094bc", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 219 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(220);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(5)("11b68d90", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b85094bc\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowComponent.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b85094bc\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowComponent.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 220 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(4)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 221 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {};
-    },
-    created: function created() {
-        this.$Progress.start(40);
-    }
-});
-
-/***/ }),
-/* 222 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "dash-title text-center" }, [
-        _c("h5", [_vm._v("All Bookings")])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-b85094bc", module.exports)
-  }
-}
-
-/***/ }),
+/* 218 */,
+/* 219 */,
+/* 220 */,
+/* 221 */,
+/* 222 */,
 /* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -106497,9 +106375,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         }
     },
     created: function created() {
-        /*let vehicle = this.$route.params.vehicle
-        this.$store.dispatch('getVehicle',vehicle)
-        this.vehiclesToEdit = vehicle*/
         this.vehicleStoreValues();
         this.$Progress.start(40);
     }
@@ -106774,6 +106649,10 @@ var mymixins = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vehicles_index__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__drivers_drivers__ = __webpack_require__(266);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__bookings_bookings__ = __webpack_require__(277);
+
+
 
 
 
@@ -106785,7 +106664,7 @@ var store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
     getters: {},
     actions: {},
     modules: {
-        Vehicles: __WEBPACK_IMPORTED_MODULE_2__vehicles_index__["a" /* default */]
+        Vehicles: __WEBPACK_IMPORTED_MODULE_2__vehicles_index__["a" /* default */], Drivers: __WEBPACK_IMPORTED_MODULE_3__drivers_drivers__["a" /* default */], Bookings: __WEBPACK_IMPORTED_MODULE_4__bookings_bookings__["a" /* default */]
     }
 });
 
@@ -106812,6 +106691,9 @@ var getters = {
     },
     vehiclesToEdit: function vehiclesToEdit(state) {
         return state.vehiclesToEdit;
+    },
+    vehiclesNo: function vehiclesNo(state) {
+        return state.vehicles.length;
     }
 };
 
@@ -106883,7 +106765,10 @@ var actions = {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MY_URLS; });
 var MY_URLS = {
-    VEHICLES_URL: '/api/vehicles'
+        VEHICLES_URL: '/api/vehicles',
+        DRIVERS_URL: '/api/drivers',
+        BOOKINGS_URL: '/api/bookings',
+        EVENTS_URL: '/api/events'
 };
 
 /***/ }),
@@ -106918,15 +106803,1203 @@ return(this.options.end-this.options.start)*t+this.options.start}},{key:"_logTra
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_drivers_AddDriverComponent__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_drivers_AddDriverComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_drivers_AddDriverComponent__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_drivers_ShowDriversComponent__ = __webpack_require__(267);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_drivers_ShowDriversComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_drivers_ShowDriversComponent__);
+
 
 var DriversRoutes = [{
     path: '/add/driver',
     name: 'addDriver_route',
     component: __WEBPACK_IMPORTED_MODULE_0__components_drivers_AddDriverComponent___default.a
 
+}, {
+    path: '/show/drivers',
+    name: 'Showdrivers_route',
+    component: __WEBPACK_IMPORTED_MODULE_1__components_drivers_ShowDriversComponent___default.a
+
 }];
 
 /* harmony default export */ __webpack_exports__["a"] = (DriversRoutes);
+
+/***/ }),
+/* 266 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__configs_url__ = __webpack_require__(253);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+
+
+var state = {
+    drivers: [],
+    driversToEdit: {}
+};
+
+var getters = {
+    drivers: function drivers(state) {
+        return state.drivers;
+    },
+    driversToEdit: function driversToEdit(state) {
+        return state.driversToEdit;
+    },
+    driversNo: function driversNo(state) {
+        return state.drivers.length;
+    }
+};
+
+var mutations = {
+    EDIT_DRIVER: function EDIT_DRIVER(state, driverToEdit) {
+        state.drivers = state.drivers.map(function (driver) {
+            return driver.id == driverToEdit.id ? _extends({}, driver, { driverToEdit: driverToEdit }) : driver;
+        });
+        console.log(driverToEdit);
+    },
+    GET_ALL_DRIVERS: function GET_ALL_DRIVERS(state, data) {
+        state.drivers = data;
+    },
+    ADD_DRIVER: function ADD_DRIVER(state, newDriver) {
+        state.drivers.unshift(newDriver);
+    },
+    DELETE_DRIVER: function DELETE_DRIVER(state, driverToDelete) {
+        state.drivers.splice(state.drivers.indexOf(driverToDelete), 1);
+    },
+    GET_DRIVER: function GET_DRIVER(state, singleDriver) {
+        state.driverToEdit = new driverToEdit(), state.driverToEdit = singleDriver;
+    }
+};
+
+var actions = {
+    getAllDrivers: function getAllDrivers(store) {
+        axios.get(__WEBPACK_IMPORTED_MODULE_0__configs_url__["a" /* MY_URLS */].DRIVERS_URL).then(function (resp) {
+            store.commit('GET_ALL_DRIVERS', resp.data);
+        });
+    },
+    addDriver: function addDriver(store, newDriver) {
+        axios.post(__WEBPACK_IMPORTED_MODULE_0__configs_url__["a" /* MY_URLS */].DRIVERS_URL, newDriver).then(function (response) {
+            store.commit('ADD_DRIVER', response.data);
+            console.log(response.data);
+        }).catch(function (error) {
+            return Promise.reject(error.response);
+        });
+    },
+    updateDriver: function updateDriver(store, data) {
+        var id = data.id;
+        console.log(id, 'here');
+
+        axios.patch(__WEBPACK_IMPORTED_MODULE_0__configs_url__["a" /* MY_URLS */].DRIVERS_URL + '/' + id, data).then(function (response) {
+            store.commit('EDIT_DRIVER', response.data);
+        });
+    },
+    deleteDriver: function deleteDriver(store, driverToDelete) {
+        console.log(driverToDelete);
+        axios.delete(__WEBPACK_IMPORTED_MODULE_0__configs_url__["a" /* MY_URLS */].DRIVERS_URL + '/' + driverToDelete.id).then(function (response) {
+            store.commit('DELETE_DRIVER', driverToDelete);
+        }).catch(function (error) {
+            return Promise.reject(error.response);
+        });
+    },
+    getDriver: function getDriver(store, id) {
+        axios.get(__WEBPACK_IMPORTED_MODULE_0__configs_url__["a" /* MY_URLS */].DRIVERS_URL + '/' + id).then(function (response) {
+            store.commit('GET_DRIVER', response.data);
+        });
+    }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    state: state, getters: getters, mutations: mutations, actions: actions
+});
+
+/***/ }),
+/* 267 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(268)
+}
+var normalizeComponent = __webpack_require__(6)
+/* script */
+var __vue_script__ = __webpack_require__(270)
+/* template */
+var __vue_template__ = __webpack_require__(271)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/drivers/ShowDriversComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-29ca84ec", Component.options)
+  } else {
+    hotAPI.reload("data-v-29ca84ec", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 268 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(269);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("be3bf7ae", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-29ca84ec\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowDriversComponent.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-29ca84ec\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowDriversComponent.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 269 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.danger {\n    color: red;\n    cursor: pointer;\n}\ntable td {\n    padding: 10px;\n    v-align: center;\n}\ntable tr:hover {\n    background-color: #e6e6e6;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 270 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(28);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {},
+    data: function data() {
+        return {
+            driversInfo: []
+        };
+    },
+
+    methods: {
+        getDriversInfo: function getDriversInfo() {
+            this.driversInfo = this.drivers;
+        },
+        deleteDriver: function deleteDriver(driverToDelete) {
+            var _this = this;
+
+            this.$confirm('' + driverToDelete.name + ' ' + driverToDelete.no_plate + '  will be  delete permanently. Continue?', 'Warning', {
+                confirmButtonText: 'OK',
+                cancelButtonText: 'Cancel',
+                type: 'warning',
+                center: true
+            }).then(function () {
+                _this.$store.dispatch('deleteDriver', driverToDelete);
+                _this.$Progress.start(40);
+                _this.$router.push({ name: 'Showdrivers_route' });
+                _this.$message({
+                    type: 'success',
+                    message: 'Delete completed'
+                });
+            }).catch(function () {
+                _this.$message({
+                    type: 'info',
+                    message: 'Action cancelled'
+                });
+            });
+        },
+        editDriver: function editDriver(driver) {
+            this.$router.push({ name: 'editDrivers_route', params: { id: vehicle } });
+        }
+    },
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])({
+        drivers: 'drivers'
+    })),
+    filters: {
+        uppercase: function uppercase(value) {
+            return value.toUpperCase();
+        },
+        ucfirst: function ucfirst(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+    },
+    mounted: function mounted() {},
+    created: function created() {
+        this.$store.dispatch('getAllDrivers');
+        this.getDriversInfo();
+        this.$Progress.start(40);
+        console.log(this.drivers);
+    }
+});
+
+/***/ }),
+/* 271 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "grid-x page-header" }, [
+      _c("div", { staticClass: "cell medium-6" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "cell medium-6" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "dash-title text-center column" }, [
+            _c(
+              "h6",
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticStyle: { color: "#2f4b26" },
+                    attrs: { to: { name: "addDriver_route" } }
+                  },
+                  [
+                    _c("i", {
+                      staticClass: "fa fa-plus-circle",
+                      attrs: { "aria-hidden": "true" }
+                    }),
+                    _vm._v(" Driver\n                    ")
+                  ]
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(0)
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "table table-borderless", attrs: { id: "tablediv" } },
+      [
+        _c(
+          "table",
+          { staticClass: "stack", attrs: { id: "table" } },
+          [
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._l(_vm.drivers, function(driver, index) {
+              return _c("tr", { staticClass: "data" }, [
+                _c("td", [_vm._v(_vm._s(index + 1))]),
+                _vm._v(" "),
+                _c("td", {}, [
+                  _vm._v(_vm._s(_vm._f("uppercase")(driver.name)))
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(driver.email))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(driver.created_at))]),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  {
+                    staticClass: "btn btn-info edit-button",
+                    on: {
+                      click: function($event) {
+                        _vm.editDriver(driver)
+                      }
+                    }
+                  },
+                  [_vm._m(2, true)]
+                ),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  {
+                    staticClass: "text-center",
+                    staticStyle: { "margin-left": "10px" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        _vm.deleteDriver(driver)
+                      }
+                    }
+                  },
+                  [_c("span", { staticClass: "fa fa-trash danger" })]
+                ),
+                _vm._v(" "),
+                _vm._m(3, true)
+              ])
+            })
+          ],
+          2
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: " dash-title text-center column" }, [
+      _c(
+        "a",
+        {
+          staticStyle: { color: "#2f4b26" },
+          attrs: { href: "/drivers/list/pdf", target: "_blank" }
+        },
+        [
+          _vm._v("\n                    Download\n                    "),
+          _c("i", {
+            staticClass: "fa fa-download",
+            attrs: { "aria-hidden": "true" }
+          })
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("#")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("NAME")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Email")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Date Added")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center", attrs: { colspan: "4" } }, [
+          _vm._v("ACTIONS")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [_c("i", { staticClass: "fa fa-pencil-square-o " })])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticClass: "text-center" }, [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Assign Van")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-29ca84ec", module.exports)
+  }
+}
+
+/***/ }),
+/* 272 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(273)
+}
+var normalizeComponent = __webpack_require__(6)
+/* script */
+var __vue_script__ = __webpack_require__(275)
+/* template */
+var __vue_template__ = __webpack_require__(276)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/bookings/ShowBookingsComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5d929388", Component.options)
+  } else {
+    hotAPI.reload("data-v-5d929388", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 273 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(274);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("e4c7d80e", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5d929388\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowBookingsComponent.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5d929388\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowBookingsComponent.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 274 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.text-center{\n}\n.success-green{\n    background-color:green;\n    margin-right: 10px;\n    margin-bottom: 0px;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 275 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(28);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {};
+    },
+
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])({
+        bookings: 'bookings'
+    })),
+    created: function created() {
+        this.$store.dispatch('getAllBookings');
+        this.$Progress.start(40);
+    }
+});
+
+/***/ }),
+/* 276 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("div", { staticClass: "grid-x page-header" }, [
+        _c("div", { staticClass: "cell medium-6" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "cell medium-6" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "dash-title text-center column" }, [
+              _c(
+                "h6",
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticStyle: { color: "#2f4b26" },
+                      attrs: { to: { name: "addvehicle_route" } }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "fa fa-plus-circle",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" Add Event\n                        ")
+                    ]
+                  )
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(0)
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._l(_vm.bookings, function(booking) {
+        return _c("div", { staticClass: "grid-x dashboard-content" }, [
+          _c(
+            "div",
+            { staticClass: " cell medium-3 card dashboard-item " },
+            [
+              _c("div", { staticClass: "card-divider " }, [
+                _c("p", { staticClass: "text-center" }, [
+                  _vm._v(_vm._s(booking.name) + " ")
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                { attrs: { to: { name: "Showvehicles_route" } } },
+                [_c("i", { staticClass: "fa fa-cab fa-4x icon-user" })]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-section" }, [
+                _c("h6", [
+                  _vm._v(
+                    "  " +
+                      _vm._s(booking.capacity) +
+                      " Seater #" +
+                      _vm._s(booking.no_plate) +
+                      "  "
+                  )
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _vm._m(1, true)
+        ])
+      })
+    ],
+    2
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: " dash-title text-center column" }, [
+      _c(
+        "a",
+        {
+          staticStyle: { color: "#2f4b26" },
+          attrs: { href: "/vehicles/list/pdf", target: "_blank" }
+        },
+        [
+          _vm._v(
+            "\n                        Download\n                        "
+          ),
+          _c("i", {
+            staticClass: "fa fa-download",
+            attrs: { "aria-hidden": "true" }
+          })
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "cell medium-9 card" }, [
+      _c("div", { staticClass: "grid-x" }, [
+        _c("div", { staticClass: "cell medium-6" }, [
+          _c("br"),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-center" }, [
+            _c("h6", [_vm._v("Driver Details")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "cell medium-6" }, [
+          _c("br"),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-center" }, [
+            _c("h6", [_vm._v("  Booking Request")])
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "button success-green float-right",
+              staticStyle: { "margin-bottom": "0px" }
+            },
+            [_vm._v("Book Vehicle")]
+          )
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5d929388", module.exports)
+  }
+}
+
+/***/ }),
+/* 277 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__configs_url__ = __webpack_require__(253);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+
+
+var state = {
+    bookings: [],
+    bookingToEdit: {}
+};
+
+var getters = {
+    bookings: function bookings(state) {
+        return state.bookings;
+    },
+    bookingToEdit: function bookingToEdit(state) {
+        return state.bookingToEdit;
+    },
+    bookingsNo: function bookingsNo(state) {
+        return state.bookings.length;
+    }
+};
+
+var mutations = {
+    EDIT_BOOKING: function EDIT_BOOKING(state, bookingToEdit) {
+        state.bookings = state.bookings.map(function (booking) {
+            return booking.id == bookingToEdit.id ? _extends({}, booking, { bookingToEdit: bookingToEdit }) : booking;
+        });
+        console.log(bookingToEdit);
+    },
+    GET_ALL_BOOKINGS: function GET_ALL_BOOKINGS(state, data) {
+        state.bookings = data;
+    },
+    ADD_BOOKING: function ADD_BOOKING(state, newBOOKING) {
+        state.bookings.unshift(newbooking);
+    },
+    DELETE_BOOKING: function DELETE_BOOKING(state, bookingToDelete) {
+        state.bookings.splice(state.bookings.indexOf(bookingsToDelete), 1);
+    },
+    GET_BOOKING: function GET_BOOKING(state, singleBookings) {
+        state.bookingsToEdit = new bookingsToEdit(), state.bookingsToEdit = singleBookings;
+    }
+};
+
+var actions = {
+    getAllBookings: function getAllBookings(store) {
+        axios.get(__WEBPACK_IMPORTED_MODULE_0__configs_url__["a" /* MY_URLS */].BOOKINGS_URL).then(function (resp) {
+            store.commit('GET_ALL_BOOKINGS', resp.data);
+            console.log(resp.data);
+        });
+    },
+    addBooking: function addBooking(store, newDriver) {
+        axios.post(__WEBPACK_IMPORTED_MODULE_0__configs_url__["a" /* MY_URLS */].BOOKINGS_URL, newDriver).then(function (response) {
+            store.commit('ADD_BOOKING', response.data);
+            console.log(response.data);
+        }).catch(function (error) {
+            return Promise.reject(error.response);
+        });
+    },
+    updateBooking: function updateBooking(store, data) {
+        var id = data.id;
+        console.log(id, 'here');
+
+        axios.patch(__WEBPACK_IMPORTED_MODULE_0__configs_url__["a" /* MY_URLS */].BOOKINGS_URL + '/' + id, data).then(function (response) {
+            store.commit('EDIT_BOOKING', response.data);
+        });
+    },
+    deleteBooking: function deleteBooking(store, driverToDelete) {
+        console.log(driverToDelete);
+        axios.delete(__WEBPACK_IMPORTED_MODULE_0__configs_url__["a" /* MY_URLS */].BOOKINGS_URL + '/' + driverToDelete.id).then(function (response) {
+            store.commit('DELETE_BOOKING', driverToDelete);
+        }).catch(function (error) {
+            return Promise.reject(error.response);
+        });
+    },
+    getBooking: function getBooking(store, id) {
+        axios.get(__WEBPACK_IMPORTED_MODULE_0__configs_url__["a" /* MY_URLS */].BOOKINGS_URL + '/' + id).then(function (response) {
+            store.commit('GET_BOOKING', response.data);
+        });
+    }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    state: state, getters: getters, mutations: mutations, actions: actions
+});
+
+/***/ }),
+/* 278 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_bookings_ShowBookingsComponent__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_bookings_ShowBookingsComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_bookings_ShowBookingsComponent__);
+
+
+var BookingRoutes = [{
+    path: '/show/bookings',
+    name: 'Showbooking_route',
+    component: __WEBPACK_IMPORTED_MODULE_0__components_bookings_ShowBookingsComponent___default.a
+
+}];
+
+/* harmony default export */ __webpack_exports__["a"] = (BookingRoutes);
+
+/***/ }),
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_events_AddEventComponent__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_events_AddEventComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_events_AddEventComponent__);
+
+
+var BookingRoutes = [{
+    path: '/show/bookings',
+    name: 'Showbooking_route',
+    component: __WEBPACK_IMPORTED_MODULE_0__components_events_AddEventComponent___default.a
+
+}];
+
+/* harmony default export */ __webpack_exports__["a"] = (BookingRoutes);
+
+/***/ }),
+/* 283 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(284)
+}
+var normalizeComponent = __webpack_require__(6)
+/* script */
+var __vue_script__ = __webpack_require__(286)
+/* template */
+var __vue_template__ = __webpack_require__(287)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/events/AddEventComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-cec781f6", Component.options)
+  } else {
+    hotAPI.reload("data-v-cec781f6", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 284 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(285);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("4a4f65b1", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-cec781f6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AddEventComponent.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-cec781f6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AddEventComponent.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 285 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.error {\n    color: red;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 286 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            errors: [],
+            hasError: true,
+            newEvent: {
+                'name': '',
+                'capacity': '',
+                'no_plate': ''
+            }
+        };
+    },
+
+    methods: {
+        createItem: function createItem() {
+            var _this = this;
+
+            var input = this.newEvent;
+            if (input['name'] == '' || input['no_plate'] == '' || input['capacity'] == '') {
+                this.errors = [];
+
+                if (!this.newEvent.name) {
+                    this.errors.push('name required.');
+                }
+                if (!this.newEvent.description) {
+                    this.errors.push('capacity required.');
+                }
+                if (!this.newEvent.date) {
+                    this.errors.push('number plate required.');
+                }
+                this.error('Vehicle not added. Ensure all fields are filled');
+            } else {
+                this.$store.dispatch('addEvent', input).then(function () {
+                    _this.success('Vehicle added successfully');
+                    _this.newEvent = {};
+                    _this.errors = [];
+                    _this.$router.push({ name: 'ShowEvents_route' });
+                }, function (error) {
+                    _this.error('Vehicle not added');
+                });
+            }
+        },
+        success: function success(messageToEcho) {
+            this.$notify({
+                title: 'Success',
+                message: messageToEcho,
+                type: 'success'
+            });
+        },
+        error: function error(messageToEcho) {
+            this.$notify({
+                title: 'Error',
+                message: messageToEcho,
+                type: 'error'
+            });
+        }
+    },
+    filters: {
+        capitalize: function capitalize(value) {
+            if (!value) return '';
+            value = value.toString();
+            return value.charAt(0).toUpperCase() + value.slice(1);
+        }
+    },
+    created: function created() {
+        this.$Progress.start(40);
+    }
+});
+
+/***/ }),
+/* 287 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "nav",
+      { attrs: { "aria-label": "You are here:", role: "navigation" } },
+      [
+        _c("ul", { staticClass: "breadcrumbs" }, [
+          _c(
+            "li",
+            [
+              _c(
+                "router-link",
+                { attrs: { to: { name: "dashboard_route" } } },
+                [_vm._v("Home")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c(
+                "router-link",
+                { attrs: { to: { name: "Showvehicles_route" } } },
+                [_vm._v("Events")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _vm._m(0)
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("form", { staticClass: "form-container" }, [
+      _c("h5", { staticClass: "text-center" }, [_vm._v("Add Vehicle")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _vm.errors.length
+          ? _c("div", { staticClass: "error text-center" }, [
+              _c("b", [_vm._v("Please correct the following error(s):")]),
+              _vm._v(" "),
+              _c(
+                "div",
+                _vm._l(_vm.errors, function(error) {
+                  return _c("div", [_vm._v(_vm._s(error))])
+                })
+              )
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _c("label", { attrs: { for: "name" } }, [_vm._v("Name:")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.newEvent.name,
+              expression: "newEvent.name"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "text",
+            id: "name",
+            name: "name",
+            maxlength: "20",
+            required: "required"
+          },
+          domProps: { value: _vm.newEvent.name },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.newEvent, "name", $event.target.value)
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", { attrs: { for: "capacity" } }, [_vm._v("Capacity:")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.newEvent.description,
+              expression: "newEvent.description"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "number",
+            id: "capacity",
+            name: "capacity",
+            min: "1",
+            max: "100",
+            required: "required"
+          },
+          domProps: { value: _vm.newEvent.description },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.newEvent, "description", $event.target.value)
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", { attrs: { for: "no_plate" } }, [_vm._v("Number Plate:")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.newEvent.startDate,
+              expression: "newEvent.startDate"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "text",
+            id: "no_plate",
+            name: "no_plate",
+            required: "required"
+          },
+          domProps: { value: _vm.newEvent.startDate },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.newEvent, "startDate", $event.target.value)
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: " button auth-button right",
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              _vm.createItem()
+            }
+          }
+        },
+        [
+          _c("span", { staticClass: "fa fa-plus" }),
+          _vm._v(" Add Event\n        ")
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("span", { staticClass: "show-for-sr" }, [_vm._v("Current: ")]),
+      _vm._v(" Add Event\n            ")
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-cec781f6", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

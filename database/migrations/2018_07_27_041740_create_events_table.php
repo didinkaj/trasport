@@ -15,10 +15,13 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('description');
+            $table->string('users_id');
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *

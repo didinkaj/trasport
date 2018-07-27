@@ -8,6 +8,7 @@ const state = {
 const getters = {
     vehicles: state => state.vehicles,
     vehiclesToEdit: state => state.vehiclesToEdit,
+    vehiclesNo:  state => state.vehicles.length,
 }
 
 const mutations = {

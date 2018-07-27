@@ -22,7 +22,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/users/list/pdf','HomeController@generateTripHistoryPDF')->name('userlistPdf');
 
-Route::get('/vehicles/list/pdf', 'ReportsController@index');
+Route::get('/vehicles/list/pdf', 'VehiclesReportsController@index');
+
+Route::get('/drivers/list/pdf', 'DriversReportController@index');
 
 Route::get('/{any}', 'HomeController@index')->where('any', '.*');
 

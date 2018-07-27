@@ -20,7 +20,7 @@
             <li class="">&nbsp;&nbsp;<router-link :to="{name:'Showvehicles_route'}"><i class="fa fa-cab fa-2x"></i> &nbsp;&nbsp;Vehicles
             </router-link>
             </li>
-            <li class="">&nbsp;&nbsp;<router-link :to="{name:'driver_route'}"><i class="fa fa-users fa-2x"></i>&nbsp;&nbsp;
+            <li class="">&nbsp;&nbsp;<router-link :to="{name:'Showdrivers_route'}"><i class="fa fa-users fa-2x"></i>&nbsp;&nbsp;
                 Drivers
             </router-link>
             </li>

@@ -21,6 +21,7 @@ Vue.config.productionTip = false
 Vue.use(ElementUI, { locale })
 
 
+
 Vue.use(VueRouter)
 
 Vue.use(VueProgressBar, {

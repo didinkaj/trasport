@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import Vehicles from './vehicles/index'
+import Drivers from './drivers/drivers'
+import Bookings from './bookings/bookings'
 
 Vue.use(Vuex)
 const store = new Vuex.Store({
@@ -9,7 +11,7 @@ const store = new Vuex.Store({
     getters: {},
     actions: {},
     modules: {
-        Vehicles
+        Vehicles,Drivers,Bookings
     }
 });
 

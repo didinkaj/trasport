@@ -60,23 +60,23 @@
 
 <body width="">
 <h4>Transport Management</h4>
-<h5> Vehicles</h5>
+<h5> Drivers List</h5>
 
 <table style="border:none;margin-bottom:8px; width:100%;cellspacing: 0px" id="content">
     <thead style="background:#F5F5F5;">
     <tr>
-        <th>Name</th>
-        <th align="center" >Capacity</th>
-        <th align="center">Number Plate</th>
+        <th>Driver Name</th>
+        <th align="center">Email</th>
+        <th>Date added</th>
     </tr>
     </thead>
     <tbody>
-    @isset($vehicles)
-        @foreach($vehicles as $vehicle)
+    @isset($drivers)
+        @foreach($drivers as $driver)
             <tr>
-                <td>{{ucwords($vehicle->name)}}</td>
-                <td align="center">{{$vehicle->capacity}}</td>
-                <td align="center">{{ucwords($vehicle->no_plate)}}</td>
+                <td>{{ucwords($driver->name)}}</td>
+                <td align="center">{{$driver->email}}</td>
+                <td>{{ucwords($driver->created_at)}}</td>
             </tr>
         @endforeach
     @endisset

@@ -14,9 +14,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div class="main-page" id="app">
-    <section class="grid-container fluid grid-margin-x grid-padding-x header-nav">
-        <div class="grid-container">
+<div class="main-page" id="app" data-sticky-container>
+    <section class="grid-container fluid grid-margin-x grid-padding-x header-nav sticky" data-sticky data-margin-top="0" >
+        <div class="grid-container " >
         <div class="title-bar " data-responsive-toggle="mainNavigation" data-hide-for="medium">
             <div class="title-bar-left">
                 <button class="menu-icon" type="button" data-toggle="mainNavigation"></button>

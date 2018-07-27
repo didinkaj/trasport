@@ -4,27 +4,23 @@
     export default {
         data() {
             return {
-                vehiclesInfo: [],
 
             }
         },
         computed: {
             ...mapGetters({
-                vehicles: 'vehicles',
+                vehiclesNo: 'vehiclesNo',
+                driversNo: 'driversNo',
+                bookingsNo: 'bookingsNo'
             })
         },
         methods: {
-            getVehicles() {
-                this.vehiclesInfo = this.vehicles
-            },
-            mounted() {
-                this.getVehicles();
-                console.log(this.vehicles)
-            }
+
         },
         created() {
-            this.$store.dispatch('getAllVehicles');
-            this.getVehicles();
+            this.$store.dispatch('getAllVehicles'),
+                this.$store.dispatch('getAllDrivers')
+                this.$store.dispatch('getAllBookings')
             this.$Progress.start()
         },
         mounted() {
@@ -38,9 +34,12 @@
 
 <template>
     <div>
-
-        <div class="dash-title text-center">
-            <h5>Quick Over View</h5>
+        <div class="grid-x page-header">
+            <div class="cell medium-12">
+                <div class="dash-title text-center">
+                    <h5>Quick Over View</h5>
+                </div>
+            </div>
         </div>
         <div class="grid-x dashboard-content">
             <div class=" cell medium-3 card dashboard-item ">
@@ -51,18 +50,18 @@
                     <i class="fa fa-cab fa-4x icon-user"></i>
                 </router-link>
                 <div class="card-section">
-                    <h6> {{ vehicles.length }} Registered Vehicles</h6>
+                    <h6> {{ vehiclesNo }} Registered Vehicles</h6>
                 </div>
             </div>
             <div class="medium-offset-1 medium-3 card dashboard-item cell">
                 <div class="card-divider">
                     Drivers
                 </div>
-                <router-link :to="{name:'Showvehicles_route'}">
+                <router-link :to="{name:'Showdrivers_route'}">
                     <i class="fa fa-users fa-4x icon-user"></i>
                 </router-link>
                 <div class="card-section">
-                    <h6>10 Drivers</h6>
+                    <h6>{{ driversNo }} Drivers</h6>
                 </div>
             </div>
             <div class="medium-offset-1 medium-3 card dashboard-item cell">
@@ -73,7 +72,7 @@
                     <i class="fa fa-calendar fa-4x icon-user"></i>
                 </router-link>
                 <div class="card-section">
-                    <h6>On Going Events 3</h6>
+                    <h6>On Going Events {{bookingsNo}}</h6>
                 </div>
             </div>
         </div>
@@ -83,11 +82,11 @@
                 <div class="card-divider">
                     Bookings
                 </div>
-                <router-link :to="{name:'Showvehicles_route'}">
+                <router-link :to="{name:'Showbooking_route'}">
                     <i class="fa fa-calendar-check-o fa-4x icon-user"></i>
                 </router-link>
                 <div class="card-section">
-                    <h6>3 Pending Requests </h6>
+                    <h6>{{bookingsNo}} Pending Requests </h6>
                 </div>
             </div>
             <div class="medium-offset-1 medium-3 card dashboard-item cell">
