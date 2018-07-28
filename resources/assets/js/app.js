@@ -3,8 +3,10 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import ElementUI from 'element-ui'
-import locale from 'element-ui/lib/locale/lang/en';
-import 'element-ui/lib/theme-chalk/index.css';
+import locale from 'element-ui/lib/locale/lang/en'
+import 'element-ui/lib/theme-chalk/index.css'
+import './configs/firebaseconfig'
+import firebase from 'firebase'
 
 import SideBar from './components/layout/includes/SideBar.vue'
 import Footer from './components/layout/includes/Footer.vue'
@@ -13,13 +15,13 @@ import router from './routes/router'
 import mymixins from './mixins/all'
 import VueProgressBar from 'vue-progressbar'
 import store from './store/store'
-
+import {JWT_AUTH} from './configs/jwtAuth'
 
 Vue.component('sidebar-component', SideBar);
 Vue.component('footer-component', Footer);
 Vue.config.productionTip = false
 Vue.use(ElementUI, { locale })
-
+Vue.config.productionTip = true
 
 
 Vue.use(VueRouter)
@@ -31,13 +33,28 @@ Vue.use(VueProgressBar, {
 })
 
 
+
+
+
+/*let app;
+firebase.auth().onAuthStateChanged(function (user) {
+    if (!app) {
+        app = new Vue({
+            router,
+            store,
+            mixin: [mymixins],
+            el: '#app'
+        });
+    }
+});*/
+
+
 const app = new Vue({
     router,
     store,
     mixin:[mymixins],
     el: '#app'
 });
-
 
 
 

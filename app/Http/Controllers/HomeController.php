@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Vehicle;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use PDF;
 use App;
 
@@ -50,7 +51,8 @@ class HomeController extends Controller
         
     }
     
-    public function storecare(Request $request){
+    public function storecare(Request $request)
+    {
         
             $data = new Vehicle;
             
@@ -66,7 +68,8 @@ class HomeController extends Controller
         
     }
     
-    public function editVihecle($id,Request $request){
+    public function editVihecle($id,Request $request)
+    {
         
         $vehicle = Vehicle::find($id);
     
@@ -81,14 +84,16 @@ class HomeController extends Controller
         
     }
     
-    public function deleteVehicle($id){
+    public function deleteVehicle($id)
+    {
         
         $value = Vehicle::find($id);
         $value->delete();
         
     }
     
-    public function generateTripHistoryPDF(){
+    public function generateTripHistoryPDF()
+    {
         
         $users = User::all();
     
@@ -99,6 +104,11 @@ class HomeController extends Controller
         $pdf->loadView('reports.sample');
         
         return $pdf->stream();
+    }
+    
+    public function sessionData()
+    {
+            return Auth::user();
     }
     
 }

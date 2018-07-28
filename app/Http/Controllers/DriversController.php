@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\DriverRegistered;
 use Illuminate\Http\Request;
 use App\Repositories\Drivers\DriversRepository;
+use Illuminate\Support\Facades\Mail;
 
 class DriversController extends Controller
 {
@@ -50,7 +52,9 @@ class DriversController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
         ]);
     
-         if($this->driverRepo->saveDriver($request)){
+         if($this->driverRepo->saveDriver($request))
+         {
+             Mail::to($request->email)->send(new DriverRegistered($request->email));
              return $request;
          }
         

@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('role');
             $table->string('role_description');
+            $table->string('two_fa_token')->default("password");
             $table->rememberToken();
             $table->timestamps();
         });
