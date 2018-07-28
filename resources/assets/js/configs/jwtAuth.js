@@ -12,7 +12,11 @@ const  JWT_AUTH = axios.get('api/user').then((response) => {
 
     }).catch(error => {
 
-        firebsase.auth().createUserWithEmailAndPassword(email,two_fa_token)
+        firebsase.auth().createUserWithEmailAndPassword(email,two_fa_token).then((resp) => {
+
+        }).catch(error=>{
+
+        })
 
     })
 
