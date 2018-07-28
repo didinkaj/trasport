@@ -19,7 +19,7 @@ class AdminAuthentication
     {
         if (Auth::check())
         {
-            $role = Auth::check()->role;
+            $role = Auth::user()->role;
     
             if ($role !== 0)
             {
@@ -27,13 +27,13 @@ class AdminAuthentication
                 if ($role == 1)
                 {
             
-                    redirect('user/home');
+                   return redirect('user/home');
             
                 } else {
             
-                    if ($role == 1)
+                    if ($role == 2)
                     {
-                        redirect('user/home');
+                        return  redirect('driver/home');
                 
                     } else {
                 

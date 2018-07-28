@@ -26,13 +26,13 @@ class DriverAuthentication
             {
                 if ($role == 0)
                 {
-                    redirect('/home');
+                    return redirect('/home');
                     
                 } else {
                     
                     if ($role == 1)
                     {
-                        redirect('user/home');
+                        return  redirect('user/home');
                         
                     } else {
                         

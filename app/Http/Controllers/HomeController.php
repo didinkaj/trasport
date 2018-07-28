@@ -18,7 +18,7 @@ class HomeController extends Controller
     public function __construct()
     {
   
-       $this->middleware('isAdmin',['only' => [ 'storecare']]);
+       $this->middleware('isAdmin',['only' => [ 'storecare','index']]);
        
     }
 
@@ -34,12 +34,12 @@ class HomeController extends Controller
     
     public function indexUser()
     {
-        return view('welcome');
+        return view('user');
     }
     
     public function indexDriver()
     {
-        return view('welcome');
+        return view('driver');
     }
     
     public function alluser(){

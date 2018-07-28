@@ -22,16 +22,16 @@ class UserAuthentication
         {
             $role = Auth::user()->role;
             
-            if ($role !== 2)
+            if ($role !== 1)
             {
                 if ($role == 0)
                 {
-                    redirect('/home');
+                   return redirect('/home');
                 } else {
                     
-                    if ($role == 1)
+                    if ($role == 2)
                     {
-                        redirect('user/home');
+                      return  redirect('user/driver');
                         
                     } else {
                         
