@@ -11133,6 +11133,7 @@ body .help-text {
 .header-nav {
   background-color: #e6e6e6;
   height: 80px;
+  z-index: 1000;
 }
 
 .header-nav .title-bar {

@@ -2,13 +2,14 @@ import {MY_URLS} from '../../configs/url'
 
 const state = {
     events: [],
+    eventsNo:'',
     eventsToEdit: {}
 }
 
 const getters = {
     events: state => state.events,
     eventsToEdit: state => state.eventsToEdit,
-    eventsNo: state => state.events.length,
+    eventsNo: state => state.eventsNo,
 }
 
 const mutations = {
@@ -29,17 +30,27 @@ const mutations = {
     GET_EVENT(state, singleEvent) {
         state.eventToEdit = new eventToEdit,
             state.eventToEdit = singleEvent
+    },
+    COUNT_EVENTS(state, num){
+        console.log(num)
+        state.eventsNo = num
     }
 
 };
 
 const actions = {
-    getAllEvent(store) {
+    getAllEvents(store) {
         axios.get(MY_URLS.EVENTS_URL).then((resp) => {
             store.commit('GET_ALL_EVENT', resp.data);
         })
     },
+    countAllEvents(store) {
+        axios.get(MY_URLS.EVENTS_URL + '/count').then((resp) => {
+            store.commit('COUNT_EVENTS', resp.data);
+        })
+    },
     addEvent(store, newEvent) {
+        console.log(newEvent);
         axios.post(MY_URLS.EVENTS_URL, newEvent).then((response) => {
             store.commit('ADD_EVENT', response.data);
             console.log(response.data)

@@ -11,7 +11,8 @@
             ...mapGetters({
                 vehiclesNo: 'vehiclesNo',
                 driversNo: 'driversNo',
-                bookingsNo: 'bookingsNo'
+                bookingsNo: 'bookingsNo',
+                eventsNo: 'eventsNo'
             })
         },
         methods: {
@@ -21,6 +22,7 @@
             this.$store.dispatch('getAllVehicles'),
                 this.$store.dispatch('getAllDrivers')
                 this.$store.dispatch('getAllBookings')
+                this.$store.dispatch('countAllEvents')
             this.$Progress.start()
         },
         mounted() {
@@ -68,11 +70,11 @@
                 <div class="card-divider">
                     Events
                 </div>
-                <router-link :to="{name:'AddEvent_route'}">
+                <router-link :to="{name:'ShowEvents_route'}">
                     <i class="fa fa-calendar fa-4x icon-user"></i>
                 </router-link>
                 <div class="card-section">
-                    <h6>On Going Events {{bookingsNo}}</h6>
+                    <h6>On Going Events {{eventsNo}}</h6>
                 </div>
             </div>
         </div>

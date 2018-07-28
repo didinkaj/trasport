@@ -53,6 +53,8 @@ Route::middleware('auth')->patch('/bookings/{id}','ReserveController@update');
 //events routes
 Route::middleware('auth')->get('/events', 'EventController@index');
 
+Route::middleware('auth')->get('/events/count', 'EventController@countEvents');
+
 Route::middleware('auth')->get('/events/{id}', 'Eventontroller@edit');
 
 Route::middleware('auth')->post('/events','EventController@store');

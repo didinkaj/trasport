@@ -12,6 +12,8 @@ class DriversController extends Controller
     function __construct(DriversRepository $driversRepository)
     {
         $this->driverRepo = $driversRepository;
+        
+        $this->middleware('isAdmin',['only' => [ 'store']]);
     }
     /**
      * Display a listing of the resource.

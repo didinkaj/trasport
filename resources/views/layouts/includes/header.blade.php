@@ -30,7 +30,7 @@
             <div class="top-bar-left">
                 <ul class="menu vertical medium-horizontal">
                     <li class="menu-text hide-for-small-only">
-                        <a href="{{route('home')}}"> {{ config('app.name', 'Laravel') }}</a>
+                        <a href="{{route('home')}}"> {{ config('app.name', 'Laravel') }} </a>
                     </li>
                     <li><a href="#"></a></li>
                     <li><a href="#"></a></li>

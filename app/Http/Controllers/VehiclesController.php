@@ -56,7 +56,7 @@ class VehiclesController extends Controller
              return $request;
          }
         
-         return $request;
+         return  $request;
         
     }
     

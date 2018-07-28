@@ -13,10 +13,15 @@
 
 
 
+Route::get('/', function (){
+    return view('auth/login');
+})->name('homeguest');
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('homeguest');
-Auth::routes();
+Route::get('/driver/home', 'HomeController@indexDriver')->name('homedriver');
+
+Route::get('/user/home', 'HomeController@indexUser')->name('homeuser');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

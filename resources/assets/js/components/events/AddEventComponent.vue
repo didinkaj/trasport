@@ -6,37 +6,34 @@
                 hasError: true,
                 newEvent: {
                     'name': '',
-                    'capacity': '',
-                    'no_plate': ''
+                    'description': ''
                 },
             }
         },
         methods: {
             createItem() {
                 let input = this.newEvent;
-                if (input['name'] == '' || input['no_plate'] == '' || input['capacity'] == '') {
+                if (input['name'] == '' || input['description'] == '') {
                     this.errors = [];
 
                     if (!this.newEvent.name) {
-                        this.errors.push('name required.');
+                        this.errors.push('Event name required.');
                     }
                     if (!this.newEvent.description) {
-                        this.errors.push('capacity required.');
+                        this.errors.push('Event Description required.');
 
                     }
-                    if (!this.newEvent.date) {
-                        this.errors.push('number plate required.');
-                    }
-                    this.error('Vehicle not added. Ensure all fields are filled')
+
+                    this.error('Event not added. Ensure all fields are filled')
                 } else {
                     this.$store.dispatch('addEvent', input).then(() => {
-                            this.success('Vehicle added successfully')
+                            this.success('Event added successfully')
                             this.newEvent = {}
                             this.errors = []
                             this.$router.push({name: 'ShowEvents_route'})
                         },
                         error => {
-                            this.error('Vehicle not added')
+                            this.error('Event not added')
 
                         })
                 }
@@ -76,7 +73,7 @@
         <nav aria-label="You are here:" role="navigation">
             <ul class="breadcrumbs">
                 <li><router-link :to="{name:'dashboard_route'}">Home</router-link></li>
-                <li><router-link :to="{name:'Showevents_route'}">Events</router-link></li>
+                <li><router-link :to="{name:'ShowEvents_route'}">Events</router-link></li>
                 <li>
                     <span class="show-for-sr">Current: </span> Add Event
                 </li>
@@ -96,14 +93,9 @@
                        required="required" v-model="newEvent.name">
             </div>
             <div class="form-group">
-                <label for="capacity">Date:</label>
-                <input type="number" class="form-control" id="capacity" name="capacity" min="1" max="100"
-                       required="required" v-model="newEvent.start_date">
-            </div>
-            <div class="form-group">
                 <label for="no_plate">Description:</label>
                 <input type="text" class="form-control" id="no_plate" name="no_plate"
-                       required="required" v-model="newEvent.desccription">
+                       required="required" v-model="newEvent.description">
             </div>
 
             <button class=" button auth-button right" @click.prevent="createItem()">
