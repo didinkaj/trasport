@@ -13,6 +13,8 @@ class EventController extends Controller
     
     function __construct(EventsRepository $eventsRepository)
     {
+        $this->middleware('auth');
+        
         $this->eventRepo = $eventsRepository;
     }
     /**

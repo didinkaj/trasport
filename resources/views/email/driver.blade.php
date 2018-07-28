@@ -4,6 +4,6 @@
     <title>Send Email</title>
 </head>
 <body>
-<h2>Hi Welcome to Test Mail </h2>
+<h2>Hi Welcome to Test Mail</h2>
 </body>
 </html>

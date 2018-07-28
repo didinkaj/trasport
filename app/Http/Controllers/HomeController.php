@@ -18,8 +18,10 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-  
-       $this->middleware('isAdmin',['only' => [ 'storecare','index']]);
+       
+       $this->middleware('auth');
+    
+        $this->middleware('isAdmin')->only('index');
        
     }
 

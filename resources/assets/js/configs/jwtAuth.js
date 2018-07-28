@@ -1,6 +1,11 @@
 import axios from 'axios'
 
 import firebase from 'firebase'
+
+firebase.auth().signOut().then(()=>{
+
+})
+
 const  JWT_AUTH = axios.get('api/user').then((response) => {
 
 

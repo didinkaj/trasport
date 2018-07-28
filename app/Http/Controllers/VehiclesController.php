@@ -12,6 +12,8 @@ class VehiclesController extends Controller
     function __construct(VehicleRepository $vehicleRepository)
     {
         $this->vehicleRepo = $vehicleRepository;
+    
+        $this->middleware('auth');
     }
     
     /**

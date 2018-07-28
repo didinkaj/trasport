@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Reservations;
 
-use App\Reserve;
+use App\Reservation;
 use App\Vehicle;
 use Illuminate\Support\Facades\Hash;
 

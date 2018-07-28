@@ -13,6 +13,17 @@ class Vehicle extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'capacity', 'no_plate',
+        'name', 'capacity', 'no_plate','users_id'
     ];
+    
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+    
+    
+    public function setTitleAttribute($value)
+    {
+        $this->attributes['name'] = ucwords($value);
+    }
 }

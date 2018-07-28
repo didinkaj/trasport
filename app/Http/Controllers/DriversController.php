@@ -13,9 +13,11 @@ class DriversController extends Controller
     
     function __construct(DriversRepository $driversRepository)
     {
+        $this->middleware('auth');
+        
         $this->driverRepo = $driversRepository;
         
-        $this->middleware('isAdmin',['only' => [ 'store']]);
+       // $this->middleware('isAdmin',['only' => [ 'store']]);
     }
     /**
      * Display a listing of the resource.
@@ -54,7 +56,10 @@ class DriversController extends Controller
     
          if($this->driverRepo->saveDriver($request))
          {
-             Mail::to($request->email)->send(new DriverRegistered($request->email));
+             $message = array('test' => 'Welcome to Cytonn TRSM');
+             
+             Mail::to($request->email)->send(new DriverRegistered($message));
+             
              return $request;
          }
         

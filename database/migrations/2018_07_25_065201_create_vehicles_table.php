@@ -15,10 +15,13 @@ class CreateVehiclesTable extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('users_id');
             $table->string('name');
             $table->integer('capacity');
             $table->string('no_plate')->unique();
             $table->timestamps();
+    
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -14,6 +14,8 @@ class VehiclesReportsController extends Controller
     function __construct(ReportsRepository $reportsRepository)
     {
         $this->reportRepo = $reportsRepository;
+    
+        $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.

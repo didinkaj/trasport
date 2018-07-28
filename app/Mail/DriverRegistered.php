@@ -3,10 +3,12 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Http\Request;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use App\User;
+
+
 
 class DriverRegistered extends Mailable
 {
@@ -17,6 +19,14 @@ class DriverRegistered extends Mailable
      *
      * @return void
      */
+    public $message;
+    
+    
+    public function __construct($message)
+    {
+        $this->message = "ccooool";
+        
+    }
 
     /**
      * Build the message.
@@ -25,6 +35,8 @@ class DriverRegistered extends Mailable
      */
     public function build()
     {
-        return $this->view('email.driver');
+        //dd($this->message);
+        return $this->view('email.driver')
+            ->with(['message', $this->message]);
     }
 }

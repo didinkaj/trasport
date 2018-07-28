@@ -25,15 +25,15 @@ class RedirectIfAuthenticated
                 
             } else {
                 
-                if (Auth::user()->role === 0)
+                if (Auth::user()->role == 0)
                 {
                     return redirect('/home');
                     
-                } elseif (Auth::user()->role === 1) {
+                } elseif (Auth::user()->role == 1) {
                     
                     return redirect('/user/home');
                     
-                } elseif (Auth::user()->role === 2) {
+                } elseif (Auth::user()->role == 2) {
                     
                     return redirect('/driver/home');
                     

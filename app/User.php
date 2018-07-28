@@ -27,7 +27,26 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
-    /*query scope for drivers*/
+    public function events()
+    {
+        return $this->hasMany('App\Events');
+    }
+    
+    public function reservations()
+    {
+        return $this->hasMany('App\Reservation');
+    }
+    
+    public function vehicles()
+    {
+        return $this->hasMany('App\Vehicle');
+    }
+    
+    public function maintainances()
+    {
+        return $this->hasMany('App\Maintainance');
+    }
+    
     public function scopeDrivers($query)
     {
         return $query->where('role', '=', 2);

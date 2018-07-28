@@ -13,6 +13,8 @@ class DriversReportController extends Controller
     
     function __construct(DriversRepository $driversRepository)
     {
+        $this->middleware('auth');
+        
         $this->driversRepo = $driversRepository;
     }
     /**
