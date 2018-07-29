@@ -44,7 +44,7 @@
                 <div class="card-divider">
                     Book Seat
                 </div>
-                <router-link :to="{name:'Showdrivers_route'}">
+                <router-link :to="{name:'Seatbooking_route'}">
                     <i class="fa fa-plane fa-4x icon-user" aria-hidden="true"></i>
                 </router-link>
                 <div class="card-section">
@@ -55,7 +55,7 @@
                 <div class="card-divider">
                     My Reservations
                 </div>
-                <router-link :to="{name:'Showvehicles_route'}">
+                <router-link :to="{name:'Userbooking_route'}">
                     <i class="fa fa-cab fa-4x icon-user"></i>
                 </router-link>
                 <div class="card-section">
@@ -67,7 +67,7 @@
                 <div class="card-divider">
                     Events
                 </div>
-                <router-link :to="{name:'ShowEvents_route'}">
+                <router-link :to="{name:'UserEvents_route'}">
                     <i class="fa fa-calendar fa-4x icon-user"></i>
                 </router-link>
                 <div class="card-section">
@@ -84,7 +84,7 @@
                 <div class="card-divider">
                     Reports
                 </div>
-                <router-link :to="{name:'Showvehicles_route'}">
+                <router-link :to="{name:'UserReports_route'}">
                     <i class="fa fa-area-chart fa-4x icon-user"></i>
                 </router-link>
                 <div class="card-section">

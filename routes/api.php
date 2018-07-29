@@ -42,6 +42,15 @@ Route::middleware('auth')->delete('/drivers/{id}','DriversController@destroy');
 
 Route::middleware('auth')->patch('/drivers/{id}','DriversController@update');
 
+//driver assignment to vehicles
+
+Route::middleware('auth')->post('/driver/assign/vehicle','DriverAssignmentController@store');
+
+Route::middleware('auth')->post('/driver/assign/vehicle/{id}','DriverAssignmentController@show');
+
+Route::middleware('auth')->get('/driver/assign/vehicle','DriverAssignmentController@index');
+
+
 //booking routes
 Route::middleware('auth')->get('/bookings', 'ReserveController@index');
 
@@ -65,3 +74,5 @@ Route::middleware('auth')->post('/events','EventController@store');
 Route::middleware('auth')->delete('/events/{id}','EventController@destroy');
 
 Route::middleware('auth')->patch('/events/{id}','EventController@update');
+
+

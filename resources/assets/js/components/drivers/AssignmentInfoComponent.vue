@@ -1,7 +1,38 @@
 <script>
+    import {mapGetters} from 'vuex'
     export default {
         data() {
-            return {}
+            return {
+                myProfileInfo: {},
+                myvehicles:{},
+                vehiclesAssigned:{}
+            }
+        },
+        computed: {
+            ...mapGetters({
+                driversAssignedToVehicle:'driversAssignedToVehicle',
+                driverInfo: 'driverInfo'
+            })
+
+        }
+        ,
+        methods:{
+
+
+        },
+        created(){
+
+            this.$store.dispatch('getLoggedInDriver');
+
+            this.$store.dispatch('getDriversVehicle',this.driverInfo.id).then((response)=>{
+
+                this.myvehicles = this.response.data;
+
+            }).catch((error)=>{
+                console.log(error.message)
+            })
+
+
         }
     }
 </script>

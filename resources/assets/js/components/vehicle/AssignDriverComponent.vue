@@ -37,8 +37,13 @@
                         'users_id': this.formdata.users_id,
                         'vehicles_id': this.vehicleDatas.id
                     }
+                    this.$store.dispatch('addDriverAssignment',assignment).then((response) => {
+                        this.success('Driver assigned successfully')
+                    }).catch((error)=>{
+                        this.error('Driver assignement failed')
+                    })
                     console.log(assignment)
-                    this.success('Driver assigned successfully')
+
                 }
 
 
@@ -62,7 +67,8 @@
         computed: {
             ...mapGetters({
                 drivers: 'drivers',
-                routeParamsVehicle: 'routeParamsVehicle'
+                routeParamsVehicle: 'routeParamsVehicle',
+                driversAssignedToVehicle:'driversAssignedToVehicle'
             })
 
         },
@@ -80,9 +86,15 @@
             if (this.driversInfo == null) {
                 this.$router.push({name: 'addDriverToVehicles_route'})
             }
+            this.$store.dispatch('getDriverAssignments',this.vehicleDatas.id).then((response)=>{
+                console.response
+            }).catch((error)=>{
+                console.log(error.message)
+            })
         },
         mounted() {
             console.log(this.vehicleDatas)
+            console.log(this.driversAssignedToVehicle)
 
         }
     }
@@ -166,8 +178,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>
-                        </td>
+                        <td> delete</td>
                     </tr>
                     </tbody>
                 </table>

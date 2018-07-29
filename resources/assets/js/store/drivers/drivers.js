@@ -3,14 +3,14 @@ import {MY_URLS} from '../../configs/url'
 const state = {
     drivers: [],
     driversToEdit: {},
-    driverProfileInfo:{}
+    driverProfileInfo:{},
 }
 
 const getters = {
     drivers: state => state.drivers,
     driversToEdit: state => state.driversToEdit,
     driversNo: state => state.drivers.length,
-    driverInfo: state => state.driverProfileInfo
+    driverInfo: state => state.driverProfileInfo,
 
 }
 

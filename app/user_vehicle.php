@@ -11,5 +11,10 @@ class user_vehicle extends Model
          'users_id','vehicles_id'
     ];
     
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+    
     
 }

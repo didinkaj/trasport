@@ -4,6 +4,7 @@ import Vehicles from './vehicles/index'
 import Drivers from './drivers/drivers'
 import Bookings from './bookings/bookings'
 import Events from './events/events'
+import DriverAssignment from './assignment/driver/assignmen_to_vehicle'
 
 Vue.use(Vuex)
 const store = new Vuex.Store({
@@ -12,7 +13,7 @@ const store = new Vuex.Store({
     getters: {},
     actions: {},
     modules: {
-        Vehicles,Drivers,Bookings,Events
+        Vehicles,Drivers,Bookings,Events,DriverAssignment
     }
 });
 
