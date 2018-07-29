@@ -79,7 +79,7 @@
                     </h6>
                 </div>
                     <div class=" dash-title text-center column">
-                    <a href="/drivers/list/pdf" target="_blank" style="color: #2f4b26">
+                    <a href="/vehicles/list/pdf" target="_blank" style="color: #2f4b26">
                         Download
                         <i class="fa fa-download" aria-hidden="true"></i>
                     </a>
@@ -96,7 +96,7 @@
                     <th>#</th>
                     <th>NAME</th>
                     <th class="text-center">Email</th>
-                    <th>Date Added</th>
+                    <th>Phone Number</th>
                     <th colspan="4" class="text-center">ACTIONS</th>
                 </tr>
                 </thead>
@@ -104,7 +104,7 @@
                     <td>{{ index+1 }}</td>
                     <td class="">{{ driver.name  }}</td>
                     <td>{{ driver.email  }}</td>
-                    <td>{{ driver.created_at  }}</td>
+                    <td>{{ driver.phone  }}</td>
                     <td class="btn btn-info edit-button" @click="editDriver(driver)">
                         <span> <i class="fa fa-pencil-square-o "></i></span>
                     </td>

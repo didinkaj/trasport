@@ -18,6 +18,8 @@ class CreateReservationsTable extends Migration
             $table->string('description');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
+            $table->integer('reservation_status');
+            $table->integer('maintainance_status');
             $table->unsignedInteger('users_id');
             $table->unsignedInteger('vehicles_id');
             $table->unsignedInteger('events_id');

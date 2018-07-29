@@ -32,6 +32,8 @@ class DriversRepository
         $this->driver->name = $request->name;
     
         $this->driver->email = $request->email;
+        
+        $this->driver->phone = $request->phone;
     
         $this->driver->role = 2;
         
@@ -47,11 +49,13 @@ class DriversRepository
         
         $vehicle = $this->driver->find($id);
         
-        $vehicle->name  = $request->name;;
+        $vehicle->name  = $request->name;
+    
+        $this->driver->phone = $request->phone;
         
-        $vehicle->capacity  = $request->capacity;;
+        $vehicle->capacity  = $request->capacity;
         
-        $vehicle->no_plate  = $request->no_plate;;
+        $vehicle->no_plate  = $request->no_plate;
     
         $vehicle->save();
     

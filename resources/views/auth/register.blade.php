@@ -24,6 +24,18 @@
                     @endif
                 </div>
 
+                <div class="phone">
+                    <label for="phone">Phone Number</label>
+
+                    <input id="phone" type="number" class="form-control" name="phone" value="{{ old('phone') }}"  aria-describedby="nameHelpText" required autofocus>
+
+                    @if ($errors->has('phone'))
+                        <span class="help-text" id="nameHelpText">
+                            <strong>{{ $errors->first('phone') }}</strong>
+                        </span>
+                    @endif
+                </div>
+
                 <div class="email">
                     <label for="email">E-Mail Address</label>
 

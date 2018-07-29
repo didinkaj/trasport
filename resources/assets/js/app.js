@@ -10,6 +10,9 @@ import firebase from 'firebase'
 
 import SideBar from './components/layout/includes/SideBar.vue'
 import Footer from './components/layout/includes/Footer.vue'
+import DriverProfile from './components/drivers/DriversProfileComponent.vue'
+import DriverAssignmentInfo from './components/drivers/AssignmentInfoComponent.vue'
+
 import VueRouter from 'vue-router'
 import router from './routes/router'
 import mymixins from './mixins/all'
@@ -19,6 +22,8 @@ import {JWT_AUTH} from './configs/jwtAuth'
 
 Vue.component('sidebar-component', SideBar);
 Vue.component('footer-component', Footer);
+Vue.component('driver-profile-component', DriverProfile);
+Vue.component('driver-assignmenr-component', DriverAssignmentInfo);
 Vue.config.productionTip = false
 Vue.use(ElementUI, { locale })
 Vue.config.productionTip = true

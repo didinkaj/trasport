@@ -5,6 +5,7 @@
                 form:{
                     name: '',
                     email: '',
+                    phone:''
                 },
                 errors: [],
             }
@@ -12,12 +13,15 @@
         methods: {
             registerDriver() {
 
-                if (this.form.name == '' || this.form.email == '') {
+                if (this.form.name == '' || this.form.email == '' || this.form.phone == '') {
                     if (this.name == '') {
                         this.errors.push('  Name required.');
                     }
                     if (this.form.email == '') {
                         this.errors.push(' Email Address required.');
+                    }
+                    if (this.form.phone == '') {
+                        this.errors.push(' Phone Number required.');
                     }
                 } else {
                     this.errors = []
@@ -82,6 +86,10 @@
                 <label for="email">Name</label>
                 <input id="name" type="text" class="form-control" name="name" v-model="form.name" value=""
                        aria-describedby="nameHelpText" required autofocus>
+            </div>
+            <div class="phone">
+                <label for="phone">Phone Number</label>
+                <input id="phone" type="number" name="phone" v-model="form.phone" aria-describedby="emailHelpText" required>
             </div>
             <div class="email">
                 <label for="email">E-Mail Address</label>

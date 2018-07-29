@@ -7,6 +7,7 @@ import VehiclesRoutes from './vehicles'
 import DriversRoutes from './drivers'
 import BookingsRoutes from './bookings'
 import EventsRoutes from './events'
+import ReportsRoutes from './reports'
 
 import VueRouter from 'vue-router'
 
@@ -47,6 +48,7 @@ Vue.use(VueRouter)
      ...generateRoutesFromMenu(DriversRoutes),
      ...generateRoutesFromMenu(BookingsRoutes),
      ...generateRoutesFromMenu(EventsRoutes),
+     ...generateRoutesFromMenu(ReportsRoutes),
 
 ];
 

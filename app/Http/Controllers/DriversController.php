@@ -17,7 +17,6 @@ class DriversController extends Controller
         
         $this->driverRepo = $driversRepository;
         
-       // $this->middleware('isAdmin',['only' => [ 'store']]);
     }
     /**
      * Display a listing of the resource.
@@ -52,6 +51,7 @@ class DriversController extends Controller
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
+            'phone' => 'required|string|max:13',
         ]);
     
          if($this->driverRepo->saveDriver($request))

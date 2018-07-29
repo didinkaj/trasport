@@ -10,7 +10,7 @@ class ReservationRepository
 {
     public $booking;
     
-    public function __construct(Reserve $reserve)
+    public function __construct(Reservation $reserve)
     {
         $this->booking = $reserve;
     }

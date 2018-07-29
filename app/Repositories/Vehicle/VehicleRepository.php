@@ -3,6 +3,7 @@
 namespace App\Repositories\Vehicle;
 
 use App\Vehicle;
+use Auth;
 
 class VehicleRepository
 {
@@ -31,6 +32,8 @@ class VehicleRepository
         $this->vehicle->capacity = $request->capacity;
     
         $this->vehicle->no_plate = $request->no_plate;
+        
+        $this->vehicle->users_id = Auth::id();
     
         return $this->vehicle->save ();
     
@@ -42,7 +45,9 @@ class VehicleRepository
         
         $vehicle->name  = $request->name;;
         
-        $vehicle->capacity  = $request->capacity;;
+        $vehicle->capacity  = $request->capacity;
+    
+        $this->vehicle->users_id = Auth::id();
         
         $vehicle->no_plate  = $request->no_plate;;
     
