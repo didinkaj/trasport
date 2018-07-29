@@ -75,7 +75,7 @@
                 <div class="dash-title text-center column">
                     <h6>
                         <router-link style="color: #2f4b26" :to="{name:'addDriver_route'}">
-                            <i class="fa fa-plus-circle" aria-hidden="true"></i> Driver
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i> Add Driver
                         </router-link>
                     </h6>
                 </div>

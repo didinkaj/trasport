@@ -75,7 +75,7 @@
             </ul>
         </nav>
         <form class="auth-form">
-            <h5 class="text-center">Add Driver</h5>
+            <h5 class="text-center">Create New Driver</h5>
             <div v-if="errors.length" class="error text-center">
                 <b>Please correct the following error(s):</b>
                 <div>

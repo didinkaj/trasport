@@ -29,6 +29,8 @@ Route::get('/users/list/pdf','HomeController@generateTripHistoryPDF')->name('use
 
 Route::get('/vehicles/list/pdf', 'VehiclesReportsController@index');
 
+Route::get('/events/list/pdf', 'EventsReportsController@index');
+
 Route::get('/drivers/list/pdf', 'DriversReportController@index');
 
 Route::get('/{any}', 'HomeController@index')->where('any', '.*');

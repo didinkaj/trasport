@@ -19,6 +19,7 @@ class EventsRepository
         return $this->event->latest()->get();
     }
     
+    
     public function countAllEvents()
     {
         return $this->event->all()->count();

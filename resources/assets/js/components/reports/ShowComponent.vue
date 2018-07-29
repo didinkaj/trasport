@@ -22,7 +22,7 @@
         <div class="card cell medium-5">
             <div class="card-section">
                 <p><a href="/drivers/list/pdf" target="_blank" style="color: #2f4b26">
-                    Download  Drivers List
+                      Drivers List Download PDF
                     <i class="fa fa-download" aria-hidden="true"></i>
                 </a></p>
             </div>
@@ -30,11 +30,24 @@
         <div class="card medium-5 cell medium-offset-1">
             <div class="card-section">
                 <p><a href="/drivers/list/pdf" target="_blank" style="color: #2f4b26">
-                    Download  Vehicles List
+                      Vehicles List Download PDF
                     <i class="fa fa-download" aria-hidden="true"></i>
                 </a></p>
             </div>
         </div>
+        </div>
+
+        <div class="grid-x">
+
+            <div class="card cell medium-5">
+                <div class="card-section">
+                    <p><a href="/drivers/list/pdf" target="_blank" style="color: #2f4b26">
+                          Events List Download PDF
+                        <i class="fa fa-download" aria-hidden="true"></i>
+                    </a></p>
+                </div>
+            </div>
+
         </div>
     </div>
 </template>

@@ -80,7 +80,7 @@
                     </h6>
                 </div>
                     <div class=" dash-title text-center column">
-                    <a href="/drivers/list/pdf" target="_blank" style="color: #2f4b26">
+                    <a href="/events/list/pdf" target="_blank" style="color: #2f4b26">
                         Download
                         <i class="fa fa-download" aria-hidden="true"></i>
                     </a>
