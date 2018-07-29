@@ -9,6 +9,7 @@ import './configs/firebaseconfig'
 //import firebase from 'firebase'
 
 import SideBar from './components/layout/includes/SideBar.vue'
+import UserSideBar from './components/layout/includes/UserSideBar.vue'
 import Footer from './components/layout/includes/Footer.vue'
 import DriverProfile from './components/drivers/DriversProfileComponent.vue'
 import DriverAssignmentInfo from './components/drivers/AssignmentInfoComponent.vue'
@@ -21,6 +22,7 @@ import store from './store/store'
 //import {JWT_AUTH} from './configs/jwtAuth'
 
 Vue.component('sidebar-component', SideBar);
+Vue.component('user-sidebar-component', UserSideBar);
 Vue.component('footer-component', Footer);
 Vue.component('driver-profile-component', DriverProfile);
 Vue.component('driver-assignmenr-component', DriverAssignmentInfo);

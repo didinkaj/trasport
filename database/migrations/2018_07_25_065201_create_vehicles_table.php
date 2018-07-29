@@ -18,6 +18,9 @@ class CreateVehiclesTable extends Migration
             $table->unsignedInteger('users_id');
             $table->string('name');
             $table->integer('capacity');
+            $table->integer('reservation_status')->default(0);
+            $table->integer('maintainance_status')->default(0);
+            $table->integer('assigned_status')->default(0);
             $table->string('no_plate')->unique();
             $table->timestamps();
     

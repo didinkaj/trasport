@@ -63,4 +63,10 @@ class User extends Authenticatable
         return $query->where('role', '=', 1);
     }
     
+    //mutators
+    public function setTitleAttribute($value)
+    {
+        return $this->attributes['name'] = ucwords($value);
+    }
+    
 }
