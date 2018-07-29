@@ -15,5 +15,10 @@ class Reservation extends Model
     {
         return $this->belongsTo('App\User');
     }
+    
+    public function seat_reservations()
+    {
+        return $this->hasMany('App\Seat_reservation');
+    }
 }
 

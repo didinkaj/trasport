@@ -13,11 +13,12 @@
                     class="fa fa-dashboard fa-2x"></i>&nbsp;&nbsp; Dashboard
             </router-link>
             </li>
-            <li class="">&nbsp;&nbsp;<router-link :to="{name:'bookings_route'}"><i
-                    class="fa fa-calendar-check-o fa-2x"></i> &nbsp;&nbsp;Events
+
+            <li class="">&nbsp;&nbsp;<router-link :to="{name:'Showvehicles_route'}"><i class="fa fa-cab fa-2x"></i> &nbsp;&nbsp;Book Vehicle
             </router-link>
             </li>
-            <li class="">&nbsp;&nbsp;<router-link :to="{name:'Showvehicles_route'}"><i class="fa fa-cab fa-2x"></i> &nbsp;&nbsp;Book Vehicle
+            <li class="">&nbsp;&nbsp;<router-link :to="{name:'bookings_route'}"><i
+                    class="fa fa-calendar-check-o fa-2x"></i> &nbsp;&nbsp;My Events
             </router-link>
             </li>
             <li class="">&nbsp;&nbsp;<router-link :to="{name:'Showdrivers_route'}"><i class="fa fa-check fa-2x"></i>&nbsp;&nbsp;

@@ -47,6 +47,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Maintainance');
     }
     
+    public function seat_reservations()
+    {
+        return $this->hasMany('App\Seat_reservation');
+    }
+    
     public function scopeDrivers($query)
     {
         return $query->where('role', '=', 2);
