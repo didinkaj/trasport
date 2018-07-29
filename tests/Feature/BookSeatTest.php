@@ -17,4 +17,18 @@ class BookSeatTest extends TestCase
     {
         $this->assertTrue(true);
     }
+    
+    
+    /** @test */
+    public function guest_may_not_book_seat()
+    {
+        
+        $this->withExceptionHandling()
+            ->get('/api/bookings')
+            ->assertRedirect('/login');
+        
+        $this->withExceptionHandling()
+            ->post('/home')
+            ->assertRedirect('/login');
+    }
 }
