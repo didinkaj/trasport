@@ -80,7 +80,7 @@
             </ul>
         </nav>
         <form class="form-container">
-                <h5 class="text-center">Add Event</h5>
+                <h5 class="text-center">Create New Event</h5>
             <div class="form-group">
                 <div v-if="errors.length" class="error text-center">
                     <b>Please correct the following error(s):</b>
@@ -88,14 +88,14 @@
                         <div v-for="error in errors">{{ error }}</div>
                     </div>
                 </div>
-                <label for="name">Name:</label>
+                <label for="name">Event Name:</label>
                 <input type="text" class="form-control" id="name" name="name" maxlength="20"
                        required="required" v-model="newEvent.name">
             </div>
             <div class="form-group">
                 <label for="no_plate">Description:</label>
-                <input type="text" class="form-control" id="no_plate" name="no_plate"
-                       required="required" v-model="newEvent.description">
+                <textarea rows="5"type="text" class="form-control" id="no_plate" name="no_plate"
+                          required="required" v-model="newEvent.description"></textarea>
             </div>
 
             <button class=" button auth-button right" @click.prevent="createItem()">

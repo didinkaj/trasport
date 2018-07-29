@@ -68,6 +68,7 @@
     <div>
         <div class="grid-x page-header">
             <div class="cell medium-6">
+                <h5>Events</h5>
             </div>
             <div class="cell medium-6">
                 <div class="row">

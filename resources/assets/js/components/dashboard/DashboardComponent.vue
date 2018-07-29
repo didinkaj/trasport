@@ -95,7 +95,7 @@
                 <div class="card-divider">
                     Reports
                 </div>
-                <router-link :to="{name:'Showvehicles_route'}">
+                <router-link :to="{name:'Showreports_route'}">
                     <i class="fa fa-area-chart fa-4x icon-user"></i>
                 </router-link>
                 <div class="card-section">
@@ -106,7 +106,7 @@
                 <div class="card-divider">
                     Maintainance
                 </div>
-                <router-link :to="{name:'Showvehicles_route'}">
+                <router-link :to="{name:'Showmaintainance_route'}">
                     <i class="fa fa-cogs fa-4x icon-user"></i>
                 </router-link>
                 <div class="card-section">

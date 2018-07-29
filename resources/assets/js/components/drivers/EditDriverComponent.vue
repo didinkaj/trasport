@@ -5,6 +5,7 @@
                 form:{
                     name: '',
                     email: '',
+                    phone:''
                 },
                 errors: [],
             }
@@ -12,12 +13,15 @@
         methods: {
             registerDriver() {
 
-                if (this.form.name == '' || this.form.email == '') {
+                if (this.form.name == '' || this.form.email == '' || this.form.phone == '') {
                     if (this.name == '') {
                         this.errors.push('  Name required.');
                     }
                     if (this.form.email == '') {
                         this.errors.push(' Email Address required.');
+                    }
+                    if (this.form.phone == '') {
+                        this.errors.push(' Phone Number required.');
                     }
                 } else {
                     this.errors = []
@@ -66,12 +70,12 @@
                     <router-link :to="{name:'Showdrivers_route'}">Drivers</router-link>
                 </li>
                 <li>
-                    <span class="show-for-sr">Current: </span> Add Driver
+                    <span class="show-for-sr">Current: </span> Edit Driver
                 </li>
             </ul>
         </nav>
         <form class="auth-form">
-            <h5 class="text-center">Add Driver</h5>
+            <h5 class="text-center">Edit Driver</h5>
             <div v-if="errors.length" class="error text-center">
                 <b>Please correct the following error(s):</b>
                 <div>
@@ -83,6 +87,10 @@
                 <input id="name" type="text" class="form-control" name="name" v-model="form.name" value=""
                        aria-describedby="nameHelpText" required autofocus>
             </div>
+            <div class="phone">
+                <label for="phone">Phone Number</label>
+                <input id="phone" type="number" name="phone" v-model="form.phone" aria-describedby="emailHelpText" required>
+            </div>
             <div class="email">
                 <label for="email">E-Mail Address</label>
                 <input id="email" type="email" name="email" v-model="form.email" aria-describedby="emailHelpText" required>
@@ -92,7 +100,7 @@
                 </div>
                 <div class="column small-12  medium-6 button-plus-link  ">
                     <button type="submit" class="button auth-button " @click.prevent="registerDriver()">
-                        Add Driver
+                        Edit Driver
                     </button>
                 </div>
             </div>

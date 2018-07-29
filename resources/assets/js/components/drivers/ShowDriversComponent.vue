@@ -36,7 +36,7 @@
                 });
             },
             editDriver(driver) {
-                this.$router.push({name: 'editDrivers_route', params: {id: vehicle}});
+                this.$router.push({name: 'editDriver_route', params: {id: driver}});
             }
         },
         computed: {
@@ -68,6 +68,7 @@
     <div>
         <div class="grid-x page-header">
             <div class="cell medium-6">
+                <h5>Drivers</h5>
             </div>
             <div class="cell medium-6">
                 <div class="row">
@@ -97,7 +98,7 @@
                     <th>NAME</th>
                     <th class="text-center">Email</th>
                     <th>Phone Number</th>
-                    <th colspan="4" class="text-center">ACTIONS</th>
+                    <th colspan="3" class="text-center">ACTIONS</th>
                 </tr>
                 </thead>
                 <tr v-for="(driver, index) in drivers" class="data">
@@ -110,9 +111,6 @@
                     </td>
                     <td @click.prevent="deleteDriver(driver)" class="text-center" style="margin-left: 10px;">
                         <span class="fa fa-trash danger"></span>
-                    </td>
-                    <td class="text-center">
-                        <a href="#">Assign Van</a>
                     </td>
                 </tr>
             </table>

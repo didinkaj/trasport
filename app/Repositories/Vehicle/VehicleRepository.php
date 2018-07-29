@@ -16,7 +16,8 @@ class VehicleRepository
     
     public function getAllVehicles()
     {
-        return $this->vehicle->latest()->get();
+           return $this->vehicle->with('user')->latest()->get();
+        
     }
     
     public function getVihecle($id)

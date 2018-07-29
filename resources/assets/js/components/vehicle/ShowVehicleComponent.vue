@@ -13,6 +13,7 @@
             ...mapGetters({
                 vehicles: 'vehicles',
             })
+
         },
         methods: {
             deleteVehicle(vehicleToDelete) {
@@ -54,6 +55,7 @@
             this.$store.dispatch('getAllVehicles')
             this.$Progress.start(40)
 
+
         },
     }
 </script>
@@ -62,6 +64,7 @@
     <div>
         <div class="grid-x page-header">
             <div class="cell medium-6">
+                <h5>Vehicles</h5>
             </div>
             <div class="cell medium-6">
                 <div class="row">
@@ -106,7 +109,7 @@
                         <span class="fa fa-trash danger"></span>
                     </td>
                     <td class="text-center">
-                        <a href="#">Add Driver</a>
+                        <router-link :to="{name:'addDriverToVehicles_route',params: { vehicleDatas:'vehicle'}}">Add Driver</router-link>
                     </td>
                 </tr>
             </table>

@@ -22,12 +22,13 @@
     <div>
         <div class="grid-x page-header">
             <div class="cell medium-6">
+                <h5>Bookings</h5>
             </div>
             <div class="cell medium-6">
                 <div class="row">
                     <div class="dash-title text-center column">
                         <h6>
-                            <router-link style="color: #2f4b26" :to="{name:'addvehicle_route'}">
+                            <router-link style="color: #2f4b26" :to="{name:'AddEvent_route'}">
                                 <i class="fa fa-plus-circle" aria-hidden="true"></i> Add Event
                             </router-link>
                         </h6>
@@ -68,7 +69,10 @@
                         <br/>
                         <br/>
                         <br/>
-                        <button class="button success-green float-right" style="margin-bottom: 0px">Book Vehicle</button>
+
+
+                        <button class="button success-green float-right" style="margin-bottom: 0px">Approve</button>
+                        <button class="button success-red float-right" style="margin-bottom: 0px">Reject</button>
 
                     </div>
                 </div>
@@ -83,6 +87,11 @@
     }
     .success-green{
         background-color:green;
+        margin-right: 10px;
+        margin-bottom: 0px;
+    }
+    .success-red{
+        background-color:red;
         margin-right: 10px;
         margin-bottom: 0px;
     }

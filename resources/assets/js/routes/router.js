@@ -9,6 +9,7 @@ import BookingsRoutes from './bookings'
 import EventsRoutes from './events'
 import ReportsRoutes from './reports'
 import UserDashBoardRoutes from './user'
+import VehicleMaintainance from './maintainance'
 
 import VueRouter from 'vue-router'
 
@@ -51,6 +52,8 @@ Vue.use(VueRouter)
      ...generateRoutesFromMenu(EventsRoutes),
      ...generateRoutesFromMenu(ReportsRoutes),
      ...generateRoutesFromMenu(UserDashBoardRoutes),
+     ...generateRoutesFromMenu(VehicleMaintainance),
+
 
 ];
 
