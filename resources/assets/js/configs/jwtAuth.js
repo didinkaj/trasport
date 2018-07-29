@@ -1,3 +1,4 @@
+/*
 import axios from 'axios'
 
 import firebase from 'firebase'
@@ -27,4 +28,4 @@ const  JWT_AUTH = axios.get('api/user').then((response) => {
 
 })
 
-export default JWT_AUTH;
+export default JWT_AUTH;*/

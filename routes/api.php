@@ -34,6 +34,8 @@ Route::middleware('auth')->get('/drivers', 'DriversController@index');
 
 Route::middleware('auth')->get('/drivers/{id}', 'DriversController@edit');
 
+Route::middleware('auth')->get('/drivers/logged/in', 'DriversController@loggedInDriverInfo');
+
 Route::middleware('auth')->post('/drivers','DriversController@store');
 
 Route::middleware('auth')->delete('/drivers/{id}','DriversController@destroy');

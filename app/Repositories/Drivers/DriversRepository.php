@@ -3,6 +3,7 @@
 namespace App\Repositories\Drivers;
 
 use App\User;
+use Auth;
 use Illuminate\Support\Facades\Hash;
 
 class DriversRepository
@@ -68,6 +69,11 @@ class DriversRepository
         
          $res->delete();
         
+    }
+    
+    public function loggedInDriver()
+    {
+        return Auth::user();
     }
     
 }

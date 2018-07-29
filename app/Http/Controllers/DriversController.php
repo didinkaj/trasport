@@ -110,4 +110,10 @@ class DriversController extends Controller
         //
         $this->driverRepo->deleteDriver($id);
     }
+    
+    public function loggedInDriverInfo()
+    {
+        return  $this->driverRepo->loggedInDriver();
+    
+    }
 }

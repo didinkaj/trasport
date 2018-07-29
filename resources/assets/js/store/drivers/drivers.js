@@ -2,13 +2,16 @@ import {MY_URLS} from '../../configs/url'
 
 const state = {
     drivers: [],
-    driversToEdit: {}
+    driversToEdit: {},
+    driverProfileInfo:{}
 }
 
 const getters = {
     drivers: state => state.drivers,
     driversToEdit: state => state.driversToEdit,
     driversNo: state => state.drivers.length,
+    driverInfo: state => state.driverProfileInfo
+
 }
 
 const mutations = {
@@ -29,6 +32,10 @@ const mutations = {
     GET_DRIVER(state, singleDriver) {
         state.driverToEdit = new driverToEdit,
             state.driverToEdit = singleDriver
+    },
+    GET_DRIVER_LOGGEDIN(state, data) {
+            state.driverProfileInfo = data
+
     }
 
 };
@@ -66,6 +73,11 @@ const actions = {
     getDriver(store, id) {
         axios.get(MY_URLS.DRIVERS_URL + '/' + id).then((response) => {
             store.commit('GET_DRIVER', response.data);
+        })
+    },
+    getLoggedInDriver(store, id) {
+        axios.get(MY_URLS.DRIVERS_URL + '/logged/in').then((response) => {
+            store.commit('GET_DRIVER_LOGGEDIN', response.data);
         })
     }
 };
