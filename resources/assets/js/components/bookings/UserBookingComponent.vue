@@ -16,22 +16,39 @@
                 formLabelWidth: '120px'
             }
         },
+        methods:{
+            getAllevents(){
+                this.allevents = this.events
+            },
+            bookVehicle(){
+
+                if(this.form.dates == '' || this.form.description =='' || this.form.event == '')
+                {
+
+
+                }else{
+
+                }
+                this.dialogFormVisible = false
+                console.log('done')
+            }
+        },
         computed: {
             ...mapGetters({
                 bookings: 'bookings',
                 events:'events'
             })
         },
-        methods:{
-            getAllevents(){
-                this.allevents = this.events
-            }
-        },
         created() {
-            this.$store.dispatch('getAllBookings');
-            this.$store.dispatch('getAllEvents');
+            this.$store.dispatch('getAllBookings').then((response)=>{
+
+                this.$store.dispatch('getAllEvents').then((response)=>{
+                    this.$Progress.start(40)
+                })
+
+            })
             this.getAllevents();
-            this.$Progress.start(40)
+            this.$Progress.finish()
         },
         mounted(){
 
@@ -129,7 +146,7 @@
             </el-form>
             <span slot="footer" class="dialog-footer">
                 <el-button @click="dialogFormVisible = false">Cancel</el-button>
-                <el-button type="primary" @click="dialogFormVisible = false">Confirm</el-button>
+                <el-button type="primary" @click="bookVehicle">Confirm</el-button>
               </span>
         </el-dialog>
 
@@ -152,6 +169,9 @@
         background-color: red;
         margin-right: 10px;
         margin-bottom: 0px;
+    }
+    input{
+        width:100%;
     }
 
 </style>
