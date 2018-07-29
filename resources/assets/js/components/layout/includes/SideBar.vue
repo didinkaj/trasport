@@ -16,7 +16,6 @@
                 &nbsp;&nbsp;Events
             </router-link>
             </li>
-            </li>
             <li class="">&nbsp;&nbsp;<router-link :to="{name:'bookings_route'}"><i
                     class="fa fa-calendar-check-o fa-2x"></i> &nbsp;&nbsp;Bookings
             </router-link>

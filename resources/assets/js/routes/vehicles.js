@@ -9,21 +9,24 @@ const VehiclesRoutes = [
         path: '/vehicles',
         name: 'addvehicle_route',
         component: AddVehicle,
+        props: true,
 
     },
     {
         path: '/ShowVehicles',
         name: 'Showvehicles_route',
         component: ShowVehicles,
+        props: true,
     },
     {
-        path:'/vehicles/edit/:id',
+        path:'/vehicles/edit/:vehicleDatas',
         name: 'editvehicles_route',
         component: EditVehicleComponent
     },
     {
-        path:'/vehicles/add/driver',
+        path:'/vehicles/add/driver/:vehicleDatas',
         name: 'addDriverToVehicles_route',
+        props: true,
         component: AssignDriver
     }
 

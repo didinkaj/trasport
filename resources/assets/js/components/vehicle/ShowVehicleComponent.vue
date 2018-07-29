@@ -39,6 +39,10 @@
             },
             editVehicle(vehicle) {
                 this.$router.push({name: 'editvehicles_route', params: {id:vehicle} });
+            },
+            assignDriverToVehicle(vehicle){
+                this.$router.push({name: 'addDriverToVehicles_route', params: {vehicleDatas:vehicle} });
+                this.$store.commit('SAVE_ROUTE_VEHICLE',vehicle);
             }
         },
         filters: {
@@ -108,8 +112,8 @@
                     <td @click.prevent="deleteVehicle(vehicle)" class="text-center" style="margin-left: 10px;">
                         <span class="fa fa-trash danger"></span>
                     </td>
-                    <td class="text-center">
-                        <router-link :to="{name:'addDriverToVehicles_route',params: { vehicleDatas:'vehicle'}}">Add Driver</router-link>
+                    <td class="text-center" @click.prevent="assignDriverToVehicle(vehicle)">
+                        <router-link to="#">Add Driver</router-link>
                     </td>
                 </tr>
             </table>

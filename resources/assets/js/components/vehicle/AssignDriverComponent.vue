@@ -2,31 +2,87 @@
     import {mapGetters} from 'vuex'
 
     export default {
-        data(){
-            return{
-                driversInfo:{},
-                vehicleDatas:{},
-                vehicleToEdit:{}
+        props: [
+            'vehicleDatas'
+        ],
+        data() {
+            return {
+                driversInfo: {},
+                vehicleToEdit: {},
+                formdata: {
+                    users_id: '',
+                    vehicles_id: ''
+                }
 
             }
         },
-        methods:{
-            getDrivers(){
+        methods: {
+            getDrivers() {
                 this.driversInfo = this.drivers
-            }
+            },
+            getVehicleInfo() {
+
+                this.vehicleToEdit = this.routeParamsVehicle
+            },
+            assignDriver() {
+                if (this.formdata.users_id == '' || this.vehicleDatas.id == '') {
+                    if(this.vehicleDatas.id == ''){
+                        this.error('please select the driver to assign')
+                    }
+                    this.error('an error occured driver not assigned')
+
+
+                } else {
+                    let assignment = {
+                        'users_id': this.formdata.users_id,
+                        'vehicles_id': this.vehicleDatas.id
+                    }
+                    console.log(assignment)
+                    this.success('Driver assigned successfully')
+                }
+
+
+            },
+            success(messageToEcho) {
+                this.$notify({
+                    title: 'Success',
+                    message: messageToEcho,
+                    type: 'success'
+                });
+            },
+            error(messageToEcho) {
+                this.$notify({
+                    title: 'Error',
+                    message: messageToEcho,
+                    type: 'error'
+                });
+            },
 
         },
-        computed:{
+        computed: {
             ...mapGetters({
-                drivers:'drivers'
+                drivers: 'drivers',
+                routeParamsVehicle: 'routeParamsVehicle'
             })
 
         },
-        created(){
-            this.getDrivers();
-            console.log(this.driversInfo)
+        filters: {
+            dateFormat: (dateValue) => {
+                let dateObject = new Date(Date.parse(dateValue))
+                let dateReadable = dateObject.toDateString();
+                return dateReadable
+            }
         },
-        mounted(){
+        created() {
+            this.getDrivers();
+            this.getVehicleInfo();
+            console.log(this.driversInfo)
+            if (this.driversInfo == null) {
+                this.$router.push({name: 'addDriverToVehicles_route'})
+            }
+        },
+        mounted() {
+            console.log(this.vehicleDatas)
 
         }
     }
@@ -34,51 +90,66 @@
 
 <template>
     <div class="container">
-        <div class="grid-x ">
-            <div class="cell medium-4">
-    <div class="card dashboard-item cell">
-        <div class="card-section">
-            <div class="card-section text-center">
-                <h4>{{ vehicleDatas.name }}</h4>
+        <div class="grid-x page-header">
+            <div class="cell medium-6">
+                <h5>Assigning Driver to vehicle</h5>
             </div>
-            <div class="card-section text-center">
-                <a href="#" >
-                    <i class="fa fa-cab fa-5x icon-user"></i>
-                </a>
-            </div>
-            <div class="card-section">
-                <h6>Number Plate : {{ vehicleDatas.no_plate }}</h6>
-            </div>
-            <div class="card-section">
-                <h6>Capacity : {{ vehicleDatas.capacity }}</h6>
-            </div>
-            <div class="card-section">
-                <h6>Date Created : {{ vehicleDatas.created_at }}</h6>
-            </div>
-            <div class="card-section">
-                <h6>Date Update : {{ vehicleDatas.updated_at }}</h6>
+            <div class="cell medium-6">
+                <div class="row">
+                    <div class="dash-title text-center column">
+                        <h6>
+
+                        </h6>
+                    </div>
+                    <div class=" dash-title text-center column">
+
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+
+
+        <div class="grid-x ">
+            <div class="cell medium-4">
+                <div class="card dashboard-item cell">
+                    <div class="card-section">
+                        <div class="card-section text-center">
+                            <h5>{{ vehicleDatas.name }}</h5>
+                        </div>
+                        <div class="card-section text-center">
+                            <a href="#">
+                                <i class="fa fa-cab fa-5x icon-user"></i>
+                            </a>
+                        </div>
+                        <div class="card-section">
+                            <h6>Number Plate : {{ vehicleToEdit.no_plate }}</h6>
+                        </div>
+                        <div class="card-section">
+                            <h6>Capacity : {{ vehicleToEdit.capacity }}</h6>
+                        </div>
+                        <div class="card-section">
+                            <h6> Created : {{ vehicleToEdit.created_at | dateFormat}}</h6>
+                        </div>
+                        <div class="card-section">
+                            <h6> Update : {{ vehicleToEdit.updated_at | dateFormat}}</h6>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="cell medium-7 medium-offset-1">
-                <h4>Add Driver</h4>
+                <h5 class="text-center">Add Driver</h5>
                 <form>
                     <div class=" ">
                         <label>Select Driver
-                            <select>
-                                <option value="husker">Husker</option>
-                                <option value="starbuck">Starbuck</option>
-                                <option value="hotdog">Hot Dog</option>
-                                <option value="apollo">Apollo</option>
+                            <select v-model="formdata.users_id">
+                                <option v-for="driver in drivers" :value="driver.id">{{driver.name}}</option>
                             </select>
                         </label>
                     </div>
-                    <button type="submit" class="button auth-button right" @click.prevent="">
+                    <button type="submit" class="button auth-button right" @click.prevent="assignDriver">
                         Add Driver
                     </button>
                 </form>
-
 
 
                 <table class="stack" id="table">
@@ -92,11 +163,11 @@
                     </thead>
                     <tbody>
                     <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                    </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                        </td>
                     </tr>
                     </tbody>
                 </table>

@@ -64,7 +64,7 @@
     <div>
         <div class="grid-x page-header">
             <div class="cell medium-6">
-                <h5>Vehicles</h5>
+                <h5>Vehicles Maintainance</h5>
             </div>
             <div class="cell medium-6">
                 <div class="row">

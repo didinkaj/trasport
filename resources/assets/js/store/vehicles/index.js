@@ -2,13 +2,15 @@ import {MY_URLS} from '../../configs/url'
 
 const state = {
     vehicles: [],
-    vehiclesToEdit: {}
+    vehiclesToEdit: {},
+    routeParamsVehicle:{},
 }
 
 const getters = {
     vehicles: state => state.vehicles,
     vehiclesToEdit: state => state.vehiclesToEdit,
     vehiclesNo:  state => state.vehicles.length,
+    routeParamsVehicle:  state => state.routeParamsVehicle,
 }
 
 const mutations = {
@@ -22,7 +24,10 @@ const mutations = {
     ADD_VEHICLES(state, newVehicle) {
         state.vehicles.unshift(newVehicle);
     },
-
+    SAVE_ROUTE_VEHICLE(state, vehicle){
+        state.routeParamsVehicle = {}
+        state.routeParamsVehicle = vehicle
+    },
     DELETE_VEHICLE(state, vehicleToDelete) {
         state.vehicles.splice(state.vehicles.indexOf(vehicleToDelete), 1);
     },

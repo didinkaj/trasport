@@ -72,7 +72,6 @@
     <div>
         <nav aria-label="You are here:" role="navigation">
             <ul class="breadcrumbs">
-                <li><router-link :to="{name:'dashboard_route'}">Home</router-link></li>
                 <li><router-link :to="{name:'ShowEvents_route'}">Events</router-link></li>
                 <li>
                     <span class="show-for-sr">Current: </span> Add Event
