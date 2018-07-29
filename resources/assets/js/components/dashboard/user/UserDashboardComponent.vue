@@ -53,7 +53,7 @@
             </div>
             <div class=" medium-offset-1 cell medium-3 card dashboard-item ">
                 <div class="card-divider">
-                    My Reservations
+                    Make Reservations
                 </div>
                 <router-link :to="{name:'Userbooking_route'}">
                     <i class="fa fa-cab fa-4x icon-user"></i>
