@@ -39,7 +39,11 @@
             },
             editVehicle(vehicle) {
                 this.$router.push({name: 'editvehicles_route', params: {id:vehicle} });
-            }
+            },
+        addVehicleToMaintenance(vehicle){
+            this.$router.push({name: 'addToMaintenance_route', params: {vehicleDatas:vehicle} });
+            this.$store.commit('SAVE_ROUTE_VEHICLE',vehicle);
+        }
         },
         filters: {
             uppercase: (value) => {
@@ -103,8 +107,8 @@
                     <td class="text-center">{{ vehicle.capacity }}</td>
                     <td class="text-center">{{ vehicle.no_plate | uppercase}}</td>
 
-                    <td class="text-center">
-                        <router-link :to="{name:'addDriverToVehicles_route',params: { vehicleDatas:'vehicle'}}">Add Maintainance</router-link>
+                    <td class="text-center" @click.prevent="addVehicleToMaintenance(vehicle)">
+                        <a href="#">Add Maintainance</a>
                     </td>
                 </tr>
             </table>
