@@ -41,7 +41,7 @@
                 this.$router.push({name: 'editvehicles_route', params: {id:vehicle} });
             },
             assignDriverToVehicle(vehicle){
-                this.$router.push({name: 'addDriverToVehicles_route', params: {vehicleDatas:vehicle} });
+                this.$router.push({name: 'addDriverToVehicles_route', params: {vehicleDatas:vehicle.id} });
                 this.$store.commit('SAVE_ROUTE_VEHICLE',vehicle);
             }
         },

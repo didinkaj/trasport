@@ -3,6 +3,8 @@ $primary-color: #e6e6e6;
 $secondary-color: #1779ba;
 $primary-color2: #264027;
 $white-links: #ffffff;
+$primary: rgb(0,0,71);
+$white:#ffffff;
 //general body
 body {
 height: auto;
@@ -13,19 +15,22 @@ height: auto;
 
 //top bar
 .header-nav {
-  background-color: $primary-color;
+  background-color: $primary;
   height: 80px;
   z-index: 1000;
+  a {
+    color: $white;
+  }
   .title-bar {
-    background-color: $primary-color;
+    background-color: $primary;
     color: #2f4b26;
   }
 
   .top-bar, .top-bar ul {
-
+    background-color: $primary;
     .title-bar-right {
       a {
-        color: #fe5f55;
+        color: $white;
       }
     }
     .title-bar-left {

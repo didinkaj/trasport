@@ -1,5 +1,168 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
 
+body {
+  height: auto;
+}
+
+body .help-text {
+  color: red;
+}
+
+.header-nav {
+  background-color: #000047;
+  height: 80px;
+  z-index: 1000;
+}
+
+.header-nav a {
+  color: #ffffff;
+}
+
+.header-nav .title-bar {
+  background-color: #000047;
+  color: #2f4b26;
+}
+
+.header-nav .top-bar,
+.header-nav .top-bar ul {
+  background-color: #000047;
+}
+
+.header-nav .top-bar .title-bar-right a,
+.header-nav .top-bar ul .title-bar-right a {
+  color: #ffffff;
+}
+
+.header-nav .top-bar .title-bar-left button,
+.header-nav .top-bar ul .title-bar-left button {
+  color: #1779ba;
+}
+
+.header-nav .top-bar .title-bar-left .menu-text a,
+.header-nav .top-bar ul .title-bar-left .menu-text a {
+  color: red;
+}
+
+.main-page-login {
+  min-height: 94vh;
+}
+
+.main-page {
+  min-height: 100vh;
+}
+
+.auth {
+  margin-top: 10px;
+  border: 2px solid #e6e6e6;
+  padding: 40px;
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
+.sidebar {
+  height: auto;
+  padding-left: 50px;
+}
+
+.sidebar .menu {
+  line-height: 1.0em;
+}
+
+.side-bar-icon {
+  color: #e6e6e6;
+}
+
+.sidebar-items {
+  margin-top: 20px;
+  height: 100%;
+  margin-left: 15px;
+}
+
+.content-area {
+  padding-top: 20px;
+}
+
+.dashboard-content {
+  margin-bottom: 20px;
+}
+
+.dashboard-content .dashboard-item a {
+  text-align: center;
+  color: #0a0a0a;
+}
+
+.dashboard-content .dashboard-item a:hover {
+  text-align: center;
+  color: #1779ba;
+}
+
+.dashboard-content .dashboard-item .icon-user {
+  text-align: center;
+  margin-top: 15px;
+  min-height: 50px;
+}
+
+.edit-button {
+  color: #1779ba;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+}
+
+.dash-title {
+  padding: 20px;
+}
+
+.home-logo img {
+  width: 85%;
+  vertical-align: middle;
+}
+
+.auth-container {
+  min-height: 600px;
+  vertical-align: middle;
+}
+
+.auth-container .login-content {
+  min-height: 600px;
+  vertical-align: middle;
+}
+
+.dash-container {
+  min-height: 84vh;
+  line-height: inherit;
+}
+
+.auth-form .auth-button {
+  float: right;
+}
+
+.auth-form .forgot-password {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.footer-section {
+  background: #e6e6e6;
+  height: 50px;
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+.footer-section .footer-text {
+  color: #2f4b26;
+}
+
+.align-left {
+  float: left;
+}
+
+a:hover {
+  color: green;
+}
+
 /**
  * Foundation for Sites by ZURB
  * Version 6.4.3
@@ -11120,160 +11283,6 @@ a.thumbnail image {
   .column-block > :last-child {
     margin-bottom: 0;
   }
-}
-
-body {
-  height: auto;
-}
-
-body .help-text {
-  color: red;
-}
-
-.header-nav {
-  background-color: #e6e6e6;
-  height: 80px;
-  z-index: 1000;
-}
-
-.header-nav .title-bar {
-  background-color: #e6e6e6;
-  color: #2f4b26;
-}
-
-.header-nav .top-bar .title-bar-right a,
-.header-nav .top-bar ul .title-bar-right a {
-  color: #fe5f55;
-}
-
-.header-nav .top-bar .title-bar-left button,
-.header-nav .top-bar ul .title-bar-left button {
-  color: #1779ba;
-}
-
-.header-nav .top-bar .title-bar-left .menu-text a,
-.header-nav .top-bar ul .title-bar-left .menu-text a {
-  color: red;
-}
-
-.main-page-login {
-  min-height: 94vh;
-}
-
-.main-page {
-  min-height: 100vh;
-}
-
-.auth {
-  margin-top: 10px;
-  border: 2px solid #e6e6e6;
-  padding: 40px;
-  border-radius: 10px;
-  opacity: 0.9;
-}
-
-.sidebar {
-  height: auto;
-  padding-left: 50px;
-}
-
-.sidebar .menu {
-  line-height: 1.0em;
-}
-
-.side-bar-icon {
-  color: #e6e6e6;
-}
-
-.sidebar-items {
-  margin-top: 20px;
-  height: 100%;
-  margin-left: 15px;
-}
-
-.content-area {
-  padding-top: 20px;
-}
-
-.dashboard-content {
-  margin-bottom: 20px;
-}
-
-.dashboard-content .dashboard-item a {
-  text-align: center;
-  color: #0a0a0a;
-}
-
-.dashboard-content .dashboard-item a:hover {
-  text-align: center;
-  color: #1779ba;
-}
-
-.dashboard-content .dashboard-item .icon-user {
-  text-align: center;
-  margin-top: 15px;
-  min-height: 50px;
-}
-
-.edit-button {
-  color: #1779ba;
-  cursor: pointer;
-}
-
-.error {
-  color: red;
-}
-
-.dash-title {
-  padding: 20px;
-}
-
-.home-logo img {
-  width: 85%;
-  vertical-align: middle;
-}
-
-.auth-container {
-  min-height: 600px;
-  vertical-align: middle;
-}
-
-.auth-container .login-content {
-  min-height: 600px;
-  vertical-align: middle;
-}
-
-.dash-container {
-  min-height: 84vh;
-  line-height: inherit;
-}
-
-.auth-form .auth-button {
-  float: right;
-}
-
-.auth-form .forgot-password {
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-.footer-section {
-  background: #e6e6e6;
-  height: 50px;
-  padding: 10px;
-  margin-bottom: 0;
-}
-
-.footer-section .footer-text {
-  color: #2f4b26;
-}
-
-.align-left {
-  float: left;
-}
-
-a:hover {
-  color: green;
 }
 
 /*!

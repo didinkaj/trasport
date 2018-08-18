@@ -1,4 +1,6 @@
 
+//custom sass
+@import "custom";
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
@@ -9,7 +11,4 @@
 @import "foundation";
 
 
-//custom sass
-@import "custom";
-
-@import "../../../node_modules/font-awesome/scss/font-awesome";
+@import "node_modules/font-awesome/scss/font-awesome";

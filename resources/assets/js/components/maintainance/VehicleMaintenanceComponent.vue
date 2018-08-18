@@ -133,7 +133,7 @@
             </div>
             <div class="cell medium-7 medium-offset-1">
                 <h5 class="text-center">Add Maintenance Dates</h5>
-                <form>
+                <elForm>
                     <div class=" ">
                         <el-form-item label="Select Maintenance Date" :label-width="formLabelWidth">
                             <el-date-picker
@@ -148,7 +148,7 @@
                     <button type="submit" class="button auth-button right" @click.prevent="addToMaitenance">
                         Add Maintenance
                     </button>
-                </form>
+                </elForm>
 
 
                 <table class="stack" id="table">
