@@ -9,7 +9,7 @@ body .help-text {
 }
 
 .header-nav {
-  background-color: #000047;
+  background-color: #00473a;
   height: 80px;
   z-index: 1000;
 }
@@ -18,14 +18,18 @@ body .help-text {
   color: #ffffff;
 }
 
+.header-nav a:hover {
+  color: #1B1B3A;
+}
+
 .header-nav .title-bar {
-  background-color: #000047;
+  background-color: #00473a;
   color: #2f4b26;
 }
 
 .header-nav .top-bar,
 .header-nav .top-bar ul {
-  background-color: #000047;
+  background-color: #00473a;
 }
 
 .header-nav .top-bar .title-bar-right a,
@@ -76,6 +80,18 @@ body .help-text {
   margin-top: 20px;
   height: 100%;
   margin-left: 15px;
+}
+
+.sidebar-items a {
+  color: #000047;
+}
+
+.sidebar-items a:hover {
+  color: #1779ba;
+}
+
+.sidebar-items .menu .active > a {
+  background: #000047;
 }
 
 .content-area {

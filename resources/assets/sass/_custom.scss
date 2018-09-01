@@ -3,8 +3,12 @@ $primary-color: #e6e6e6;
 $secondary-color: #1779ba;
 $primary-color2: #264027;
 $white-links: #ffffff;
-$primary: rgb(0,0,71);
+//$primary: rgb(0,0,71);
+$primary: #00473a;
 $white:#ffffff;
+$yellow:yellow;
+$green:green;
+$link-primary:#000047;
 //general body
 body {
 height: auto;
@@ -20,6 +24,9 @@ height: auto;
   z-index: 1000;
   a {
     color: $white;
+  }
+  a:hover{
+    color: #1B1B3A;
   }
   .title-bar {
     background-color: $primary;
@@ -78,6 +85,17 @@ height: auto;
   margin-top: 20px;
   height: 100%;
   margin-left:15px ;
+  a{
+    color:$link-primary;
+  }
+  a:hover{
+    color:$secondary-color;
+  }
+
+  .menu .active > a {
+    background: $link-primary;
+  }
+
 }
 
 .content-area{
