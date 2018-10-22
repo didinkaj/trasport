@@ -5,7 +5,7 @@ namespace App\Repositories\Maintenance;
 use App\Maintainance;
 use Illuminate\Support\Facades\Auth;
 
-class UsersVehicleRepository
+class MaintainanceRepository
 {
     public $maintainance;
     

@@ -51,7 +51,7 @@ class DriversController extends Controller
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'phone' => 'required|string|max:13',
+            'phone' => 'required|string|max:13|unique:users',
         ]);
     
          if($this->driverRepo->saveDriver($request))
@@ -60,7 +60,9 @@ class DriversController extends Controller
              
              Mail::to($request->email)->send(new DriverRegistered($message));
              
-             return $request;
+             return response()->json(['status'=>"saved successfull", 'data'=>$request]);
+         }else{
+             return response()->json(['status' =>"error data not saved successfully"]);
          }
         
     }

@@ -34,8 +34,8 @@ Vue.config.productionTip = true
 Vue.use(VueRouter)
 
 Vue.use(VueProgressBar, {
-    color: 'rgb(255,255,0)',
-    failedColor: 'yellow',
+    color: 'rgb(241,80,37)',
+    failedColor: 'blue',
     thickness: '4px',
     height: '4px'
 })

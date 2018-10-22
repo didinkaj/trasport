@@ -47,11 +47,13 @@ const actions = {
         })
     },
     addDriver(store, newDriver) {
-        axios.post(MY_URLS.DRIVERS_URL, newDriver).then((response) => {
-            store.commit('ADD_DRIVER', response.data);
-            console.log(response.data)
-        }).catch(error => {
-            return Promise.reject(error.response);
+        return new Promise((resolve, reject) => {
+            axios.post(MY_URLS.DRIVERS_URL, newDriver).then((response) => {
+                store.commit('ADD_DRIVER', response.data);
+                resolve(response);
+            }).catch((error) => {
+                reject(error.response);
+            });
         });
     },
     updateDriver(store, data) {

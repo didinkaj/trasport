@@ -2,50 +2,56 @@
     export default {
         data() {
             return {
-                form:{
+                form: {
                     name: '',
                     email: '',
-                    phone:''
+                    phone: ''
                 },
                 errors: [],
+                disabled:false
             }
         },
         methods: {
             registerDriver() {
 
-                if (this.form.name == '' || this.form.email == '' || this.form.phone == '') {
-                    if (this.name == '') {
+                if (!this.form.name || !this.form.email || !this.form.phone) {
+                    if (!this.name) {
                         this.errors.push('  Name required.');
                     }
-                    if (this.form.email == '') {
+                    if (!this.form.email) {
                         this.errors.push(' Email Address required.');
                     }
-                    if (this.form.phone == '') {
+                    if (!this.form.phone) {
                         this.errors.push(' Phone Number required.');
                     }
                 } else {
                     this.errors = []
                     let input = this.form
-                    this.$store.dispatch('addDriver', input).then(() => {
-                            this.success('Driver added successfully')
-                            this.newVehicle = {}
-                            this.errors = []
-                            this.$router.push({name: 'Showdrivers_route'})
-                        },
-                        error => {
-                            this.error('Driver not added')
-
-                        })
+                    this.$Progress.start()
+                    this.disabled = true;
+                    this.$store.dispatch('addDriver', input).then((response) => {
+                        this.successNotify('Driver added successfully')
+                        this.newVehicle = {}
+                        this.errors = []
+                        this.$router.push({name: 'Showdrivers_route'});
+                        this.$Progress.finish()
+                    }).catch((error) => {
+                        this.disabled = false;
+                        this.$Progress.finish();
+//                        this.errors.push(error.data.errors);
+                        this.errors.push(Object.values(error.data.errors).toString());
+                        this.errorNotify(Object.values(error.data.errors).join(','));
+                    })
                 }
             },
-            success(messageToEcho) {
+            successNotify(messageToEcho) {
                 this.$notify({
                     title: 'Success',
                     message: messageToEcho,
                     type: 'success'
                 });
             },
-            error(messageToEcho) {
+            errorNotify(messageToEcho) {
                 this.$notify({
                     title: 'Error',
                     message: messageToEcho,
@@ -74,32 +80,34 @@
                 </li>
             </ul>
         </nav>
-        <form class="auth-form">
+        <form class="auth-form" @submit.prevent="registerDriver()">
             <h5 class="text-center">Create New Driver</h5>
             <div v-if="errors.length" class="error text-center">
                 <b>Please correct the following error(s):</b>
                 <div>
-                    <div v-for="error in errors">{{ error }}</div>
+                    {{errors.toString()}}
                 </div>
             </div>
             <div class="name">
                 <label for="email">Name</label>
                 <input id="name" type="text" class="form-control" name="name" v-model="form.name" value=""
-                       aria-describedby="nameHelpText" required autofocus>
+                       aria-describedby="nameHelpText" required="required" autofocus>
             </div>
             <div class="phone">
                 <label for="phone">Phone Number</label>
-                <input id="phone" type="number" name="phone" v-model="form.phone" aria-describedby="emailHelpText" required>
+                <input id="phone" type="number" name="phone" v-model="form.phone" aria-describedby="emailHelpText"
+                       required="required">
             </div>
             <div class="email">
                 <label for="email">E-Mail Address</label>
-                <input id="email" type="email" name="email" v-model="form.email" aria-describedby="emailHelpText" required>
+                <input id="email" type="email" name="email" v-model="form.email" aria-describedby="emailHelpText"
+                       required="required">
             </div>
             <div class="row">
                 <div class="column small-12  medium-6 button-plus-link">
                 </div>
                 <div class="column small-12  medium-6 button-plus-link  ">
-                    <button type="submit" class="button auth-button " @click.prevent="registerDriver()">
+                    <button type="submit" class="button auth-button " :disabled="disabled">
                         Add Driver
                     </button>
                 </div>

@@ -52,10 +52,11 @@ class DriverAssignmentController extends Controller
     
         if($this->userVehicleRepo->saveUserVehicle($request))
         {
-            return $request;
+            return response()->json(['success'=>'Data save Successfully','data'=>$request]);
+        }else{
+            return response()->json(['status'=>'An error occured']);
         }
-    
-        return  $request;
+        
     }
 
     /**

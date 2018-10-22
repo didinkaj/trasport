@@ -7,11 +7,11 @@ use Illuminate\Support\Facades\Auth;
 
 class SeatResrvationRepository
 {
-    public $seatreservation;
+    public $seatReservation;
     
     public function __construct(Seat_reservation $reservation)
     {
-        $this->seatreservation = $reservation;
+        $this->seatReservation = $reservation;
     }
     
     public function getAllSeatResrvations()

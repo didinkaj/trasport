@@ -83,11 +83,11 @@
             this.getDrivers();
             this.getVehicleInfo();
             console.log(this.driversInfo)
-            if (this.driversInfo == null) {
+            if (!this.driversInfo) {
                 this.$router.push({name: 'addDriverToVehicles_route'})
             }
             this.$store.dispatch('getDriverAssignments',this.vehicleDatas.id).then((response)=>{
-                console.response
+                console.response.data
             }).catch((error)=>{
                 console.log(error.message)
             })
