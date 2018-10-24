@@ -40,7 +40,7 @@
                         this.$Progress.finish();
 //                        this.errors.push(error.data.errors);
                         this.errors.push(Object.values(error.data.errors).toString());
-                        this.errorNotify(Object.values(error.data.errors).join(','));
+//                        this.errorNotify(Object.values(error.data.errors).join(','));
                     })
                 }
             },
@@ -82,11 +82,14 @@
         </nav>
         <form class="auth-form" @submit.prevent="registerDriver()">
             <h5 class="text-center">Create New Driver</h5>
-            <div v-if="errors.length" class="error text-center">
+            <div v-if="errors.length" class="callout alert" data-closable>
                 <b>Please correct the following error(s):</b>
                 <div>
                     {{errors.toString()}}
                 </div>
+                <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="name">
                 <label for="email">Name</label>
@@ -106,10 +109,18 @@
             <div class="row">
                 <div class="column small-12  medium-6 button-plus-link">
                 </div>
-                <div class="column small-12  medium-6 button-plus-link  ">
-                    <button type="submit" class="button auth-button " :disabled="disabled">
-                        Add Driver
-                    </button>
+                <div class="column small-12  medium-6 button-plus-link">
+                    <div class="loading-button">
+                        <button type="submit" class="primary button auth-button" data-loading-start v-show="!disabled" >
+                            Register Driver
+                        </button>
+                        <button type="button" class="primary button show auth-button" data-loading-end v-show="disabled" >
+                            <i class='fa fa-spinner fa-spin'></i> Registering Driver
+                        </button>
+                    </div> <!-- refresh -->
+                    <div data-success-message class="callout success hide">
+                        Thanks, your order has been processed!
+                    </div>
                 </div>
             </div>
         </form>

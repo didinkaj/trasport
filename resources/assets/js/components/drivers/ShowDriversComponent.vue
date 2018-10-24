@@ -2,12 +2,11 @@
     import {mapGetters} from 'vuex'
 
     export default {
-        components: {
-
-        },
+        components: {},
         data() {
             return {
                 driversInfo: [],
+                notification:[]
             }
         },
         methods: {
@@ -19,14 +18,19 @@
                     confirmButtonText: 'OK',
                     cancelButtonText: 'Cancel',
                     type: 'warning',
-                    center:true
+                    center: true
                 }).then(() => {
-                    this.$store.dispatch('deleteDriver' ,driverToDelete);
-                    this.$Progress.start(40);
-                    this.$router.push({name: 'Showdrivers_route'})
-                    this.$message({
-                        type: 'success',
-                        message: 'Delete completed'
+                    this.$store.dispatch('deleteDriver', driverToDelete).then(response => {
+                        this.$Progress.start(40);
+                        this.$router.push({name: 'Showdrivers_route'})
+                        this.notification.push(response.data.status)
+                        this.$message({
+                            type: 'success',
+                            message: response.data.status
+                        });
+                    }).catch(error=>{
+                        console.log("Deletion failed");
+                        this.notification.push(error.data)
                     });
                 }).catch(() => {
                     this.$message({
@@ -46,7 +50,7 @@
         },
         filters: {
             uppercase: (value) => {
-               return value.toUpperCase();
+                return value.toUpperCase();
             },
             ucfirst: (string) => {
                 return string.charAt(0).toUpperCase() + string.slice(1);
@@ -72,23 +76,22 @@
             </div>
             <div class="cell medium-6">
                 <div class="row">
-                <div class="dash-title text-center column">
-                    <h6>
-                        <router-link style="color: #2f4b26" :to="{name:'addDriver_route'}">
-                            <i class="fa fa-plus-circle" aria-hidden="true"></i> Add Driver
-                        </router-link>
-                    </h6>
-                </div>
+                    <div class="dash-title text-center column">
+                        <h6>
+                            <router-link style="color: #2f4b26" :to="{name:'addDriver_route'}">
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i> Add Driver
+                            </router-link>
+                        </h6>
+                    </div>
                     <div class=" dash-title text-center column">
-                    <a href="/vehicles/list/pdf" target="_blank" style="color: #2f4b26">
-                        Download
-                        <i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                </div>
+                        <a href="/drivers/list/pdf" target="_blank" style="color: #2f4b26">
+                            Download
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-
 
         <div class="table table-borderless" id="tablediv">
             <table class="stack" id="table">
@@ -102,10 +105,10 @@
                 </tr>
                 </thead>
                 <tr v-for="(driver, index) in drivers" class="data">
-                    <td>{{ index+1 }}</td>
-                    <td class="">{{ driver.name  }}</td>
-                    <td>{{ driver.email  }}</td>
-                    <td>{{ driver.phone  }}</td>
+                    <td>{{ index + 1 }}</td>
+                    <td class="">{{ driver.name }}</td>
+                    <td>{{ driver.email }}</td>
+                    <td>{{ driver.phone }}</td>
                     <td class="btn btn-info edit-button" @click="editDriver(driver)">
                         <span> <i class="fa fa-pencil-square-o "></i></span>
                     </td>

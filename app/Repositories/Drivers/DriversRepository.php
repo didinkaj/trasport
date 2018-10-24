@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Drivers;
 
+use App\Events\DriverRegistered;
 use App\User;
 use Auth;
 use Illuminate\Support\Facades\Hash;
@@ -41,8 +42,12 @@ class DriversRepository
         $this->driver->role_description = 'driver';
         
         $this->driver->password = Hash::make($password);
+        
+        $response = $this->driver->save ();
     
-        return $this->driver->save ();
+        event(new DriverRegistered( $this->driver));
+    
+        return $response;
         
     }
     
@@ -67,7 +72,7 @@ class DriversRepository
         
         $res = $this->driver->find($id);
         
-         $res->delete();
+        return $res->delete();
         
     }
     

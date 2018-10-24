@@ -49,7 +49,7 @@ const actions = {
     addDriver(store, newDriver) {
         return new Promise((resolve, reject) => {
             axios.post(MY_URLS.DRIVERS_URL, newDriver).then((response) => {
-                store.commit('ADD_DRIVER', response.data);
+                store.commit('ADD_DRIVER', newDriver);
                 resolve(response);
             }).catch((error) => {
                 reject(error.response);
@@ -66,10 +66,13 @@ const actions = {
     },
     deleteDriver(store, driverToDelete) {
         console.log(driverToDelete);
-        axios.delete(MY_URLS.DRIVERS_URL + '/' + driverToDelete.id).then((response) => {
-            store.commit('DELETE_DRIVER', driverToDelete);
-        }).catch(error => {
-            return Promise.reject(error.response);
+        return new Promise((resolve, reject) => {
+            axios.delete(MY_URLS.DRIVERS_URL + '/' + driverToDelete.id).then((response) => {
+                store.commit('DELETE_DRIVER', driverToDelete);
+                resolve(response);
+            }).catch(error => {
+                reject(resolve.error);
+            });
         });
     },
     getDriver(store, id) {

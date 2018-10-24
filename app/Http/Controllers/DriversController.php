@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\DriverRegistered;
+use App\Events\DriverRegistered;
+use App\Listeners\SendWelcomeEmailToDriver;
+use App\Mail\DriverRegisteredMail;
 use Illuminate\Http\Request;
 use App\Repositories\Drivers\DriversRepository;
 use Illuminate\Support\Facades\Mail;
@@ -18,6 +20,7 @@ class DriversController extends Controller
         $this->driverRepo = $driversRepository;
         
     }
+    
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +31,7 @@ class DriversController extends Controller
         //
         return $this->driverRepo->getAllDrivers();
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -38,11 +41,11 @@ class DriversController extends Controller
     {
         //
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -53,69 +56,74 @@ class DriversController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'phone' => 'required|string|max:13|unique:users',
         ]);
-    
-         if($this->driverRepo->saveDriver($request))
-         {
-             $message = array('test' => 'Welcome to Cytonn TRSM');
-             
-             Mail::to($request->email)->send(new DriverRegistered($message));
-             
-             return response()->json(['status'=>"saved successfull", 'data'=>$request]);
-         }else{
-             return response()->json(['status' =>"error data not saved successfully"]);
-         }
+        
+        if ($this->driverRepo->saveDriver($request)) {
+            $message = array('test' => 'Welcome to Cytonn TRSM');
+            
+            Mail::to($request->email)->send(new DriverRegisteredMail($message));
+            
+            return response()->json(['status' => "saved successfull", 'data' => $request]);
+        } else {
+            return response()->json(['status' => "error data not saved successfully"]);
+        }
         
     }
-
+    
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         //
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         //
     }
-
+    
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         //
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
-        $this->driverRepo->deleteDriver($id);
+        if ($this->driverRepo->deleteDriver($id)) {
+            return response()->json(['status' => "Driver Deleted successfully"]);
+        } else {
+            return response()->json(['status' => "An error occured driver not deleted"]);
+        }
+        
+        
     }
     
     public function loggedInDriverInfo()
     {
-        return  $this->driverRepo->loggedInDriver();
-    
+        return $this->driverRepo->loggedInDriver();
+        
     }
 }
